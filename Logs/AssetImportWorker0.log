@@ -15,11 +15,11 @@ C:/Users/brian/Documents/Unity/Project-Lylat
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-58443
+62360
 Successfully changed project path to: C:/Users/brian/Documents/Unity/Project-Lylat
 C:/Users/brian/Documents/Unity/Project-Lylat
 Using Asset Import Pipeline V2.
-Refreshing native plugins compatible for Editor in 322.98 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 141.99 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2020.3.21f1 (a38c86f6690f)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2020.3.21f1/Editor/Data/Resources/UnitySubsystems
@@ -35,89 +35,89 @@ Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2020.3.21f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2020.3.21f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
 Mono config path = 'C:/Program Files/Unity/Hub/Editor/2020.3.21f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56368
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56072
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2020.3.21f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.005915 seconds.
+Registered in 0.003646 seconds.
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 230.89 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 174.23 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  3.807 seconds
+- Completed reload, in  2.430 seconds
 Domain Reload Profiling:
-	ReloadAssembly (3808ms)
-		BeginReloadAssembly (238ms)
+	ReloadAssembly (2430ms)
+		BeginReloadAssembly (113ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (0ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (2ms)
-		EndReloadAssembly (2075ms)
-			LoadAssemblies (229ms)
+			CreateAndSetChildDomain (1ms)
+		EndReloadAssembly (1257ms)
+			LoadAssemblies (109ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (959ms)
+			SetupTypeCache (378ms)
 			ReleaseScriptCaches (0ms)
-			RebuildScriptCaches (171ms)
-			SetupLoadedEditorAssemblies (559ms)
+			RebuildScriptCaches (81ms)
+			SetupLoadedEditorAssemblies (524ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (9ms)
+				InitializePlatformSupportModulesInManaged (19ms)
 				SetLoadedEditorAssemblies (1ms)
-				RefreshPlugins (231ms)
-				BeforeProcessingInitializeOnLoad (43ms)
-				ProcessInitializeOnLoadAttributes (210ms)
-				ProcessInitializeOnLoadMethodAttributes (65ms)
+				RefreshPlugins (174ms)
+				BeforeProcessingInitializeOnLoad (31ms)
+				ProcessInitializeOnLoadAttributes (194ms)
+				ProcessInitializeOnLoadMethodAttributes (104ms)
 				AfterProcessingInitializeOnLoad (0ms)
-				EditorAssembliesLoaded (0ms)
+				EditorAssembliesLoaded (1ms)
 			ExecutionOrderSort2 (0ms)
 			AwakeInstancesAfterBackupRestoration (0ms)
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.010400 seconds.
+Registered in 0.010646 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 127.29 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 104.78 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  3.641 seconds
+- Completed reload, in  3.040 seconds
 Domain Reload Profiling:
-	ReloadAssembly (3643ms)
-		BeginReloadAssembly (336ms)
+	ReloadAssembly (3041ms)
+		BeginReloadAssembly (334ms)
 			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (10ms)
+			DisableScriptedObjects (9ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (37ms)
-		EndReloadAssembly (3171ms)
-			LoadAssemblies (211ms)
+			CreateAndSetChildDomain (35ms)
+		EndReloadAssembly (2552ms)
+			LoadAssemblies (238ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (689ms)
+			SetupTypeCache (615ms)
 			ReleaseScriptCaches (1ms)
-			RebuildScriptCaches (136ms)
-			SetupLoadedEditorAssemblies (1841ms)
+			RebuildScriptCaches (102ms)
+			SetupLoadedEditorAssemblies (1410ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (9ms)
-				SetLoadedEditorAssemblies (1ms)
-				RefreshPlugins (127ms)
-				BeforeProcessingInitializeOnLoad (305ms)
-				ProcessInitializeOnLoadAttributes (1369ms)
+				InitializePlatformSupportModulesInManaged (6ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (105ms)
+				BeforeProcessingInitializeOnLoad (164ms)
+				ProcessInitializeOnLoadAttributes (1106ms)
 				ProcessInitializeOnLoadMethodAttributes (16ms)
-				AfterProcessingInitializeOnLoad (13ms)
-				EditorAssembliesLoaded (0ms)
+				AfterProcessingInitializeOnLoad (12ms)
+				EditorAssembliesLoaded (1ms)
 			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (13ms)
+			AwakeInstancesAfterBackupRestoration (11ms)
 Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.13 seconds
-Refreshing native plugins compatible for Editor in 0.96 ms, found 2 plugins.
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.10 seconds
+Refreshing native plugins compatible for Editor in 0.86 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 2544 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 134.1 MB.
-System memory in use after: 134.1 MB.
+System memory in use before: 134.2 MB.
+System memory in use after: 134.2 MB.
 
 Unloading 34 unused Assets to reduce memory usage. Loaded Objects now: 3011.
-Total: 11.669700 ms (FindLiveObjects: 0.457100 ms CreateObjectMapping: 0.201600 ms MarkObjects: 10.438300 ms  DeleteObjects: 0.570600 ms)
+Total: 7.182400 ms (FindLiveObjects: 0.422700 ms CreateObjectMapping: 0.202300 ms MarkObjects: 6.191600 ms  DeleteObjects: 0.364000 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
@@ -132,17 +132,105 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
-  path: Assets/AssetPacks/SkySeries Freebie/FreebieHdri/AmbienceExposure4k.hdr
-  artifactKey: Guid(c9bc6cdb7a2e78b4c85ae74715b0a355) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/AssetPacks/SkySeries Freebie/FreebieHdri/AmbienceExposure4k.hdr using Guid(c9bc6cdb7a2e78b4c85ae74715b0a355) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '71f925f39f5f6d3152856867687b4e72') in 0.316313 seconds 
-  Import took 0.333625 seconds .
+  path: Assets/Low Poly Water/Plane Meshes/Plane75x90W300H300.asset
+  artifactKey: Guid(a0713cc8a5080fb4299a7b5f9c8bce8a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Water/Plane Meshes/Plane75x90W300H300.asset using Guid(a0713cc8a5080fb4299a7b5f9c8bce8a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5eee070fad93f5708f615bbe7bb6843b') in 0.257929 seconds 
+  Import took 0.265189 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 134.946053 seconds.
-  path: Assets/Prefabs/Enemy Waves
-  artifactKey: Guid(e98978b0d05276a408a12b0dc3ae5772) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Enemy Waves using Guid(e98978b0d05276a408a12b0dc3ae5772) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '29d058df40878eed8000353152f8b644') in 0.067435 seconds 
-  Import took 0.077811 seconds .
+  Time since last request: 0.000503 seconds.
+  path: Assets/Low Poly Water/Plane Meshes/Ocean45x40W100H100.asset
+  artifactKey: Guid(d13fd822a587aea49b07e7a41056aa75) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Water/Plane Meshes/Ocean45x40W100H100.asset using Guid(d13fd822a587aea49b07e7a41056aa75) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6249068531f08a693e7c0733d3d659c8') in 0.108013 seconds 
+  Import took 0.115277 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000393 seconds.
+  path: Assets/Low Poly Water/Plane Meshes
+  artifactKey: Guid(4fc00f4b334328b4abbea4099c4d569b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Water/Plane Meshes using Guid(4fc00f4b334328b4abbea4099c4d569b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4c226bc28a5839d24ac38b5782704a93') in 0.076259 seconds 
+  Import took 0.084014 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000394 seconds.
+  path: Assets/Low Poly Water/Plane Meshes/Ocean25x30W100H100.asset
+  artifactKey: Guid(cffb3547ccc69a4448cd643b4a2c5dbf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Water/Plane Meshes/Ocean25x30W100H100.asset using Guid(cffb3547ccc69a4448cd643b4a2c5dbf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '302cdfe81fef26b43e480225c89809c3') in 0.092565 seconds 
+  Import took 0.099481 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000429 seconds.
+  path: Assets/Low Poly Water/Plane Meshes/Ocean90x94W300H300.asset
+  artifactKey: Guid(9e794192c09d54c40afc867b75c9413d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Water/Plane Meshes/Ocean90x94W300H300.asset using Guid(9e794192c09d54c40afc867b75c9413d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1a209542d5c0c08cebe49f8b10264fa3') in 0.157433 seconds 
+  Import took 0.165850 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000444 seconds.
+  path: Assets/Low Poly Water/Plane Meshes/Plane97x89W300H300.asset
+  artifactKey: Guid(7b478c02971ac6e42b5ab1b55912ee44) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Water/Plane Meshes/Plane97x89W300H300.asset using Guid(7b478c02971ac6e42b5ab1b55912ee44) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fd43a16ae58eed557d0eaed39f456a21') in 0.164272 seconds 
+  Import took 0.172403 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000436 seconds.
+  path: Assets/Low Poly Water/Plane Meshes/Ocean2155x180W300H350.asset
+  artifactKey: Guid(7dfb4fe75c430c446adf0c1440cb0025) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Water/Plane Meshes/Ocean2155x180W300H350.asset using Guid(7dfb4fe75c430c446adf0c1440cb0025) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '315ef06c26061dd88d04ba4dd8e8d7e9') in 0.343157 seconds 
+  Import took 0.350814 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000477 seconds.
+  path: Assets/Low Poly Water/Plane Meshes/Ocean60x60W100H100.asset
+  artifactKey: Guid(513f694261fd5fe43a85c697e99c7d62) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Water/Plane Meshes/Ocean60x60W100H100.asset using Guid(513f694261fd5fe43a85c697e99c7d62) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'baef3995aaba53dd9e7ca86137293749') in 0.122854 seconds 
+  Import took 0.132989 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000398 seconds.
+  path: Assets/Low Poly Water/Plane Meshes/Ocean75x90W300H350.asset
+  artifactKey: Guid(40748af64254c684b87612f4a806b783) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Water/Plane Meshes/Ocean75x90W300H350.asset using Guid(40748af64254c684b87612f4a806b783) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0473fc96b30d6d8e85d853d0831dd22b') in 0.139176 seconds 
+  Import took 0.147570 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000431 seconds.
+  path: Assets/Low Poly Water/Plane Meshes/Plane33x40W300H300.asset
+  artifactKey: Guid(ee6766664cf163844ae63d3a11b745a5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Water/Plane Meshes/Plane33x40W300H300.asset using Guid(ee6766664cf163844ae63d3a11b745a5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3b379a2293146716ac92d6f52f338d8f') in 0.096205 seconds 
+  Import took 0.104534 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000402 seconds.
+  path: Assets/Low Poly Water/Plane Meshes/Ocean2150x180W300H300.asset
+  artifactKey: Guid(96f46a33f89147d40bb169f0b468249c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Water/Plane Meshes/Ocean2150x180W300H300.asset using Guid(96f46a33f89147d40bb169f0b468249c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cb23a96bab13f67b2c96c35af4c0a5a4') in 0.151293 seconds 
+  Import took 0.162439 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000841 seconds.
+  path: Assets/Low Poly Water/Plane Meshes/Plane50x50W100H100.asset
+  artifactKey: Guid(e5c20efa4da8c134bb7e1a021af0d6b5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Water/Plane Meshes/Plane50x50W100H100.asset using Guid(e5c20efa4da8c134bb7e1a021af0d6b5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '80b98555a6c35d1941c0a6e219b6500b') in 0.110272 seconds 
+  Import took 0.165459 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 49.194805 seconds.
+  path: Assets/AssetPacks/LowPolyWater_Pack/LowPoly Island/Materials
+  artifactKey: Guid(ff03683a26939b2418b9d1ed51da72da) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetPacks/LowPolyWater_Pack/LowPoly Island/Materials using Guid(ff03683a26939b2418b9d1ed51da72da) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6c8550bbdb834c077644296f3a5801b0') in 0.069801 seconds 
+  Import took 0.082936 seconds .
 
 AssetImportWorkerClient::OnTransportError - code=2 error=End of file

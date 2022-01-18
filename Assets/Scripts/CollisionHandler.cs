@@ -11,6 +11,8 @@ public class CollisionHandler : MonoBehaviour
 
     [SerializeField] ParticleSystem deathVFX;
     [SerializeField] float levelLoadDelay = 1f;
+    [SerializeField] GameObject playerShipCollider;
+    [SerializeField] GameObject playerShipMesh;
 
     void OnTriggerEnter(Collider other)
     {
@@ -28,9 +30,9 @@ public class CollisionHandler : MonoBehaviour
     void StartCrashSequence()
     {
         deathVFX.Play();
-        GetComponent<MeshRenderer>().enabled = false;
-        GetComponent<MeshCollider>().enabled = false;
         GetComponent<PlayerControls>().enabled = false;
+        playerShipCollider.SetActive(false);
+        playerShipMesh.SetActive(false);
         Invoke("ReloadLevel", levelLoadDelay);
     }
 
