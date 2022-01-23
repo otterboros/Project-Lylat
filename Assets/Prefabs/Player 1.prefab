@@ -99,7 +99,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerSpaceship: {fileID: 8524465265688175337}
   cameraPositionYRatio: 0.3
-  cameraPositionXRatio: 0.4
+  cameraPositionXRatio: 0.3
   cameraPitchRatio: 0.25
   cameraYawRatio: 0.1
   cameraRollRatio: 0.25
@@ -222,6 +222,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3315304266721250917}
     m_Modifications:
+    - target: {fileID: 112310687823145711, guid: 3715a73d88eee534aaaa6e92c9931381, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4590049320576156769, guid: 3715a73d88eee534aaaa6e92c9931381, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5955202905175819478, guid: 3715a73d88eee534aaaa6e92c9931381, type: 3}
+      propertyPath: shipYawRatio
+      value: 60
+      objectReference: {fileID: 0}
     - target: {fileID: 6081734556815140609, guid: 3715a73d88eee534aaaa6e92c9931381, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -274,6 +286,14 @@ PrefabInstance:
       propertyPath: playerShipMesh
       value: 
       objectReference: {fileID: 5829557242754095069}
+    - target: {fileID: 8600856457073820000, guid: 3715a73d88eee534aaaa6e92c9931381, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8818088906995795148, guid: 3715a73d88eee534aaaa6e92c9931381, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3715a73d88eee534aaaa6e92c9931381, type: 3}
 --- !u!1 &8524465265688175337 stripped

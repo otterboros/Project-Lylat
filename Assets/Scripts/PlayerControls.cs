@@ -17,13 +17,13 @@ public class PlayerControls : MonoBehaviour
     [SerializeField] float yDodgeSpeed;
 
     [Tooltip("How far ship can move from 0,0 in response to player input")]
-    [SerializeField] float xShipRange;
-    [SerializeField] float yShipRange;
+    public float xShipRange;
+    public float yShipRange;
 
     [Header("Ship Rotation Settings")]
     [Tooltip("How far ship can rotate in response to player input")]
-    [SerializeField] float shipPitchRatio;
-    [SerializeField] float shipYawRatio;
+    public float shipPitchRatio;
+    public float shipYawRatio;
     [SerializeField] float shipRollRatio;
 
     [Tooltip("Rate of change from current to desired rotation")]
@@ -116,16 +116,32 @@ public class PlayerControls : MonoBehaviour
         ProcessFire();
     }
 
+
+
+
     void ProcessFire()
     {
         if (fire.ReadValue<float>() > 0.05)
         {
             SetLasersActive(true);
         }
+
         else
         {
             SetLasersActive(false);
         }
+
+        // Charged Shot
+        // Add an if for holding button down for 2 seconds (or so)
+        // If held, 
+        ReadyChargedShot();
+
+        // If button is released while charged shot is queued and enemy is marked
+        FireChargedShot();
+
+        // If button is released without marking an enemy
+        // or after shot is fired at marked enemy
+        // Reset firing conditions
     }
 
     void SetLasersActive(bool isLaserActive)
@@ -133,4 +149,26 @@ public class PlayerControls : MonoBehaviour
         var emission = lasers[0].GetComponent<ParticleSystem>().emission; // Stores the module in a local variable
         emission.enabled = isLaserActive; // Applies the new value directly to the Particle System
     }
+
+    void ReadyChargedShot()
+    {
+        //Instantiate an invisible sphere at the nose of the ship
+        // Hold this object at nose of ship while fire button is held
+        //This sphere has the following properties
+        //A particle system active while sphere exists
+        //A collision detector for enemies
+        //  When it strikes an enemy, it explodes dealing an AOE effect and running a different enemy death counter
+
+        // Alter color of UI reticles
+        
+        // Raycast forward
+        // if raycast collides with an enemy that enemy is marked
+    }
+
+    void FireChargedShot()
+    {
+        // release sphere in a straight line towards marked enemy
+        // it must strike marked enemy unless an object moves between it and blocks it, in which case it will explode prematurely
+    }
 }
+

@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5889617469278063957}
   - component: {fileID: 8527821719142005151}
   - component: {fileID: 8213676409511517680}
+  - component: {fileID: 5228230427657230609}
   m_Layer: 0
   m_Name: SingleShotEnemy
   m_TagString: Untagged
@@ -95,3 +96,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 27.063995, y: 10.921931, z: 25.642958}
   m_Center: {x: 0, y: 5.4609656, z: 0}
+--- !u!114 &5228230427657230609
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7879070482740172874}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c6f8a79e0236a8478662f4dd1d3ccb3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  deathFX: {fileID: 2713837767111585032, guid: e71e64dc6f08c2147a53d2d20e126a0d, type: 3}
+  hitVFX: {fileID: 2713837767111585032, guid: 6789de3455690f642a060e8ba5808e7f, type: 3}
+  enemyScoreValue: 1
+  enemyHealth: 2

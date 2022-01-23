@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2247648551998731410}
   - component: {fileID: 4095380900124999768}
   - component: {fileID: 2875247527597812166}
+  - component: {fileID: -4002614015406892965}
   m_Layer: 0
   m_Name: ChargedShotEnemy
   m_TagString: Untagged
@@ -95,3 +96,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 23.737385, y: 7.035349, z: 33.500877}
   m_Center: {x: 0, y: 3.5176744, z: 0}
+--- !u!114 &-4002614015406892965
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2582052746013270413}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c6f8a79e0236a8478662f4dd1d3ccb3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  deathFX: {fileID: 2713837767111585032, guid: e71e64dc6f08c2147a53d2d20e126a0d, type: 3}
+  hitVFX: {fileID: 2713837767111585032, guid: 6789de3455690f642a060e8ba5808e7f, type: 3}
+  enemyScoreValue: 1
+  enemyHealth: 3

@@ -10,7 +10,7 @@ TagManager:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - ReticleRayPlane
   - Water
   - UI
   - Post Processing
