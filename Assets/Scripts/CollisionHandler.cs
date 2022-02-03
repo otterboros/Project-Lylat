@@ -21,8 +21,11 @@ public class CollisionHandler : MonoBehaviour
             case "Friendly":
                 Debug.Log("This thing is friendly");
                 break;
-            default:
+            case "Enemy":
                 StartCrashSequence();
+                break;
+            default:
+                Debug.Log("Somehow, this is neither friendly nor an enemy.");
                 break;
         }
     }

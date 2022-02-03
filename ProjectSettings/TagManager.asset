@@ -6,11 +6,12 @@ TagManager:
   tags:
   - Friendly
   - CreateAtRuntime
+  - Enemy
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - ReticleRayPlane
+  - 
   - Water
   - UI
   - Post Processing

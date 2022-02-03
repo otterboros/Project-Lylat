@@ -282,6 +282,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerShip2
       objectReference: {fileID: 0}
+    - target: {fileID: 6093717307201130453, guid: 3715a73d88eee534aaaa6e92c9931381, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 3315304266031366357}
     - target: {fileID: 7387528410501973334, guid: 3715a73d88eee534aaaa6e92c9931381, type: 3}
       propertyPath: playerShipMesh
       value: 

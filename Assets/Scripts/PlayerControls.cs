@@ -2,14 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.InputSystem.Interactions;
+using UnityEngine.UI;
 
 public class PlayerControls : MonoBehaviour
 {
     // Remove redundancies between this and PlayerControls, if possible
 
     [SerializeField] InputAction movement;
-    [SerializeField] InputAction fire;
     [SerializeField] GameObject[] lasers;
+    [SerializeField] GameObject chargedShotSphere;
+    [SerializeField] GameObject enemyTargetedReticlePrefab;
+    [SerializeField] GameObject uiCanvas;
+    
+    Camera gameCamera;
 
     [Header("Ship Movement Settings")]
     [Tooltip("How fast ship moves in response to player input")]
@@ -31,16 +37,35 @@ public class PlayerControls : MonoBehaviour
 
     float xThrow, yThrow;
 
+    bool isTargetingChargedShot = false;
+    bool isChargedTargetAcquired = false;
+    bool isChargedShotFired = false;
+    GameObject chargedShot;
+
+    [SerializeField] GameObject[] reticles;
+    Color defaultReticleColor;
+
+    GameObject enemyTargeted;
+    GameObject enemyTargetedReticle;
+
+
+
+    private void Awake()
+    {
+        SetLasersActive(false);
+        defaultReticleColor = new Color(0.9058824f, 0.1058823f, 0.6814225f, 1f);
+
+        gameCamera = Camera.main;
+    }
+
     void OnEnable()
     {
         movement.Enable();
-        fire.Enable();
     }
 
     void OnDisable()
     {
         movement.Disable();
-        fire.Disable();
     }
 
     private void ProcessShipPosition()
@@ -113,62 +138,153 @@ public class PlayerControls : MonoBehaviour
     {
         ProcessShipPosition();
         ProcessShipRotation();
-        ProcessFire();
     }
+  
 
-
-
-
-    void ProcessFire()
+    public void Fire(InputAction.CallbackContext context)
     {
-        if (fire.ReadValue<float>() > 0.05)
+        // See "Fire" in Input Action Asset for detail on "Tap" & "Hold" interactions
+        if(context.started) 
+            SetLasersActive(true); // Fire lasers while button is held above Press Point but beneath Hold time threshold
+
+        if(context.performed) 
+            ReadyChargedShot(); // Button has been held on or above Hold time threshold
+
+        if (context.canceled)
         {
-            SetLasersActive(true);
+            SetLasersActive(false); // Deactivate lasers if button is released before Hold time threshold
+            if (isChargedTargetAcquired)
+                isChargedShotFired = true; // If Charged shot target is acquired, fire Charged Shot
+            else
+                CancelChargedShot(); // Otherwise, cancel Charged Shot
+
+            enemyTargeted = null; // Move this to a general CancelCharged that runs after sphere is fired, as well as if its canceled
+
+            // Add a destroy target on enemy, and remove target acquired, if enemy leaves screen
+
+
+            reticles[0].GetComponent<Image>().color = defaultReticleColor;
+            reticles[1].GetComponent<Image>().color = defaultReticleColor;
         }
-
-        else
-        {
-            SetLasersActive(false);
-        }
-
-        // Charged Shot
-        // Add an if for holding button down for 2 seconds (or so)
-        // If held, 
-        ReadyChargedShot();
-
-        // If button is released while charged shot is queued and enemy is marked
-        FireChargedShot();
-
-        // If button is released without marking an enemy
-        // or after shot is fired at marked enemy
-        // Reset firing conditions
     }
-
     void SetLasersActive(bool isLaserActive)
     {
         var emission = lasers[0].GetComponent<ParticleSystem>().emission; // Stores the module in a local variable
         emission.enabled = isLaserActive; // Applies the new value directly to the Particle System
+        // play firing laser sound (ideally, this will be attached to emission system)
     }
-
     void ReadyChargedShot()
     {
-        //Instantiate an invisible sphere at the nose of the ship
-        // Hold this object at nose of ship while fire button is held
-        //This sphere has the following properties
-        //A particle system active while sphere exists
-        //A collision detector for enemies
-        //  When it strikes an enemy, it explodes dealing an AOE effect and running a different enemy death counter
+        SetLasersActive(false);
 
-        // Alter color of UI reticles
-        
-        // Raycast forward
-        // if raycast collides with an enemy that enemy is marked
+        Vector3 chargedShotPositionAdj = new Vector3(0f, -0.753000021f, 1.30999994f);
+        chargedShot = Instantiate(chargedShotSphere, transform.position + chargedShotPositionAdj, Quaternion.identity, transform);
+
+        reticles[0].GetComponent<Image>().color = Color.yellow;
+        reticles[1].GetComponent<Image>().color = Color.red;
+
+        // Add ready charged shot sound
+
+        isTargetingChargedShot = true;
+    }
+
+    private void FixedUpdate()
+    {
+        if (isTargetingChargedShot)
+            TargetingChargedShot();
+        else if (isChargedTargetAcquired)
+            PositionEnemyTargetedReticle();
+        else if (isChargedShotFired)
+            FireChargedShot();
+        else
+            return;
+    }
+
+    void TargetingChargedShot()
+    {
+        RaycastHit hit;
+
+        int layerMask = 1 << 2;
+        layerMask = ~layerMask; // Ignore only objects in the Ignore Raycast layer (2)
+
+        if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, 50, layerMask) && hit.collider.gameObject.tag == "Enemy")
+        {
+            isTargetingChargedShot = false;
+            isChargedTargetAcquired = true;
+            enemyTargeted = hit.collider.gameObject;
+            Debug.Log("Targeted enemy" + hit.collider.gameObject.transform.name + "!");
+
+            enemyTargetedReticle = Instantiate(enemyTargetedReticlePrefab, gameCamera.WorldToScreenPoint(enemyTargeted.transform.position), Quaternion.identity, uiCanvas.transform);
+        }
+    }
+
+    void PositionEnemyTargetedReticle()
+    {
+        enemyTargetedReticle.transform.position = gameCamera.WorldToScreenPoint(enemyTargeted.transform.position);
     }
 
     void FireChargedShot()
     {
-        // release sphere in a straight line towards marked enemy
-        // it must strike marked enemy unless an object moves between it and blocks it, in which case it will explode prematurely
+        chargedShot.transform.LookAt(enemyTargeted.transform);
+        chargedShot.transform.Translate(Vector3.forward * 1);
     }
+
+    void CancelChargedShot()
+    {
+        isTargetingChargedShot = false;
+        isChargedTargetAcquired = false;
+        isChargedShotFired = false;
+        Destroy(enemyTargetedReticle);
+        Destroy(chargedShot);
+    }
+
+    //bool isFiringChargedShot { get { return firingChargedShot != null; } }
+    //Coroutine firingChargedShot = null;
+
+    //void FireChargedShot()
+    //{
+    //    StopFiringChargedShot();
+    //    chargedShot.transform.rotation = Quaternion.LookRotation(transform.forward);
+    //    firingChargedShot = StartCoroutine(FiringChargedShot());
+    //}
+
+    //void StopFiringChargedShot()
+    //{
+    //    if (isFiringChargedShot)
+    //    {
+    //        StopCoroutine(firingChargedShot);
+    //    }
+    //    firingChargedShot = null;
+    //}
+
+    //IEnumerator FiringChargedShot()
+    //{
+    //    // fire sphere that homes in on targetted enemy
+    //    // play firing charged shot sound
+    //    Collider other;
+
+
+
+    //    // run sphere collision method
+    //    // destroy targeted reticle on collision
+    //    void OnTriggerEnter(Collider other)
+    //    {
+    //        switch (other.gameObject.tag)
+    //        {
+    //            case "Friendly":
+    //                Debug.Log("This thing is friendly");
+    //                break;
+    //            case "Enemy":
+    //                StartExplosionSequence();
+    //                break;
+    //            default:
+    //                Debug.Log("Somehow, this is neither friendly nor an enemy.");
+    //                break;
+    //        }
+    //    }
+    //    yield return new WaitForEndOfFrame();
+
+    //    StopFiringChargedShot();
+    //}
 }
 
