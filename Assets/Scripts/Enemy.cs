@@ -28,13 +28,22 @@ public class Enemy : MonoBehaviour
 
     void OnParticleCollision(GameObject other)
     {
-        enemyHealth--;
+        Damage(1,"Laser");
+    }
+
+    public void Damage(int damage, string weaponType)
+    {
+        enemyHealth -= damage;
 
         if (enemyHealth >= 1)
             ProcessEnemyDamage();
 
         else if (enemyHealth < 1)
+        {
+            if (weaponType == "ChargedShot")
+                ComboManager.instance.AddToCombo();
             ProcessEnemyDeath();
+        }   
     }
 
     void ProcessEnemyDamage()

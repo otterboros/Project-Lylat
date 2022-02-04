@@ -35,17 +35,19 @@ public class PlayerControls : MonoBehaviour
     [Tooltip("Rate of change from current to desired rotation")]
     [SerializeField] float InterpDuration;
 
-    float xThrow, yThrow;
+    private float xThrow, yThrow;
+    
+    private static bool isTargetingChargedShot = false;
+    private static bool isChargedTargetAcquired = false;
+    private static bool isChargedShotFired = false;
 
-    bool isTargetingChargedShot = false;
-    bool isChargedTargetAcquired = false;
-    bool isChargedShotFired = false;
     GameObject chargedShot;
 
     [SerializeField] GameObject[] reticles;
     Color defaultReticleColor;
 
     GameObject enemyTargeted;
+    Vector3 chargedShotPositionAdj;
     GameObject enemyTargetedReticle;
 
 
@@ -154,11 +156,12 @@ public class PlayerControls : MonoBehaviour
         {
             SetLasersActive(false); // Deactivate lasers if button is released before Hold time threshold
             if (isChargedTargetAcquired)
+            {
                 isChargedShotFired = true; // If Charged shot target is acquired, fire Charged Shot
+                isChargedTargetAcquired = false;
+            }
             else
-                CancelChargedShot(); // Otherwise, cancel Charged Shot
-
-            enemyTargeted = null; // Move this to a general CancelCharged that runs after sphere is fired, as well as if its canceled
+                ResetChargedShot(); // Otherwise, cancel Charged Shot
 
             // Add a destroy target on enemy, and remove target acquired, if enemy leaves screen
 
@@ -177,8 +180,11 @@ public class PlayerControls : MonoBehaviour
     {
         SetLasersActive(false);
 
-        Vector3 chargedShotPositionAdj = new Vector3(0f, -0.753000021f, 1.30999994f);
-        chargedShot = Instantiate(chargedShotSphere, transform.position + chargedShotPositionAdj, Quaternion.identity, transform);
+        chargedShotPositionAdj = new Vector3(0f, -0.753000021f, 1.30999994f);
+        chargedShot = Instantiate(chargedShotSphere, transform.position + chargedShotPositionAdj, Quaternion.identity, transform.parent.transform);
+        // Move to create at runtime parent
+
+        enemyTargeted = null; // Move this to a general CancelCharged that runs after sphere is fired, as well as if its canceled
 
         reticles[0].GetComponent<Image>().color = Color.yellow;
         reticles[1].GetComponent<Image>().color = Color.red;
@@ -192,12 +198,15 @@ public class PlayerControls : MonoBehaviour
     {
         if (isTargetingChargedShot)
             TargetingChargedShot();
-        else if (isChargedTargetAcquired)
+        
+        if (isTargetingChargedShot || isChargedTargetAcquired)
+            PositionChargedShot();
+
+        if (isChargedTargetAcquired || isChargedShotFired)
             PositionEnemyTargetedReticle();
-        else if (isChargedShotFired)
+
+        if (isChargedShotFired)
             FireChargedShot();
-        else
-            return;
     }
 
     void TargetingChargedShot()
@@ -207,14 +216,16 @@ public class PlayerControls : MonoBehaviour
         int layerMask = 1 << 2;
         layerMask = ~layerMask; // Ignore only objects in the Ignore Raycast layer (2)
 
-        if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, 50, layerMask) && hit.collider.gameObject.tag == "Enemy")
+        if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, 100, layerMask) && hit.collider.gameObject.tag == "Enemy")
         {
             isTargetingChargedShot = false;
             isChargedTargetAcquired = true;
             enemyTargeted = hit.collider.gameObject;
-            Debug.Log("Targeted enemy" + hit.collider.gameObject.transform.name + "!");
+
+            // Add sound
 
             enemyTargetedReticle = Instantiate(enemyTargetedReticlePrefab, gameCamera.WorldToScreenPoint(enemyTargeted.transform.position), Quaternion.identity, uiCanvas.transform);
+            ChargedShotCollisionHandler.AssignLinkedReticle(enemyTargetedReticle);
         }
     }
 
@@ -223,68 +234,34 @@ public class PlayerControls : MonoBehaviour
         enemyTargetedReticle.transform.position = gameCamera.WorldToScreenPoint(enemyTargeted.transform.position);
     }
 
+    void PositionChargedShot()
+    {
+        chargedShot.transform.position = transform.position + chargedShotPositionAdj;
+    }
+
     void FireChargedShot()
     {
+        // Add sound
         chargedShot.transform.LookAt(enemyTargeted.transform);
         chargedShot.transform.Translate(Vector3.forward * 1);
     }
 
-    void CancelChargedShot()
+    public static void ResetChargedShotBools()
+    {
+        isChargedShotFired = false;
+        isChargedTargetAcquired = false;
+        isChargedShotFired = false;
+    }
+
+    public void ResetChargedShot()
     {
         isTargetingChargedShot = false;
         isChargedTargetAcquired = false;
         isChargedShotFired = false;
+
+        enemyTargeted = null; // Move this to a general CancelCharged that runs after sphere is fired, as well as if its canceled
+
         Destroy(enemyTargetedReticle);
         Destroy(chargedShot);
     }
-
-    //bool isFiringChargedShot { get { return firingChargedShot != null; } }
-    //Coroutine firingChargedShot = null;
-
-    //void FireChargedShot()
-    //{
-    //    StopFiringChargedShot();
-    //    chargedShot.transform.rotation = Quaternion.LookRotation(transform.forward);
-    //    firingChargedShot = StartCoroutine(FiringChargedShot());
-    //}
-
-    //void StopFiringChargedShot()
-    //{
-    //    if (isFiringChargedShot)
-    //    {
-    //        StopCoroutine(firingChargedShot);
-    //    }
-    //    firingChargedShot = null;
-    //}
-
-    //IEnumerator FiringChargedShot()
-    //{
-    //    // fire sphere that homes in on targetted enemy
-    //    // play firing charged shot sound
-    //    Collider other;
-
-
-
-    //    // run sphere collision method
-    //    // destroy targeted reticle on collision
-    //    void OnTriggerEnter(Collider other)
-    //    {
-    //        switch (other.gameObject.tag)
-    //        {
-    //            case "Friendly":
-    //                Debug.Log("This thing is friendly");
-    //                break;
-    //            case "Enemy":
-    //                StartExplosionSequence();
-    //                break;
-    //            default:
-    //                Debug.Log("Somehow, this is neither friendly nor an enemy.");
-    //                break;
-    //        }
-    //    }
-    //    yield return new WaitForEndOfFrame();
-
-    //    StopFiringChargedShot();
-    //}
 }
-

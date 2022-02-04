@@ -4,30 +4,27 @@ using UnityEngine;
 
 public class ChargedShotCollisionHandler : MonoBehaviour
 {
-    int timeTilDestroy = 2;
+    private GameObject parentGameObject;
 
-    void OnTriggerEnter(Collider other)
+    private static GameObject _linkedReticle;
+
+    private void Start()
     {
-        StartExplosionSequence();
+        parentGameObject = GameObject.FindWithTag("CreateAtRuntime");
     }
 
-    void StartExplosionSequence()
+    public static void AssignLinkedReticle(GameObject linkedReticle)
     {
-        SetExplosionActive(true);
-        Destroy(gameObject, timeTilDestroy);
-        // This should Trigger the OnParticleCollision in Enemy.cs
-
-        // Later, it should modiy ProcessEnemyHealth to do more damage
-        // And ProcessEnemyDeath to add more score
-        // As well as create a combo meter
-
-        // For now, just use current scripts
+        _linkedReticle = linkedReticle;
     }
 
-    void SetExplosionActive(bool isExplosionActive)
+    private void OnTriggerEnter(Collider other)
     {
-        var emission = GetComponent<ParticleSystem>().emission; // Stores the module in a local variable
-        emission.enabled = isExplosionActive; // Applies the new value directly to the Particle System
-        // play charged shot explosion sound
+        PlayerControls.ResetChargedShotBools();
+
+        Instantiate(Resources.Load<GameObject>("Prefabs/ChargedShotExplosion"), transform.position, Quaternion.identity, parentGameObject.transform);
+
+        Destroy(_linkedReticle);
+        Destroy(gameObject);
     }
 }

@@ -1273,34 +1273,13 @@ MonoBehaviour:
       m_Groups: 
       m_Action: Movement
       m_Flags: 0
-  fire:
-    m_Name: Fire
-    m_Type: 0
-    m_ExpectedControlType: 
-    m_Id: 5b5115a4-af7e-4d17-87ca-836e890d8320
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings:
-    - m_Name: 
-      m_Id: e990b0ed-555e-480b-b934-bb53b73e7cb1
-      m_Path: <Mouse>/leftButton
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Fire
-      m_Flags: 0
-    - m_Name: 
-      m_Id: 51e26794-fa37-4f4b-93df-8fc03d932f10
-      m_Path: <Gamepad>/rightTrigger
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Fire
-      m_Flags: 0
   lasers:
   - {fileID: 869996821135218043}
   - {fileID: 3616101397354871797}
   - {fileID: 8646345733594315608}
+  chargedShotSphere: {fileID: 0}
+  enemyTargetedReticlePrefab: {fileID: 0}
+  uiCanvas: {fileID: 0}
   xDodgeSpeed: 40
   yDodgeSpeed: 40
   xShipRange: 30
@@ -1309,6 +1288,7 @@ MonoBehaviour:
   shipYawRatio: 45
   shipRollRatio: 30
   InterpDuration: 0.2
+  reticles: []
 --- !u!114 &7387528410501973334
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1947,6 +1927,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5716026747091891188, guid: 3dc3b265039bc6d4db34cd26203be34c, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3dc3b265039bc6d4db34cd26203be34c, type: 3}
 --- !u!1 &8646345733594315608 stripped
@@ -2018,6 +2002,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Laser One
       objectReference: {fileID: 0}
+    - target: {fileID: 5716026747091891188, guid: 3dc3b265039bc6d4db34cd26203be34c, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3dc3b265039bc6d4db34cd26203be34c, type: 3}
 --- !u!1 &869996821135218043 stripped
@@ -2040,6 +2028,10 @@ PrefabInstance:
     - target: {fileID: 2713837767111585032, guid: 18f3fe12a8a7d8649965e38260a03fee, type: 3}
       propertyPath: m_Name
       value: Explosion VFX
+      objectReference: {fileID: 0}
+    - target: {fileID: 2713837767111585032, guid: 18f3fe12a8a7d8649965e38260a03fee, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 2713837767111585037, guid: 18f3fe12a8a7d8649965e38260a03fee, type: 3}
       propertyPath: m_RootOrder
@@ -2163,6 +2155,10 @@ PrefabInstance:
     - target: {fileID: 5716026747091891188, guid: 3dc3b265039bc6d4db34cd26203be34c, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5716026747091891188, guid: 3dc3b265039bc6d4db34cd26203be34c, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3dc3b265039bc6d4db34cd26203be34c, type: 3}
