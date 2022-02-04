@@ -23,7 +23,6 @@ public class ChargedShotExplosion : MonoBehaviour
                 enemy.Damage(2, "ChargedShot");
             }
         }
-
         ComboManager.instance.FinishCombo();
     }
 

@@ -5,7 +5,7 @@ using UnityEngine;
 public class ComboManager : MonoBehaviour
 {
     Scoreboard scoreboard;
-    int comboValue = 0;
+    int comboValue;
 
     public static ComboManager instance;
 

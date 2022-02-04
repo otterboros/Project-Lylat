@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4848565839681877626}
   m_Layer: 0
   m_Name: CloseReticleTarget
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -94,7 +94,7 @@ GameObject:
   - component: {fileID: -6144776158261282554}
   m_Layer: 0
   m_Name: Laser One
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4910,7 +4910,7 @@ GameObject:
   - component: {fileID: 35893620845695631}
   m_Layer: 0
   m_Name: FarReticleTarget
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

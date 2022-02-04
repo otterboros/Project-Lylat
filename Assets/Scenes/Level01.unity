@@ -5179,41 +5179,12 @@ PrefabInstance:
       propertyPath: uiCanvas
       value: 
       objectReference: {fileID: 1766214070}
-    - target: {fileID: 8107660047463323432, guid: 68c7937e8268d9d42b23590f5ea31a7f, type: 3}
-      propertyPath: chargedShotSphere
-      value: 
-      objectReference: {fileID: 8722873598985845149, guid: 012396427756533428717b82571f11f3, type: 3}
-    - target: {fileID: 8107660047463323432, guid: 68c7937e8268d9d42b23590f5ea31a7f, type: 3}
-      propertyPath: reticles.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8107660047463323432, guid: 68c7937e8268d9d42b23590f5ea31a7f, type: 3}
-      propertyPath: reticles.Array.data[0]
-      value: 
-      objectReference: {fileID: 1961703065}
-    - target: {fileID: 8107660047463323432, guid: 68c7937e8268d9d42b23590f5ea31a7f, type: 3}
-      propertyPath: reticles.Array.data[1]
-      value: 
-      objectReference: {fileID: 703199535}
-    - target: {fileID: 8107660047463323432, guid: 68c7937e8268d9d42b23590f5ea31a7f, type: 3}
-      propertyPath: enemyTargetedReticlePrefab
-      value: 
-      objectReference: {fileID: 8018522826883899299, guid: 09cd693f593859d4e965d6a13d487eab, type: 3}
-    - target: {fileID: 8524465265688175337, guid: 68c7937e8268d9d42b23590f5ea31a7f, type: 3}
-      propertyPath: m_TagString
-      value: Untagged
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 68c7937e8268d9d42b23590f5ea31a7f, type: 3}
 --- !u!1 &683504030 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3656620397827434695, guid: 68c7937e8268d9d42b23590f5ea31a7f, type: 3}
   m_PrefabInstance: {fileID: 683504029}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &703199535 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6688144822575510253, guid: f906c74843af4694fa9ed7f01ddcb3fe, type: 3}
-  m_PrefabInstance: {fileID: 3463990549200887938}
   m_PrefabAsset: {fileID: 0}
 --- !u!108 &705507994 stripped
 Light:
@@ -5978,11 +5949,6 @@ PlayableDirector:
     value: {fileID: 1185045739}
   m_ExposedReferences:
     m_References: []
---- !u!1 &1961703065 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1859435947989414102, guid: f906c74843af4694fa9ed7f01ddcb3fe, type: 3}
-  m_PrefabInstance: {fileID: 3463990549200887938}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2008904117
 PrefabInstance:
   m_ObjectHideFlags: 0

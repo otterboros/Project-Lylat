@@ -25,7 +25,7 @@ public class CollisionHandler : MonoBehaviour
                 StartCrashSequence();
                 break;
             default:
-                Debug.Log("Somehow, this is neither friendly nor an enemy.");
+                Debug.Log("This is neither friendly nor an enemy.");
                 break;
         }
     }

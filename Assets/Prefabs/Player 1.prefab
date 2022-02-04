@@ -175,7 +175,7 @@ GameObject:
   - component: {fileID: 3315304266721250914}
   m_Layer: 0
   m_Name: Player 1
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -225,6 +225,22 @@ PrefabInstance:
     - target: {fileID: 112310687823145711, guid: 3715a73d88eee534aaaa6e92c9931381, type: 3}
       propertyPath: m_LocalScale.z
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3061915564696084213, guid: 3715a73d88eee534aaaa6e92c9931381, type: 3}
+      propertyPath: m_Name
+      value: CloseReticleTargetOff
+      objectReference: {fileID: 0}
+    - target: {fileID: 3061915564696084213, guid: 3715a73d88eee534aaaa6e92c9931381, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3360771872381048247, guid: 3715a73d88eee534aaaa6e92c9931381, type: 3}
+      propertyPath: m_Name
+      value: FarReticleTargetOff
+      objectReference: {fileID: 0}
+    - target: {fileID: 3360771872381048247, guid: 3715a73d88eee534aaaa6e92c9931381, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4590049320576156769, guid: 3715a73d88eee534aaaa6e92c9931381, type: 3}
       propertyPath: m_LocalScale.z
@@ -282,6 +298,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerShip2
       objectReference: {fileID: 0}
+    - target: {fileID: 6083777436945969431, guid: 3715a73d88eee534aaaa6e92c9931381, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 6093717307201130453, guid: 3715a73d88eee534aaaa6e92c9931381, type: 3}
       propertyPath: m_Camera
       value: 
@@ -290,9 +310,29 @@ PrefabInstance:
       propertyPath: playerShipMesh
       value: 
       objectReference: {fileID: 5829557242754095069}
+    - target: {fileID: 7741925922053199130, guid: 3715a73d88eee534aaaa6e92c9931381, type: 3}
+      propertyPath: m_Name
+      value: FarReticleTargetOff
+      objectReference: {fileID: 0}
+    - target: {fileID: 7741925922053199130, guid: 3715a73d88eee534aaaa6e92c9931381, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8047122563555925592, guid: 3715a73d88eee534aaaa6e92c9931381, type: 3}
+      propertyPath: m_Name
+      value: CloseReticleTargetOff
+      objectReference: {fileID: 0}
+    - target: {fileID: 8047122563555925592, guid: 3715a73d88eee534aaaa6e92c9931381, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8600856457073820000, guid: 3715a73d88eee534aaaa6e92c9931381, type: 3}
       propertyPath: m_LocalScale.z
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8600856457073820005, guid: 3715a73d88eee534aaaa6e92c9931381, type: 3}
+      propertyPath: m_Name
+      value: Player Death VFX
       objectReference: {fileID: 0}
     - target: {fileID: 8818088906995795148, guid: 3715a73d88eee534aaaa6e92c9931381, type: 3}
       propertyPath: m_LocalScale.z

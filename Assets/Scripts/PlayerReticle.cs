@@ -10,11 +10,9 @@ public class PlayerReticle : MonoBehaviour
 
     Camera gameCamera;
 
-
     private void Start()
     {
         gameCamera = Camera.main;
-
     }
 
     private void Update()

@@ -7,14 +7,11 @@ using UnityEngine.UI;
 
 public class PlayerControls : MonoBehaviour
 {
-    // Remove redundancies between this and PlayerControls, if possible
-
-    [SerializeField] InputAction movement;
-    [SerializeField] GameObject[] lasers;
-    [SerializeField] GameObject chargedShotSphere;
-    [SerializeField] GameObject enemyTargetedReticlePrefab;
     [SerializeField] GameObject uiCanvas;
-    
+
+    private List<GameObject> lasers = new List<GameObject>();
+    private List<GameObject> reticles = new List<GameObject>();
+
     Camera gameCamera;
 
     [Header("Ship Movement Settings")]
@@ -35,46 +32,103 @@ public class PlayerControls : MonoBehaviour
     [Tooltip("Rate of change from current to desired rotation")]
     [SerializeField] float InterpDuration;
 
+    // Used to store input from movement controls
     private float xThrow, yThrow;
     
+    // Variables used by Charged Shot state that are shared with other scripts
+    private static GameObject chargedShot;
+    private static GameObject enemyTargeted = null;
+    private static GameObject enemyTargetedReticle;
+
     private static bool isTargetingChargedShot = false;
     private static bool isChargedTargetAcquired = false;
     private static bool isChargedShotFired = false;
 
-    GameObject chargedShot;
-
-    [SerializeField] GameObject[] reticles;
-    Color defaultReticleColor;
-
-    GameObject enemyTargeted;
-    Vector3 chargedShotPositionAdj;
-    GameObject enemyTargetedReticle;
-
-
+    // Variables used by Charged Shot state
+    private GameObject parentGameObject;
+    private Color defaultReticleColor;
+    private Vector3 chargedShotPositionAdj;
 
     private void Awake()
     {
+        gameCamera = Camera.main;
+
+        lasers.Add(transform.Find("Laser One").gameObject);
+        lasers.Add(transform.Find("Laser Two Port").gameObject);
+        lasers.Add(transform.Find("Laser Two Starb").gameObject);
+
         SetLasersActive(false);
+
+        reticles.Add(uiCanvas.transform.Find("CloseReticle").gameObject);
+        reticles.Add(uiCanvas.transform.Find("FarReticle").gameObject);
+
         defaultReticleColor = new Color(0.9058824f, 0.1058823f, 0.6814225f, 1f);
 
-        gameCamera = Camera.main;
+        parentGameObject = GameObject.FindWithTag("CreateAtRuntime");
     }
 
-    void OnEnable()
+    /// <summary>
+    /// Function used by Player Input to log changes in Movement
+    /// </summary>
+    /// <param name="context"></param>
+    public void Move(InputAction.CallbackContext context)
     {
-        movement.Enable();
+        xThrow = context.ReadValue<Vector2>().x;
+        yThrow = context.ReadValue<Vector2>().y;
     }
-
-    void OnDisable()
+  
+    /// <summary>
+    /// Function used by Player Input to determine Firing state based on stages of the "Hold" interaction
+    /// </summary>
+    /// <param name="context"></param>
+    public void Fire(InputAction.CallbackContext context)
     {
-        movement.Disable();
+        if(context.started) 
+            SetLasersActive(true); // Activate Normal Shot Lasers on Fire button press
+
+        if(context.performed)
+        {
+            // If Fire button is held beyond Hold time threshold, deactivate Normal Shot Lasers and Ready Charged Shot state
+            SetLasersActive(false);
+            ReadyChargedShot(); 
+        }
+
+        if (context.canceled)
+        {
+            if (isChargedTargetAcquired) // If Fire button is released after acquiring Charged Shot target, fire Charged Shot
+            {
+                isChargedShotFired = true; 
+                isChargedTargetAcquired = false;
+            }
+            else
+                ResetChargedShotStates(); // Otherwise, cancel Charged Shot State
+
+            foreach (GameObject reticle in reticles)
+                reticle.GetComponent<Image>().color = defaultReticleColor; // Reset reticle colors upon leaving Charged Shot state
+        }
+    }
+    private void FixedUpdate()
+    {
+        // Functions to Process Movement
+        ProcessShipPosition();
+        ProcessShipRotation();
+
+        // Functions to Process Charged Shot stages
+        if (isTargetingChargedShot)
+            TargetingChargedShot();
+
+        if (isTargetingChargedShot || isChargedTargetAcquired)
+            PositionChargedShot();
+
+        if (isChargedTargetAcquired || isChargedShotFired)
+            PositionEnemyTargetedReticle();
+
+        if (isChargedShotFired)
+            FireChargedShot();
     }
 
     private void ProcessShipPosition()
     {
-        xThrow = movement.ReadValue<Vector2>().x;
-        yThrow = movement.ReadValue<Vector2>().y;
-
         float xOffset = xThrow * xDodgeSpeed * Time.deltaTime;
         float yOffset = yThrow * yDodgeSpeed * Time.deltaTime;
 
@@ -136,40 +190,6 @@ public class PlayerControls : MonoBehaviour
         transform.localRotation = Quaternion.Euler(pitch, yaw, roll);
     }
 
-    void Update()
-    {
-        ProcessShipPosition();
-        ProcessShipRotation();
-    }
-  
-
-    public void Fire(InputAction.CallbackContext context)
-    {
-        // See "Fire" in Input Action Asset for detail on "Tap" & "Hold" interactions
-        if(context.started) 
-            SetLasersActive(true); // Fire lasers while button is held above Press Point but beneath Hold time threshold
-
-        if(context.performed) 
-            ReadyChargedShot(); // Button has been held on or above Hold time threshold
-
-        if (context.canceled)
-        {
-            SetLasersActive(false); // Deactivate lasers if button is released before Hold time threshold
-            if (isChargedTargetAcquired)
-            {
-                isChargedShotFired = true; // If Charged shot target is acquired, fire Charged Shot
-                isChargedTargetAcquired = false;
-            }
-            else
-                ResetChargedShot(); // Otherwise, cancel Charged Shot
-
-            // Add a destroy target on enemy, and remove target acquired, if enemy leaves screen
-
-
-            reticles[0].GetComponent<Image>().color = defaultReticleColor;
-            reticles[1].GetComponent<Image>().color = defaultReticleColor;
-        }
-    }
     void SetLasersActive(bool isLaserActive)
     {
         var emission = lasers[0].GetComponent<ParticleSystem>().emission; // Stores the module in a local variable
@@ -181,10 +201,7 @@ public class PlayerControls : MonoBehaviour
         SetLasersActive(false);
 
         chargedShotPositionAdj = new Vector3(0f, -0.753000021f, 1.30999994f);
-        chargedShot = Instantiate(chargedShotSphere, transform.position + chargedShotPositionAdj, Quaternion.identity, transform.parent.transform);
-        // Move to create at runtime parent
-
-        enemyTargeted = null; // Move this to a general CancelCharged that runs after sphere is fired, as well as if its canceled
+        chargedShot = Instantiate(Resources.Load<GameObject>("Prefabs/ChargedShot"), transform.position + chargedShotPositionAdj, Quaternion.identity, parentGameObject.transform);
 
         reticles[0].GetComponent<Image>().color = Color.yellow;
         reticles[1].GetComponent<Image>().color = Color.red;
@@ -192,21 +209,6 @@ public class PlayerControls : MonoBehaviour
         // Add ready charged shot sound
 
         isTargetingChargedShot = true;
-    }
-
-    private void FixedUpdate()
-    {
-        if (isTargetingChargedShot)
-            TargetingChargedShot();
-        
-        if (isTargetingChargedShot || isChargedTargetAcquired)
-            PositionChargedShot();
-
-        if (isChargedTargetAcquired || isChargedShotFired)
-            PositionEnemyTargetedReticle();
-
-        if (isChargedShotFired)
-            FireChargedShot();
     }
 
     void TargetingChargedShot()
@@ -224,8 +226,7 @@ public class PlayerControls : MonoBehaviour
 
             // Add sound
 
-            enemyTargetedReticle = Instantiate(enemyTargetedReticlePrefab, gameCamera.WorldToScreenPoint(enemyTargeted.transform.position), Quaternion.identity, uiCanvas.transform);
-            ChargedShotCollisionHandler.AssignLinkedReticle(enemyTargetedReticle);
+            enemyTargetedReticle = Instantiate(Resources.Load<GameObject>("Prefabs/EnemyTargetedReticle"), gameCamera.WorldToScreenPoint(enemyTargeted.transform.position), Quaternion.identity, uiCanvas.transform);
         }
     }
 
@@ -246,20 +247,13 @@ public class PlayerControls : MonoBehaviour
         chargedShot.transform.Translate(Vector3.forward * 1);
     }
 
-    public static void ResetChargedShotBools()
-    {
-        isChargedShotFired = false;
-        isChargedTargetAcquired = false;
-        isChargedShotFired = false;
-    }
-
-    public void ResetChargedShot()
+    public static void ResetChargedShotStates()
     {
         isTargetingChargedShot = false;
         isChargedTargetAcquired = false;
         isChargedShotFired = false;
 
-        enemyTargeted = null; // Move this to a general CancelCharged that runs after sphere is fired, as well as if its canceled
+        enemyTargeted = null;
 
         Destroy(enemyTargetedReticle);
         Destroy(chargedShot);
