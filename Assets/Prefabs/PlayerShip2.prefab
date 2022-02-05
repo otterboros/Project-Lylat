@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8165532296538932843}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Collider
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -50,7 +50,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6081776167666345207}
   - component: {fileID: 6089289191172705755}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: PortFinCollider
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6086818566971192437}
   - component: {fileID: 6093304000793618473}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: NoseCollider
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -139,7 +139,7 @@ GameObject:
   - component: {fileID: 6086652580000920145}
   - component: {fileID: 6061502704208362683}
   - component: {fileID: 6069383425887419977}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: StarSparrow_Weapon
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -220,7 +220,7 @@ GameObject:
   - component: {fileID: 6087100765014766237}
   - component: {fileID: 6061725552529658695}
   - component: {fileID: 6069284511037454347}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: StarSparrow_Wing_1
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -300,7 +300,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6082023821459343197}
   - component: {fileID: 6093092718283615059}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: StabFinCollider
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -345,7 +345,7 @@ GameObject:
   - component: {fileID: 6081875189114540979}
   - component: {fileID: 6061726506064575891}
   - component: {fileID: 6069299635888406779}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: StarSparrow_Weapon (1)
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -425,7 +425,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6086676266902853901}
   - component: {fileID: 6088950298302346885}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: StarbWingCollider
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -470,7 +470,7 @@ GameObject:
   - component: {fileID: 6081923582671161801}
   - component: {fileID: 6057452719976211369}
   - component: {fileID: 6069664241037246805}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: StarSparrow_Wing_3 (2)
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -551,7 +551,7 @@ GameObject:
   - component: {fileID: 6086898209301128155}
   - component: {fileID: 6061324752523359813}
   - component: {fileID: 6069247327292004093}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: StarSparrow_Thruster
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -631,7 +631,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6086891731748723711}
   - component: {fileID: 6089190234925691111}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: PortGunCollider
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -675,7 +675,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6082088470883996903}
   - component: {fileID: 6089324654917471807}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: PortWingCollider
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -719,7 +719,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6087096200074001115}
   - component: {fileID: 6093259464685514229}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: StarbEngineCollider
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -764,7 +764,7 @@ GameObject:
   - component: {fileID: 6081733010934139187}
   - component: {fileID: 6061116852419999455}
   - component: {fileID: 6069140259397391111}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: StarSparrow_Thruster
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -844,7 +844,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6086927620577005751}
   - component: {fileID: 6089388434583916019}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: StabEngineRearCollider
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -889,7 +889,7 @@ GameObject:
   - component: {fileID: 6081830181546153653}
   - component: {fileID: 6061417572365352365}
   - component: {fileID: 6069773784343343111}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: StarSparrow_Wing_3 (3)
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -970,7 +970,7 @@ GameObject:
   - component: {fileID: 6081790552991657357}
   - component: {fileID: 6061374604245734847}
   - component: {fileID: 6069301373329507537}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: StarSparrow_Engine (1)
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -1051,7 +1051,7 @@ GameObject:
   - component: {fileID: 6086651767725338115}
   - component: {fileID: 6061552217738217311}
   - component: {fileID: 6069201709780549041}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: StarSparrow_Wing_3
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -1131,7 +1131,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6087164570281577253}
   - component: {fileID: 6093095765988919633}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: PortEngineCollider
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -1178,7 +1178,7 @@ GameObject:
   - component: {fileID: 7387528410501973334}
   - component: {fileID: 7234670039059226102}
   - component: {fileID: 6093717307201130453}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: PlayerShip2
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -1331,7 +1331,7 @@ GameObject:
   - component: {fileID: 6087100653592907251}
   - component: {fileID: 6061099066740411873}
   - component: {fileID: 6069913951341044879}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: StarSparrow_Core
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -1412,7 +1412,7 @@ GameObject:
   - component: {fileID: 6081724330075157097}
   - component: {fileID: 6057412049757379527}
   - component: {fileID: 6069299382278729057}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: StarSparrow_Wing_3
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -1493,7 +1493,7 @@ GameObject:
   - component: {fileID: 6086870151122444019}
   - component: {fileID: 6061444242248271689}
   - component: {fileID: 6070056425231430429}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: StarSparrow_Thruster
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -1573,7 +1573,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6086920957777514559}
   - component: {fileID: 6089175446257795961}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: StarbGunCollider
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -1618,7 +1618,7 @@ GameObject:
   - component: {fileID: 6082061302304032101}
   - component: {fileID: 6061408026861137477}
   - component: {fileID: 6069873104517253453}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: StarSparrow_Engine
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -1699,7 +1699,7 @@ GameObject:
   - component: {fileID: 6086829642308760067}
   - component: {fileID: 6057494285243713009}
   - component: {fileID: 6069109756240304863}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: StarSparrow_Wing_1 (1)
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -1778,7 +1778,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3077926536222863241}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Mesh
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -1823,6 +1823,10 @@ PrefabInstance:
     - target: {fileID: 564416225637911380, guid: 3dc3b265039bc6d4db34cd26203be34c, type: 3}
       propertyPath: EmissionModule.enabled
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1355739977100711513, guid: 3dc3b265039bc6d4db34cd26203be34c, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4813979170274888800, guid: 3dc3b265039bc6d4db34cd26203be34c, type: 3}
       propertyPath: m_RootOrder
@@ -1877,12 +1881,20 @@ PrefabInstance:
       value: Laser Two Starb
       objectReference: {fileID: 0}
     - target: {fileID: 5716026747091891188, guid: 3dc3b265039bc6d4db34cd26203be34c, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5716026747091891188, guid: 3dc3b265039bc6d4db34cd26203be34c, type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5716026747091891188, guid: 3dc3b265039bc6d4db34cd26203be34c, type: 3}
       propertyPath: m_TagString
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 6043352632730312118, guid: 3dc3b265039bc6d4db34cd26203be34c, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3dc3b265039bc6d4db34cd26203be34c, type: 3}
@@ -1901,6 +1913,10 @@ PrefabInstance:
     - target: {fileID: 564416225637911380, guid: 3dc3b265039bc6d4db34cd26203be34c, type: 3}
       propertyPath: EmissionModule.enabled
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1355739977100711513, guid: 3dc3b265039bc6d4db34cd26203be34c, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4813979170274888800, guid: 3dc3b265039bc6d4db34cd26203be34c, type: 3}
       propertyPath: m_RootOrder
@@ -1955,8 +1971,16 @@ PrefabInstance:
       value: Laser One
       objectReference: {fileID: 0}
     - target: {fileID: 5716026747091891188, guid: 3dc3b265039bc6d4db34cd26203be34c, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5716026747091891188, guid: 3dc3b265039bc6d4db34cd26203be34c, type: 3}
       propertyPath: m_TagString
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 6043352632730312118, guid: 3dc3b265039bc6d4db34cd26203be34c, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3dc3b265039bc6d4db34cd26203be34c, type: 3}
@@ -1975,6 +1999,10 @@ PrefabInstance:
     - target: {fileID: 2713837767111585032, guid: 18f3fe12a8a7d8649965e38260a03fee, type: 3}
       propertyPath: m_Name
       value: Explosion VFX
+      objectReference: {fileID: 0}
+    - target: {fileID: 2713837767111585032, guid: 18f3fe12a8a7d8649965e38260a03fee, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2713837767111585032, guid: 18f3fe12a8a7d8649965e38260a03fee, type: 3}
       propertyPath: m_TagString
@@ -2051,6 +2079,10 @@ PrefabInstance:
       propertyPath: EmissionModule.enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1355739977100711513, guid: 3dc3b265039bc6d4db34cd26203be34c, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4813979170274888800, guid: 3dc3b265039bc6d4db34cd26203be34c, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -2104,12 +2136,20 @@ PrefabInstance:
       value: Laser Two Port
       objectReference: {fileID: 0}
     - target: {fileID: 5716026747091891188, guid: 3dc3b265039bc6d4db34cd26203be34c, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5716026747091891188, guid: 3dc3b265039bc6d4db34cd26203be34c, type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5716026747091891188, guid: 3dc3b265039bc6d4db34cd26203be34c, type: 3}
       propertyPath: m_TagString
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 6043352632730312118, guid: 3dc3b265039bc6d4db34cd26203be34c, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3dc3b265039bc6d4db34cd26203be34c, type: 3}
