@@ -28,7 +28,22 @@ public class Enemy : MonoBehaviour
 
     void OnParticleCollision(GameObject other)
     {
-        Damage(1,"Laser");
+        switch (other.gameObject.tag)
+        {
+            case "EnemyWeapon":
+                Debug.Log($"{transform.name} was hit by {other.transform.name}. Friendly fire!");
+                break;
+            case "Player":
+                Damage(1, "Laser");
+                Debug.Log($"{transform.name} was hit by player.");
+                break;
+            case "Friendly":
+                Damage(1, "Laser");
+                Debug.Log($"{transform.name} was hit by {other.transform.name}.");
+                break;
+            default:
+                break;
+        }
     }
 
     public void Damage(int damage, string weaponType)

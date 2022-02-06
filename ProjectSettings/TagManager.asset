@@ -8,6 +8,7 @@ TagManager:
   - CreateAtRuntime
   - Enemy
   - Weapon
+  - EnemyWeapon
   layers:
   - Default
   - TransparentFX

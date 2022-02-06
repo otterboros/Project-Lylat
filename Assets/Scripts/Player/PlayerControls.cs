@@ -32,6 +32,9 @@ public class PlayerControls : MonoBehaviour
     [Tooltip("Rate of change from current to desired rotation")]
     [SerializeField] float InterpDuration;
 
+    [Tooltip("Maximum Z range of Charged Shot lock-on targeting")]
+    [SerializeField] float maximumLockOnRange;
+
     // Used to store input from movement controls
     private float xThrow, yThrow;
     
@@ -95,9 +98,10 @@ public class PlayerControls : MonoBehaviour
 
         if (context.canceled)
         {
-            if (isChargedTargetAcquired) // If Fire button is released after acquiring Charged Shot target, fire Charged Shot
+            SetLasersActive(false);
+            if (isChargedTargetAcquired) // or, if enemyTargeted != null
             {
-                isChargedShotFired = true; 
+                isChargedShotFired = true; // If Fire button is released after acquiring Charged Shot target, fire Charged Shot
                 isChargedTargetAcquired = false;
             }
             else
@@ -114,17 +118,23 @@ public class PlayerControls : MonoBehaviour
         ProcessShipRotation();
 
         // Functions to Process Charged Shot stages
-        if (isTargetingChargedShot)
+        if (isTargetingChargedShot) // or, if chargedShot != null
             TargetingChargedShot();
 
-        if (isTargetingChargedShot || isChargedTargetAcquired)
+        if (isTargetingChargedShot || isChargedTargetAcquired) // or, if enemyTargeted != null
             PositionChargedShot();
 
-        if (isChargedTargetAcquired || isChargedShotFired)
+        if (isChargedTargetAcquired || isChargedShotFired) // or, if enemyTargeted != null 
             PositionEnemyTargetedReticle();
 
+        //if (isChargedTargetAcquired || isChargedShotFired && enemyTargeted == null)
+        //    ResetChargedShotStates();
+        
         if (isChargedShotFired)
             FireChargedShot();
+
+        // Add a condition for if enemy is destroyed before shot is fired
+        // Does shot shut down or does the game allow for reacquiring?
     }
 
     private void ProcessShipPosition()
@@ -218,14 +228,16 @@ public class PlayerControls : MonoBehaviour
         int layerMask = 1 << 2;
         layerMask = ~layerMask; // Ignore only objects in the Ignore Raycast layer (2)
 
-        if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, 100, layerMask) && hit.collider.gameObject.tag == "Enemy")
+        Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * maximumLockOnRange, Color.yellow);
+
+        if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, maximumLockOnRange, layerMask) && hit.collider.gameObject.tag == "Enemy")
         {
             isTargetingChargedShot = false;
             isChargedTargetAcquired = true;
             enemyTargeted = hit.collider.gameObject;
 
             // Add sound
-
+            Debug.Log($"Targeting {enemyTargeted.transform.name}");
             enemyTargetedReticle = Instantiate(Resources.Load<GameObject>("Prefabs/EnemyTargetedReticle"), gameCamera.WorldToScreenPoint(enemyTargeted.transform.position), Quaternion.identity, uiCanvas.transform);
         }
     }
@@ -233,6 +245,9 @@ public class PlayerControls : MonoBehaviour
     void PositionEnemyTargetedReticle()
     {
         enemyTargetedReticle.transform.position = gameCamera.WorldToScreenPoint(enemyTargeted.transform.position);
+
+        if (enemyTargeted.transform.position.z < transform.position.z + 1)
+            ResetChargedShotStates();
     }
 
     void PositionChargedShot()

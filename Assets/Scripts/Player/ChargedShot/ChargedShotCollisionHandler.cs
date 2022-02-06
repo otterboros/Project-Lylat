@@ -13,15 +13,12 @@ public class ChargedShotCollisionHandler : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        switch (other.gameObject.tag)
+        if (other.gameObject.tag == "Player" || other.gameObject.tag == "Friendly" || other.gameObject.tag == "EnemyWeapon")
+            return;
+        else
         {
-            case "Player":
-                Debug.Log("This thing is the player!");
-                break;
-            default:
-                Instantiate(Resources.Load<GameObject>("Prefabs/ChargedShotExplosion"), transform.position, Quaternion.identity, parentGameObject.transform);
-                PlayerControls.ResetChargedShotStates();
-                break;
+            Instantiate(Resources.Load<GameObject>("Prefabs/ChargedShotExplosion"), transform.position, Quaternion.identity, parentGameObject.transform);
+            PlayerControls.ResetChargedShotStates();
         }
     }
 }

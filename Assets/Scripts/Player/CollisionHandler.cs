@@ -14,22 +14,45 @@ public class CollisionHandler : MonoBehaviour
     [SerializeField] GameObject playerShipCollider;
     [SerializeField] GameObject playerShipMesh;
 
+    [SerializeField] int playerHealth;
+
     void OnTriggerEnter(Collider other)
     {
         switch (other.gameObject.tag)
         {
             case "Friendly":
-                Debug.Log("This thing is friendly");
+                Debug.Log("Player collided with a friendly.");
                 break;
             case "Enemy":
-                StartCrashSequence();
+                Debug.Log($"Player collided with enemy {other.transform.name}");
+                ProcessPlayerDamage(1);
+                break;
+            case "EnemyWeapon":
+                Debug.Log($"Player was hit by {other.transform.name}");
+                ProcessPlayerDamage(other.GetComponent<EnemyAttack>().bulletDamage);
                 break;
             default:
-                Debug.Log("This is neither friendly nor an enemy.");
+                Debug.Log($"Player collided with {other.transform.name}.");
                 break;
         }
     }
 
+    public void ProcessPlayerDamage(int damage)
+    {
+        playerHealth -= damage;
+
+        if (playerHealth >= 1)
+            ChangePlayerHealthbar(damage);
+            
+        else if (playerHealth < 1)
+            StartCrashSequence();
+
+    }
+
+    private void ChangePlayerHealthbar(int damage)
+    {
+        Debug.Log($"Player health is now {playerHealth}!");
+    }
     void StartCrashSequence()
     {
         deathVFX.Play();
