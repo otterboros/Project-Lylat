@@ -32,6 +32,7 @@ public class PlayerControls : MonoBehaviour
     [Tooltip("Rate of change from current to desired rotation")]
     [SerializeField] float InterpDuration;
 
+    [Header("Charged Shot Settings")]
     [Tooltip("Maximum Z range of Charged Shot lock-on targeting")]
     [SerializeField] float maximumLockOnRange;
 
@@ -245,7 +246,7 @@ public class PlayerControls : MonoBehaviour
 
     void PositionChargedShot()
     {
-        chargedShot.transform.position = transform.position + chargedShotPositionAdj;
+        chargedShot.transform.position = lasers[0].transform.position;
     }
 
     void FireChargedShot()
