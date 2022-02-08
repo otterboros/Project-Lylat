@@ -5,10 +5,12 @@ using UnityEngine;
 public class ChargedShotCollisionHandler : MonoBehaviour
 {
     private GameObject parentGameObject;
+    private GameObject playerShip;
 
     private void Start()
     {
         parentGameObject = GameObject.FindWithTag("CreateAtRuntime");
+        playerShip = GameObject.Find("PlayerShip2");
     }
 
     private void OnTriggerEnter(Collider other)
@@ -17,8 +19,8 @@ public class ChargedShotCollisionHandler : MonoBehaviour
             return;
         else
         {
-            Instantiate(Resources.Load<GameObject>("Prefabs/ChargedShotExplosion"), transform.position, Quaternion.identity, parentGameObject.transform);
-            PlayerControls.ResetChargedShotStates();
+            Instantiate(Resources.Load<GameObject>("Prefabs/Player/ChargedShot/ChargedShotExplosion"), transform.position, Quaternion.identity, parentGameObject.transform);
+            playerShip.transform.GetComponent<PlayerControls>().ResetChargedShotStates();
         }
     }
 }

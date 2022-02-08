@@ -39,13 +39,15 @@ public class PlayerControls : MonoBehaviour
     private float xThrow, yThrow;
     
     // Variables used by Charged Shot state that are shared with other scripts
-    private static GameObject chargedShot;
-    private static GameObject enemyTargeted = null;
-    private static GameObject enemyTargetedReticle;
+    private GameObject chargedShot;
+    private GameObject enemyTargeted = null;
+    private GameObject enemyTargetedReticle;
 
-    private static bool isTargetingChargedShot = false;
-    private static bool isChargedTargetAcquired = false;
-    private static bool isChargedShotFired = false;
+    private bool isCShotCreated { get { return chargedShot != null; } }
+    private bool isReticleCreated { get { return enemyTargetedReticle != null; } }
+    private bool isEnemyTargeted { get { return enemyTargeted != null; } }
+
+    private bool isChargedShotFired = false;
 
     // Variables used by Charged Shot state
     private GameObject parentGameObject;
@@ -99,10 +101,9 @@ public class PlayerControls : MonoBehaviour
         if (context.canceled)
         {
             SetLasersActive(false);
-            if (isChargedTargetAcquired) // or, if enemyTargeted != null
+            if (isReticleCreated) // or, if enemyTargeted != null
             {
-                isChargedShotFired = true; // If Fire button is released after acquiring Charged Shot target, fire Charged Shot
-                isChargedTargetAcquired = false;
+                isChargedShotFired = true; // If Fire button is released after targeting reticle is created, fire Charged Shot
             }
             else
                 ResetChargedShotStates(); // Otherwise, cancel Charged Shot State
@@ -118,23 +119,25 @@ public class PlayerControls : MonoBehaviour
         ProcessShipRotation();
 
         // Functions to Process Charged Shot stages
-        if (isTargetingChargedShot) // or, if chargedShot != null
-            TargetingChargedShot();
+        if (isCShotCreated)
+        {
+            if (!isChargedShotFired)
+                PositionChargedShot();
+            else if (isChargedShotFired)
+                FireChargedShot();
 
-        if (isTargetingChargedShot || isChargedTargetAcquired) // or, if enemyTargeted != null
-            PositionChargedShot();
+            if (!isReticleCreated)
+                TargetingChargedShot();
+            else if (isReticleCreated)
+                PositionEnemyTargetedReticle();
 
-        if (isChargedTargetAcquired || isChargedShotFired) // or, if enemyTargeted != null 
-            PositionEnemyTargetedReticle();
-
-        //if (isChargedTargetAcquired || isChargedShotFired && enemyTargeted == null)
-        //    ResetChargedShotStates();
-        
-        if (isChargedShotFired)
-            FireChargedShot();
-
-        // Add a condition for if enemy is destroyed before shot is fired
-        // Does shot shut down or does the game allow for reacquiring?
+            if (isReticleCreated && !isEnemyTargeted)
+            {
+                // So far, this case has not showed up often enough to test! Keep debug so I know to check on it if I see the message.
+                Debug.Log("Enemy destroyed without firing CS. Retargetting!");
+                ResetChargedShotStates(true);
+            }
+        }
     }
 
     private void ProcessShipPosition()
@@ -208,17 +211,13 @@ public class PlayerControls : MonoBehaviour
     }
     void ReadyChargedShot()
     {
-        SetLasersActive(false);
-
         chargedShotPositionAdj = new Vector3(0f, -0.753000021f, 1.30999994f);
-        chargedShot = Instantiate(Resources.Load<GameObject>("Prefabs/ChargedShot"), transform.position + chargedShotPositionAdj, Quaternion.identity, parentGameObject.transform);
+        chargedShot = Instantiate(Resources.Load<GameObject>("Prefabs/Player/ChargedShot/ChargedShot"), transform.position + chargedShotPositionAdj, Quaternion.identity, parentGameObject.transform);
 
         reticles[0].GetComponent<Image>().color = Color.yellow;
         reticles[1].GetComponent<Image>().color = Color.red;
 
         // Add ready charged shot sound
-
-        isTargetingChargedShot = true;
     }
 
     void TargetingChargedShot()
@@ -228,17 +227,11 @@ public class PlayerControls : MonoBehaviour
         int layerMask = 1 << 2;
         layerMask = ~layerMask; // Ignore only objects in the Ignore Raycast layer (2)
 
-        Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * maximumLockOnRange, Color.yellow);
-
         if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, maximumLockOnRange, layerMask) && hit.collider.gameObject.tag == "Enemy")
         {
-            isTargetingChargedShot = false;
-            isChargedTargetAcquired = true;
             enemyTargeted = hit.collider.gameObject;
-
             // Add sound
-            Debug.Log($"Targeting {enemyTargeted.transform.name}");
-            enemyTargetedReticle = Instantiate(Resources.Load<GameObject>("Prefabs/EnemyTargetedReticle"), gameCamera.WorldToScreenPoint(enemyTargeted.transform.position), Quaternion.identity, uiCanvas.transform);
+            enemyTargetedReticle = Instantiate(Resources.Load<GameObject>("Prefabs/Player/ChargedShot/EnemyTargetedReticle"), gameCamera.WorldToScreenPoint(enemyTargeted.transform.position), Quaternion.identity, uiCanvas.transform);
         }
     }
 
@@ -262,15 +255,18 @@ public class PlayerControls : MonoBehaviour
         chargedShot.transform.Translate(Vector3.forward * 1);
     }
 
-    public static void ResetChargedShotStates()
+    public void ResetChargedShotStates(bool retarget = false)
     {
-        isTargetingChargedShot = false;
-        isChargedTargetAcquired = false;
-        isChargedShotFired = false;
+        if (retarget == true)
+            Destroy(enemyTargetedReticle);
+        else
+        {
+            Destroy(chargedShot);
+            Destroy(enemyTargetedReticle);
 
-        enemyTargeted = null;
+            enemyTargeted = null;
 
-        Destroy(enemyTargetedReticle);
-        Destroy(chargedShot);
+            isChargedShotFired = false;
+        }
     }
 }
