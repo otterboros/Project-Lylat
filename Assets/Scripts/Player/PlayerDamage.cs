@@ -1,0 +1,72 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.SceneManagement;
+
+
+public class PlayerDamage : MonoBehaviour, IDamagable
+{
+    [SerializeField] float levelLoadDelay = 1f;
+
+    GameObject parentGameObject;
+
+    private PlayerData _data;
+    public int health { get; set; }
+
+    private void Start()
+    {
+        // Set current health for this game object as it's stored max health
+        _data = GetComponent<PlayerData>();
+        health = _data.maxHealth;
+
+        parentGameObject = GameObject.FindWithTag("CreateAtRuntime");
+    }
+
+    public void TakeDamage(int damage)
+    {
+        // Remove damage from health
+        health -= damage;
+    }
+
+    public void ProcessHealthState(int health)
+    {
+        //if health is equal to or above 1, play damage effect.
+        if (health >= 1)
+        {
+            HealthBarManager.instance.UpdateHealthBar(health);
+            Instantiate(Resources.Load<GameObject>("Prefabs/FX/HitVFX"), transform.position, Quaternion.identity, parentGameObject.transform);
+        }
+
+        // If health is below 1, process death.
+        else if (health < 1)
+        {
+            Instantiate(Resources.Load<GameObject>("Prefabs/FX/PlayerDeathVFX"), transform.position, Quaternion.identity, parentGameObject.transform);
+
+            GetComponent<PlayerDeath>().DisablePlayerControls();
+            GetComponent<ReloadLevel>().RestartLevel();
+        }
+    }
+
+
+    void OnTriggerEnter(Collider other)
+    {
+        // Process collisions with trigger-enabled objects like enemy lasers (tagged Enemy Weapon) & enemy ships (tagged Enemy)
+        switch (other.gameObject.tag)
+        {
+            case "NPC":
+                Debug.Log("Player collided with an NPC.");
+                break;
+            case "Enemy":
+                TakeDamage(1);
+                ProcessHealthState(health);
+                break;
+            case "EnemyWeapon":
+                TakeDamage(other.GetComponent<AttackTargeting>().shotDamage);
+                ProcessHealthState(health);
+                break;
+            default:
+                Debug.Log($"Player collided with {other.transform.name}.");
+                break;
+        }
+    }
+}

@@ -12,7 +12,9 @@ GameObject:
   - component: {fileID: 5889617469278063957}
   - component: {fileID: 8527821719142005151}
   - component: {fileID: 8213676409511517680}
+  - component: {fileID: 3485433925157789959}
   - component: {fileID: 5228230427657230609}
+  - component: {fileID: 5308490640626128350}
   - component: {fileID: 878041477412963645}
   - component: {fileID: 8335988777648882675}
   m_Layer: 0
@@ -98,6 +100,21 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 27.063995, y: 10.921931, z: 25.642958}
   m_Center: {x: 0, y: 5.4609656, z: 0}
+--- !u!114 &3485433925157789959
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7879070482740172874}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23ed6622513ec9e45b1712fcb69c5632, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 1
+  scoreValue: 1
+  attackRate: 1
 --- !u!114 &5228230427657230609
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -110,10 +127,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c6f8a79e0236a8478662f4dd1d3ccb3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  deathFX: {fileID: 2713837767111585032, guid: e71e64dc6f08c2147a53d2d20e126a0d, type: 3}
-  hitVFX: {fileID: 2713837767111585032, guid: 6789de3455690f642a060e8ba5808e7f, type: 3}
-  enemyScoreValue: 1
-  enemyHealth: 2
+  _data: {fileID: 0}
+--- !u!114 &5308490640626128350
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7879070482740172874}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8079d72232aa404f9d27e8925435e66, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &878041477412963645
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -127,8 +153,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   triggerRangeZ: 100
-  enemyDamage: 1
-  weaponSpeed: 1
+  bulletDamage: 1
+  bulletSpeed: 1
+  timeBetweenShots: 1
   weaponType: SingleShot
 --- !u!95 &8335988777648882675
 Animator:

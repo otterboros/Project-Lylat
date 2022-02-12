@@ -5,7 +5,16 @@ using UnityEngine;
 public class ChargedShotExplosion : MonoBehaviour
 {
     [SerializeField] float radius;
+    [SerializeField] int chargedShotDamage = 2;
 
+    public GameObject playerShip;
+
+    private void Awake()
+    {
+        // Doing this once for each step of charged shot. Find a better way!
+        // Also, this will screw things up if anyone other than player ship uses charged shot. :/
+        playerShip = GameObject.Find("PlayerShip2");
+    }
     private void OnEnable() => Explode();
 
     private void Explode()
@@ -18,9 +27,12 @@ public class ChargedShotExplosion : MonoBehaviour
 
         foreach (Collider c in colliders)
         {
-            if(c.TryGetComponent(out Enemy enemy))
+            if(c.TryGetComponent(out EnemyDamage enemy))
             {
-                enemy.Damage(2, "ChargedShot");
+                enemy.TakeDamage(chargedShotDamage);
+                enemy.ProcessHealthState(enemy.health);
+                if (enemy.health < 1)
+                    ComboManager.instance.AddToCombo();
             }
         }
         ComboManager.instance.FinishCombo();

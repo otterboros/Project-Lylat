@@ -1174,8 +1174,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6081734556815140609}
+  - component: {fileID: 1934223627957615845}
   - component: {fileID: 5955202905175819478}
   - component: {fileID: 7387528410501973334}
+  - component: {fileID: 2768512997275655412}
+  - component: {fileID: 1098404563739343448}
   - component: {fileID: 7234670039059226102}
   - component: {fileID: 6093717307201130453}
   m_Layer: 3
@@ -1205,6 +1208,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1934223627957615845
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6083777436945969431}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfa0996b7c482c749ac417e8ba992bed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 20
+  health: 20
 --- !u!114 &5955202905175819478
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1239,11 +1256,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3e86c747ba534b4187205244103adfb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  deathVFX: {fileID: 8600856457073820007}
   levelLoadDelay: 1
+--- !u!114 &2768512997275655412
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6083777436945969431}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 795b1de6d5905934f961f26db5dbbff0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   playerShipCollider: {fileID: 2826551098890343454}
-  playerShipMesh: {fileID: 0}
-  playerHealth: 0
+  playerShipMesh: {fileID: 8270772531076875299}
+--- !u!114 &1098404563739343448
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6083777436945969431}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6f5e7bdf303fdf478372490d616d323, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!54 &7234670039059226102
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2063,11 +2102,6 @@ PrefabInstance:
 --- !u!4 &8600856457073820000 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2713837767111585037, guid: 18f3fe12a8a7d8649965e38260a03fee, type: 3}
-  m_PrefabInstance: {fileID: 5977715360495512685}
-  m_PrefabAsset: {fileID: 0}
---- !u!198 &8600856457073820007 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 2713837767111585034, guid: 18f3fe12a8a7d8649965e38260a03fee, type: 3}
   m_PrefabInstance: {fileID: 5977715360495512685}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &9042543079473170433
