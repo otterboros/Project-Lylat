@@ -5327,6 +5327,18 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8552383229101022251, guid: 68c7937e8268d9d42b23590f5ea31a7f, type: 3}
+      propertyPath: m_ActionEvents.Array.data[0].m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1398440538}
+    - target: {fileID: 8552383229101022251, guid: 68c7937e8268d9d42b23590f5ea31a7f, type: 3}
+      propertyPath: m_ActionEvents.Array.data[0].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Move
+      objectReference: {fileID: 0}
+    - target: {fileID: 8552383229101022251, guid: 68c7937e8268d9d42b23590f5ea31a7f, type: 3}
+      propertyPath: m_ActionEvents.Array.data[0].m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: ProcessMovementInput, Assembly-CSharp
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 68c7937e8268d9d42b23590f5ea31a7f, type: 3}
 --- !u!1 &683504030 stripped
@@ -5737,6 +5749,17 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1206867400}
   m_Mesh: {fileID: 4300000, guid: 40748af64254c684b87612f4a806b783, type: 2}
+--- !u!114 &1398440538 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1984836556377694691, guid: 68c7937e8268d9d42b23590f5ea31a7f, type: 3}
+  m_PrefabInstance: {fileID: 683504029}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad12e2ddf5ee8004ba7f993d179f5699, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1431915485
 PrefabInstance:
   m_ObjectHideFlags: 0

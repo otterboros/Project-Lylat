@@ -7,6 +7,21 @@ using UnityEngine.UI;
 
 public class PlayerControls : MonoBehaviour
 {
+    // SOLID
+    // Single Responsiblity
+    // Open-Closed
+    // Liskov Substitution (code interfaces so they can be replaced with any subtype)
+    // Interface Separation Principle (many client-specific if better than one general)
+    // Dependency Inversion (classes shud be abstraction, not concretion)
+
+    // Responsiblities
+    // Handle Movement input
+    // Handle firing input
+    // FIxedUpdate with all movement and firing functions (this is a great controller/selector)
+    // Convert player movement input into ship position
+    // A TON OF MATH to convert player movement input into ship rotation, this is also duplicated 
+    // Many steps for the Charged Shot, including targetting enemy, positioning reticle, and reseting the states
+
     [SerializeField] GameObject uiCanvas;
 
     private List<GameObject> lasers = new List<GameObject>();
@@ -14,30 +29,10 @@ public class PlayerControls : MonoBehaviour
 
     Camera gameCamera;
 
-    [Header("Ship Movement Settings")]
-    [Tooltip("How fast ship moves in response to player input")]
-    [SerializeField] float xDodgeSpeed;
-    [SerializeField] float yDodgeSpeed;
-
-    [Tooltip("How far ship can move from 0,0 in response to player input")]
-    public float xShipRange;
-    public float yShipRange;
-
-    [Header("Ship Rotation Settings")]
-    [Tooltip("How far ship can rotate in response to player input")]
-    public float shipPitchRatio;
-    public float shipYawRatio;
-    [SerializeField] float shipRollRatio;
-
-    [Tooltip("Rate of change from current to desired rotation")]
-    [SerializeField] float InterpDuration;
-
     [Header("Charged Shot Settings")]
     [Tooltip("Maximum Z range of Charged Shot lock-on targeting")]
     [SerializeField] float maximumLockOnRange;
 
-    // Used to store input from movement controls
-    private float xThrow, yThrow;
     
     // Variables used by Charged Shot state that are shared with other scripts
     private GameObject chargedShot;
@@ -55,6 +50,7 @@ public class PlayerControls : MonoBehaviour
     private Color defaultReticleColor;
     private Vector3 chargedShotPositionAdj;
 
+    // A bunch of assignments!
     private void Awake()
     {
         gameCamera = Camera.main;
@@ -73,16 +69,8 @@ public class PlayerControls : MonoBehaviour
         parentGameObject = GameObject.FindWithTag("CreateAtRuntime");
     }
 
-    /// <summary>
-    /// Function used by Player Input to log changes in Movement
-    /// </summary>
-    /// <param name="context"></param>
-    public void Move(InputAction.CallbackContext context)
-    {
-        xThrow = context.ReadValue<Vector2>().x;
-        yThrow = context.ReadValue<Vector2>().y;
-    }
-  
+    // Let's break out player movement and firing into two seperate classes
+
     /// <summary>
     /// Function used by Player Input to determine Firing state based on stages of the "Hold" interaction
     /// </summary>
@@ -115,9 +103,6 @@ public class PlayerControls : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        // Functions to Process Movement
-        ProcessShipPosition();
-        ProcessShipRotation();
 
         // Functions to Process Charged Shot stages
         if (isCShotCreated)
@@ -139,69 +124,6 @@ public class PlayerControls : MonoBehaviour
                 ResetChargedShotStates(true);
             }
         }
-    }
-
-    private void ProcessShipPosition()
-    {
-        float xOffset = xThrow * xDodgeSpeed * Time.deltaTime;
-        float yOffset = yThrow * yDodgeSpeed * Time.deltaTime;
-
-        float rawXPosition = transform.localPosition.x + xOffset;
-        float newXPosition = Mathf.Clamp(rawXPosition, -xShipRange, xShipRange);
-
-        float rawYPosition = transform.localPosition.y - yOffset; // negative offset here to invert vertical controls
-        float newYPosition = Mathf.Clamp(rawYPosition, -yShipRange, yShipRange);
-
-        transform.localPosition = new Vector3
-            (newXPosition,
-            newYPosition,
-            transform.localPosition.z);
-    }
-
-    private void ProcessShipRotation()
-    {
-        float currentPitch, currentYaw, currentRoll;
-        float rawPitch, rawYaw, rawRoll;
-        float pitch, yaw, roll;
-        Vector3 currentEulerAngles = transform.localRotation.eulerAngles;
-        float Interp = Time.deltaTime / InterpDuration;
-
-        float targetPitch = -yThrow * shipPitchRatio;
-        float targetYaw = xThrow * shipYawRatio;
-        float targetRoll = xThrow * shipRollRatio;
-
-        if (currentEulerAngles.x > 180) // Convert to usable values for yThrow input
-            currentPitch = 360 - currentEulerAngles.x;
-        else
-            currentPitch = -currentEulerAngles.x;
-        rawPitch = Mathf.Lerp(currentPitch, targetPitch, Interp);
-        if (rawPitch > 0) // Convert back to euler Angles
-            pitch = 360 - rawPitch;
-        else
-            pitch = -rawPitch;
-
-        if (currentEulerAngles.y > 180) // Convert to usable values for xThrow input
-            currentYaw = -360 + currentEulerAngles.y;
-        else
-            currentYaw = currentEulerAngles.y;
-
-        rawYaw = Mathf.Lerp(currentYaw, targetYaw, Interp);
-        if (rawYaw < 0) // Convert back to euler Angles
-            yaw = 360 + rawYaw;
-        else
-            yaw = rawYaw;
-
-        if (currentEulerAngles.z > 180) // Convert to usable values for xThrow input
-            currentRoll = 360 - currentEulerAngles.z;
-        else
-            currentRoll = -currentEulerAngles.z;
-        rawRoll = Mathf.Lerp(currentRoll, targetRoll, Interp);
-        if (rawRoll > 0) // Convert back to euler Angles
-            roll = 360 - rawRoll;
-        else
-            roll = -rawRoll;
-
-        transform.localRotation = Quaternion.Euler(pitch, yaw, roll);
     }
 
     void SetLasersActive(bool isLaserActive)

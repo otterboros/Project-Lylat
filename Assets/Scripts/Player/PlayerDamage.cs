@@ -6,8 +6,6 @@ using UnityEngine.SceneManagement;
 
 public class PlayerDamage : MonoBehaviour, IDamagable
 {
-    [SerializeField] float levelLoadDelay = 1f;
-
     GameObject parentGameObject;
 
     private PlayerData _data;
