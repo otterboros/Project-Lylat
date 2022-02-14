@@ -1175,15 +1175,19 @@ GameObject:
   m_Component:
   - component: {fileID: 6081734556815140609}
   - component: {fileID: 1934223627957615845}
-  - component: {fileID: 5955202905175819478}
   - component: {fileID: 4155308368838701597}
   - component: {fileID: 8284943929783934293}
   - component: {fileID: 6102465152981040187}
+  - component: {fileID: 6892428559326136548}
+  - component: {fileID: 1348608241918296379}
+  - component: {fileID: 5276443729387067984}
   - component: {fileID: 7387528410501973334}
   - component: {fileID: 2768512997275655412}
   - component: {fileID: 1098404563739343448}
   - component: {fileID: 6093717307201130453}
   - component: {fileID: 7234670039059226102}
+  - component: {fileID: 5305393930281409237}
+  - component: {fileID: 5927500340410842568}
   m_Layer: 3
   m_Name: PlayerShip2
   m_TagString: Player
@@ -1224,28 +1228,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 20
-  xDodgeSpeed: 40
-  yDodgeSpeed: 40
-  xShipRange: 30
-  yShipRange: 15
+  xMoveSpeed: 40
+  yMoveSpeed: 40
+  xRange: 30
+  yRange: 15
   shipPitchRatio: 45
   shipYawRatio: 60
   shipRollRatio: 30
   interpDuration: 0.2
---- !u!114 &5955202905175819478
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6083777436945969431}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5c91bd011896d5d45ade3b8ee3f1b003, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  uiCanvas: {fileID: 0}
-  maximumLockOnRange: 100
 --- !u!114 &4155308368838701597
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1282,6 +1272,48 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3de857897a141fa4c80416133fff66ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &6892428559326136548
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6083777436945969431}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5f53a99db4708e498a9ee483bd86d06, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1348608241918296379
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6083777436945969431}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89ffe84a0e7318e48ac3896351d178f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maximumLockOnRange: 50
+  chargedShot: {fileID: 0}
+  enemyTargeted: {fileID: 0}
+  enemyTargetedReticle: {fileID: 0}
+  isChargedShotFired: 0
+  chargedShotExplosion: {fileID: 0}
+--- !u!114 &5276443729387067984
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6083777436945969431}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14c96736dac8bd54b994ebd7c879f659, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &7387528410501973334
@@ -1365,8 +1397,8 @@ MonoBehaviour:
     m_ActionName: Player/Move[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5955202905175819478}
-        m_TargetAssemblyTypeName: PlayerControls, Assembly-CSharp
+      - m_Target: {fileID: 6892428559326136548}
+        m_TargetAssemblyTypeName: ProcessFireInput, Assembly-CSharp
         m_MethodName: Fire
         m_Mode: 0
         m_Arguments:
@@ -1400,6 +1432,30 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &5305393930281409237
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6083777436945969431}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: febdb307d2dabac448fbac454e4d7ab2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &5927500340410842568
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6083777436945969431}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27e20537daee77a46bf62f29a3d53849, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6083846813773952811
 GameObject:
   m_ObjectHideFlags: 0

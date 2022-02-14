@@ -6,6 +6,8 @@ public class CameraRotation : MonoBehaviour
 {
     [SerializeField] GameObject playerShip;
 
+    private CameraData _data;
+
     private Vector3 shipRotationRatios;
 
     private ProcessMovementInput _mInput;
@@ -13,7 +15,8 @@ public class CameraRotation : MonoBehaviour
 
     private void Awake()
     {
-        shipRotationRatios = new Vector3(CameraData.cameraPitchRatio, CameraData.cameraYawRatio, CameraData.cameraRollRatio);
+        _data = GetComponent<CameraData>();
+        shipRotationRatios = new Vector3(_data.cameraPitchRatio, _data.cameraYawRatio, _data.cameraRollRatio);
 
         _mInput = playerShip.GetComponent<ProcessMovementInput>();
     }
@@ -30,6 +33,6 @@ public class CameraRotation : MonoBehaviour
         playerInput = new Vector2(_mInput.xThrow, _mInput.yThrow);
 
         // Process Camera Rotation
-        transform.localRotation = EulerQuaternionProcessor.ProcessPitchYawAndRoll(gameObject, shipRotationRatios, playerInput, CameraData.interpDuration);
+        transform.localRotation = EulerQuaternionProcessor.ProcessPitchYawAndRoll(gameObject, shipRotationRatios, playerInput, _data.interpDuration);
     }
 }

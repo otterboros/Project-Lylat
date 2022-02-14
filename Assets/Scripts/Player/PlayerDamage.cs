@@ -55,6 +55,7 @@ public class PlayerDamage : MonoBehaviour, IDamagable
                 Debug.Log("Player collided with an NPC.");
                 break;
             case "Enemy":
+                // This will probably always be 1 but it should be a variable for damage taken by physically crashing into enemy.
                 TakeDamage(1);
                 ProcessHealthState(health);
                 break;

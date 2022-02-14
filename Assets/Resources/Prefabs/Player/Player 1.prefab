@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3315304266031366354}
   - component: {fileID: 3315304266031366357}
   - component: {fileID: 3315304266031366356}
+  - component: {fileID: 146488771485289193}
   - component: {fileID: 2072650929756149291}
   - component: {fileID: 3315304266031366355}
   - component: {fileID: 3571138790055987952}
@@ -86,6 +87,26 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3315304266031366359}
   m_Enabled: 1
+--- !u!114 &146488771485289193
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3315304266031366359}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ffb53433bd7dc4e478fcc8a4c7969416, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  xMoveSpeed: 15
+  yMoveSpeed: 15
+  xRange: 10
+  yRange: 5
+  cameraPitchRatio: 11
+  cameraYawRatio: 6
+  cameraRollRatio: 7
+  interpDuration: 0.2
 --- !u!114 &2072650929756149291
 MonoBehaviour:
   m_ObjectHideFlags: 0

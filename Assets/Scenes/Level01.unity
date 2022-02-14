@@ -5275,6 +5275,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3501030478997672645, guid: 68c7937e8268d9d42b23590f5ea31a7f, type: 3}
+      propertyPath: chargedShot
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3501030478997672645, guid: 68c7937e8268d9d42b23590f5ea31a7f, type: 3}
+      propertyPath: enemyTargeted
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3501030478997672645, guid: 68c7937e8268d9d42b23590f5ea31a7f, type: 3}
+      propertyPath: enemyTargetedReticle
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 4946312848400651944, guid: 68c7937e8268d9d42b23590f5ea31a7f, type: 3}
       propertyPath: playerHealth
       value: 20
@@ -5339,7 +5351,8 @@ PrefabInstance:
       propertyPath: m_ActionEvents.Array.data[0].m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: ProcessMovementInput, Assembly-CSharp
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: 68c7937e8268d9d42b23590f5ea31a7f, type: 3}
 --- !u!1 &683504030 stripped
 GameObject:
@@ -5537,6 +5550,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8143484033392108512, guid: 16d17d32a7dd73d4db1cd52f17efaaf1, type: 3}
       propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8213676409511517680, guid: 16d17d32a7dd73d4db1cd52f17efaaf1, type: 3}
+      propertyPath: m_IsTrigger
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

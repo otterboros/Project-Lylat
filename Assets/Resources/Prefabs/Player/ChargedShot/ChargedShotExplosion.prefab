@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 5564301302492955223}
   - component: {fileID: 1444290446322323445}
   - component: {fileID: 1440722978463804430}
-  - component: {fileID: -6841129934425049978}
   m_Layer: 0
   m_Name: ChargedShotExplosion
   m_TagString: Untagged
@@ -4877,16 +4876,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   radius: 10
---- !u!114 &-6841129934425049978
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3057589843062710453}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4646aa179afb21846a8e4cefe0851cef, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  timeTilDestroy: 1
+  chargedShotDamage: 2
+  playerShip: {fileID: 0}

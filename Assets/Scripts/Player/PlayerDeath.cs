@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerDeath : MonoBehaviour
 {
@@ -9,7 +10,7 @@ public class PlayerDeath : MonoBehaviour
 
     public void DisablePlayerControls()
     {
-        GetComponent<PlayerControls>().enabled = false;
+        GetComponent<PlayerInput>().enabled = false;
         playerShipCollider.SetActive(false);
         playerShipMesh.SetActive(false);
 

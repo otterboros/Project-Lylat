@@ -5,16 +5,8 @@ using UnityEngine;
 public class ChargedShotExplosion : MonoBehaviour
 {
     [SerializeField] float radius;
-    [SerializeField] int chargedShotDamage = 2;
+    [SerializeField] float timeTilDestroy = 1f;
 
-    public GameObject playerShip;
-
-    private void Awake()
-    {
-        // Doing this once for each step of charged shot. Find a better way!
-        // Also, this will screw things up if anyone other than player ship uses charged shot. :/
-        playerShip = GameObject.Find("PlayerShip2");
-    }
     private void OnEnable() => Explode();
 
     private void Explode()
@@ -29,13 +21,17 @@ public class ChargedShotExplosion : MonoBehaviour
         {
             if(c.TryGetComponent(out EnemyDamage enemy))
             {
-                enemy.TakeDamage(chargedShotDamage);
+                enemy.TakeDamage(ChargedShotData.chargedShotDamage);
                 enemy.ProcessHealthState(enemy.health);
                 if (enemy.health < 1)
                     ComboManager.instance.AddToCombo();
             }
         }
         ComboManager.instance.FinishCombo();
+
+        // "this" is unnecessary, but helps me grok the code below
+        ChargedShotData.isChargedShotSequenceEnded = true;
+        Destroy(this.gameObject, timeTilDestroy);
     }
 
     private void OnDrawGizmos()

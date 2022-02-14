@@ -56,11 +56,12 @@ public class EnemyDamage : MonoBehaviour, IDamagable
 
     void OnParticleCollision(GameObject other)
     {
-        // Update lasers to have a damage value!
-        // We'll have to turn them into non-particles I think.
+        // Update lasers to be objects with static colliders like EnemyBulletLaser.prefab.
+
+        // Ultimately, this should be replaced with an OnTriggerEnter so that consistently any object (Player, Enemy, NPC) that colliders with an object calculates damage with OnTriggerEnter.
 
         // Process collision with player or NPC particle colliders (lasers)
-        if (other.gameObject.tag == "Player" || other.gameObject.tag == "NPC")
+        if (other.gameObject.CompareTag("Player") || other.gameObject.CompareTag("NPC"))
         {
             TakeDamage(1);
             ProcessHealthState(health); 
@@ -68,4 +69,16 @@ public class EnemyDamage : MonoBehaviour, IDamagable
         else
             Debug.Log($"{gameObject.transform.name} was hit by an unknown particle {other.gameObject.name}");
     }
+
+    //private void OnTriggerEnter(Collider other)
+    //{
+
+    //    // Right now, "Weapon" refers only to the ChargedShot as Laser One.prefab has tag "Player".
+    //    if (other.gameObject.CompareTag("Weapon"))
+    //    {
+    //        Debug.Log($"{transform.name} was hit by {other.transform.name}");
+    //        TakeDamage(other.GetComponent<ChargedShotCollisionHandler>().csDamage);
+    //        ProcessHealthState(health);
+    //    }   
+    //}
 }
