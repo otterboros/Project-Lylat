@@ -10,7 +10,7 @@ public class ProcessFireInput : MonoBehaviour
 
     private GameObject parentGameObject;
 
-    private ToggleParticleSystem _ps;
+    private PlayerLaserFiring _psl;
     private ColorChanger _cc;
     private ChargedShotData _data;
     private ChargedShotReset _csr;
@@ -23,10 +23,11 @@ public class ProcessFireInput : MonoBehaviour
         gameCamera = Camera.main;
         uiCanvas = GameObject.Find("UI");
 
-        _ps = GetComponent<ToggleParticleSystem>();
+        _psl = GetComponent<PlayerLaserFiring>();
         _cc = GetComponent<ColorChanger>();
         _data = GetComponent<ChargedShotData>();
         _csr = GetComponent<ChargedShotReset>();
+
     }
 
     /// <summary>
@@ -36,13 +37,16 @@ public class ProcessFireInput : MonoBehaviour
     public void Fire(InputAction.CallbackContext context)
     {
         if (context.started)
+        {
             // Activate Normal Shot Lasers on Fire button press
-            _ps.ToggleLaserOneEmissionModule();
+            _psl.StartSpawningBullets();
+        }
+
 
         if (context.performed)
         {
             // If Fire button is held beyond Hold time threshold, deactivate Normal Shot Lasers and Ready Charged Shot state
-            _ps.ToggleLaserOneEmissionModule(false);
+            _psl.StopSpawningBullets();
 
             Debug.Log("Readying CS!");
             ChargedShotData.chargedShot = Instantiate(Resources.Load<GameObject>("Prefabs/Player/ChargedShot/ChargedShot"), transform.position + _data.chargedShotPositionOffset, Quaternion.identity, parentGameObject.transform);
@@ -53,7 +57,7 @@ public class ProcessFireInput : MonoBehaviour
 
         if (context.canceled)
         {
-            _ps.ToggleLaserOneEmissionModule(false);
+            _psl.StopSpawningBullets();
 
             if (_data.isEnemyTargeted)
             {

@@ -156,11 +156,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &128466617 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8336215140862927656, guid: 68c7937e8268d9d42b23590f5ea31a7f, type: 3}
-  m_PrefabInstance: {fileID: 683504029}
-  m_PrefabAsset: {fileID: 0}
 --- !u!95 &161999488 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 3315304266721250914, guid: 68c7937e8268d9d42b23590f5ea31a7f, type: 3}
@@ -5219,6 +5214,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1157400542355253259, guid: 68c7937e8268d9d42b23590f5ea31a7f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1961065544381337732, guid: 68c7937e8268d9d42b23590f5ea31a7f, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 25.082
+      objectReference: {fileID: 0}
+    - target: {fileID: 2485256060143728810, guid: 68c7937e8268d9d42b23590f5ea31a7f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.753
+      objectReference: {fileID: 0}
+    - target: {fileID: 2485256060143728810, guid: 68c7937e8268d9d42b23590f5ea31a7f, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 100.082
+      objectReference: {fileID: 0}
     - target: {fileID: 3315304266031366354, guid: 68c7937e8268d9d42b23590f5ea31a7f, type: 3}
       propertyPath: m_LocalPosition.y
       value: 3
@@ -5275,6 +5286,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3329226484336772741, guid: 68c7937e8268d9d42b23590f5ea31a7f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3501030478997672645, guid: 68c7937e8268d9d42b23590f5ea31a7f, type: 3}
       propertyPath: chargedShot
       value: 
@@ -5290,6 +5305,18 @@ PrefabInstance:
     - target: {fileID: 4946312848400651944, guid: 68c7937e8268d9d42b23590f5ea31a7f, type: 3}
       propertyPath: playerHealth
       value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 6187080591831656614, guid: 68c7937e8268d9d42b23590f5ea31a7f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7181370783797773683, guid: 68c7937e8268d9d42b23590f5ea31a7f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.753
+      objectReference: {fileID: 0}
+    - target: {fileID: 7181370783797773683, guid: 68c7937e8268d9d42b23590f5ea31a7f, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 50.082
       objectReference: {fileID: 0}
     - target: {fileID: 7400984576092356133, guid: 68c7937e8268d9d42b23590f5ea31a7f, type: 3}
       propertyPath: EmissionModule.enabled
@@ -5339,6 +5366,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8540607211121606606, guid: 68c7937e8268d9d42b23590f5ea31a7f, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 50.082
+      objectReference: {fileID: 0}
     - target: {fileID: 8552383229101022251, guid: 68c7937e8268d9d42b23590f5ea31a7f, type: 3}
       propertyPath: m_ActionEvents.Array.data[0].m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -5356,7 +5387,12 @@ PrefabInstance:
   m_SourcePrefab: {fileID: 100100000, guid: 68c7937e8268d9d42b23590f5ea31a7f, type: 3}
 --- !u!1 &683504030 stripped
 GameObject:
-  m_CorrespondingSourceObject: {fileID: 3656620397827434695, guid: 68c7937e8268d9d42b23590f5ea31a7f, type: 3}
+  m_CorrespondingSourceObject: {fileID: 1139014315476443277, guid: 68c7937e8268d9d42b23590f5ea31a7f, type: 3}
+  m_PrefabInstance: {fileID: 683504029}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &683504031 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2847652940282957073, guid: 68c7937e8268d9d42b23590f5ea31a7f, type: 3}
   m_PrefabInstance: {fileID: 683504029}
   m_PrefabAsset: {fileID: 0}
 --- !u!108 &705507994 stripped
@@ -6513,7 +6549,7 @@ PrefabInstance:
     - target: {fileID: 4475049291728834185, guid: f906c74843af4694fa9ed7f01ddcb3fe, type: 3}
       propertyPath: reticleTargets.Array.data[0]
       value: 
-      objectReference: {fileID: 128466617}
+      objectReference: {fileID: 683504031}
     - target: {fileID: 4475049291728834185, guid: f906c74843af4694fa9ed7f01ddcb3fe, type: 3}
       propertyPath: reticleTargets.Array.data[1]
       value: 

@@ -43,6 +43,7 @@ public class EnemyAI : MonoBehaviour
                     GameObject bullet = Instantiate(Resources.Load<GameObject>("Prefabs/Enemies/EnemyAttack/EnemyLaserBullet"), transform.position - new Vector3(0, 1.23000002f, 13.2600002f), Quaternion.identity, parentGameObject.transform);
                     bullet.GetComponent<BulletData>().shotDamage = _data.shotDamage;
                     bullet.GetComponent<BulletData>().shotSpeed = _data.shotSpeed;
+                    bullet.GetComponent<BulletData>().distFromCamera = _data.distFromCamera;
                     break;
                 default:
                     break;

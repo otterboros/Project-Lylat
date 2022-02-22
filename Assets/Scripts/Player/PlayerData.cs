@@ -25,4 +25,11 @@ public class PlayerData : MonoBehaviour
 
     [Tooltip("Rate of change from current to desired rotation")]
     public float interpDuration = 0.2f;
+
+    [Header("Player Attack Settings")]
+    //[Tooltip("The attack value for player lasers")]
+    public float shotsPerSecond = 0.3f;
+    public float shotSpeed = 2;
+    public int shotDamage = 1;
+    public int distFromCamera = 61; // add the -z of camera to intended dist from player ship
 }

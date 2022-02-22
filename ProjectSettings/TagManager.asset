@@ -9,6 +9,8 @@ TagManager:
   - Enemy
   - Weapon
   - EnemyWeapon
+  - ChargedShot
+  - PlayerLaser
   layers:
   - Default
   - TransparentFX

@@ -54,31 +54,16 @@ public class EnemyDamage : MonoBehaviour, IDamagable
         }
     }
 
-    void OnParticleCollision(GameObject other)
+    private void OnTriggerEnter(Collider other)
     {
-        // Update lasers to be objects with static colliders like EnemyBulletLaser.prefab.
-
-        // Ultimately, this should be replaced with an OnTriggerEnter so that consistently any object (Player, Enemy, NPC) that colliders with an object calculates damage with OnTriggerEnter.
-
-        // Process collision with player or NPC particle colliders (lasers)
-        if (other.gameObject.CompareTag("Player") || other.gameObject.CompareTag("NPC"))
+        // Right now, "Weapon" refers only to the ChargedShot and PlayerLaserBullet
+        if (other.gameObject.CompareTag("PlayerLaser"))
         {
-            TakeDamage(1);
-            ProcessHealthState(health); 
+            Debug.Log($"{transform.name} was hit by {other.transform.name}");
+            TakeDamage(other.GetComponent<BulletData>().shotDamage);
+            ProcessHealthState(health);
         }
         else
-            Debug.Log($"{gameObject.transform.name} was hit by an unknown particle {other.gameObject.name}");
+            Debug.Log($"{transform.name} was hit by trigger collider {other.gameObject.name}");
     }
-
-    //private void OnTriggerEnter(Collider other)
-    //{
-
-    //    // Right now, "Weapon" refers only to the ChargedShot as Laser One.prefab has tag "Player".
-    //    if (other.gameObject.CompareTag("Weapon"))
-    //    {
-    //        Debug.Log($"{transform.name} was hit by {other.transform.name}");
-    //        TakeDamage(other.GetComponent<ChargedShotCollisionHandler>().csDamage);
-    //        ProcessHealthState(health);
-    //    }   
-    //}
 }

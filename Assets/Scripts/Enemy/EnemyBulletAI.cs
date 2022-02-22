@@ -2,13 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AttackTargeting : MonoBehaviour
+public class EnemyBulletAI : MonoBehaviour
 {
-    GameObject target;
+    private GameObject target;
 
     private BulletData _data;
-    public int shotDamage;
     private ObjectFiring _firing;
+    private ObjectCleaner _cleaner;
+
+    private Camera gameCamera;
 
     private void Awake()
     {
@@ -16,13 +18,15 @@ public class AttackTargeting : MonoBehaviour
         transform.LookAt(target.transform);
 
         _data = GetComponent<BulletData>();
-        shotDamage = _data.shotDamage;
-
         _firing = GetComponent<ObjectFiring>();
+        _cleaner = GetComponent<ObjectCleaner>();
+
+        gameCamera = Camera.main;
     }
 
     private void Update()
     {
         _firing.FireObjectForward(_data.shotSpeed);
+        _cleaner.DestroyThisBehindObject(_data.distFromCamera, gameCamera.gameObject);
     }
 }

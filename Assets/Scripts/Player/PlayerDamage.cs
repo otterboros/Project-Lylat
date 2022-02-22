@@ -60,7 +60,7 @@ public class PlayerDamage : MonoBehaviour, IDamagable
                 ProcessHealthState(health);
                 break;
             case "EnemyWeapon":
-                TakeDamage(other.GetComponent<AttackTargeting>().shotDamage);
+                TakeDamage(other.GetComponent<BulletData>().shotDamage);
                 ProcessHealthState(health);
                 break;
             default:

@@ -7,7 +7,7 @@ public class ToggleParticleSystem : MonoBehaviour
     private ParticleSystem laserOne;
     private void Start()
     {
-        laserOne = transform.Find("Laser One").GetComponent<ParticleSystem>();
+        //laserOne = transform.Find("Laser One").GetComponent<ParticleSystem>();
     }
 
     public void ToggleEmissionModule(ParticleSystem particleSystem, bool setActive = true)
