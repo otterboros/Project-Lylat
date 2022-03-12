@@ -22,8 +22,8 @@ public class ChargedShotExplosion : MonoBehaviour
             if(c.TryGetComponent(out EnemyDamage enemy))
             {
                 enemy.TakeDamage(ChargedShotData.chargedShotDamage);
-                enemy.ProcessHealthState(enemy.health);
-                if (enemy.health < 1)
+                enemy.ProcessHealthState(enemy.currentHealth);
+                if (enemy.currentHealth < 1)
                     ComboManager.instance.AddToCombo();
             }
         }

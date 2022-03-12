@@ -4,7 +4,7 @@ using UnityEngine;
 
 public interface IDamagable
 {
-    int health { get; set; }
+    int currentHealth { get; set; }
     void TakeDamage(int damage);
     void ProcessHealthState(int health);
 }

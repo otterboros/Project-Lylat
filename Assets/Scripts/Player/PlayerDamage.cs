@@ -6,16 +6,16 @@ using UnityEngine.SceneManagement;
 
 public class PlayerDamage : MonoBehaviour, IDamagable
 {
-    GameObject parentGameObject;
-
+    private GameObject parentGameObject;
     private PlayerData _data;
-    public int health { get; set; }
+
+    public int currentHealth { get; set; }
 
     private void Start()
     {
         // Set current health for this game object as it's stored max health
         _data = GetComponent<PlayerData>();
-        health = _data.maxHealth;
+        currentHealth = _data.maxHealth;
 
         parentGameObject = GameObject.FindWithTag("CreateAtRuntime");
     }
@@ -23,7 +23,7 @@ public class PlayerDamage : MonoBehaviour, IDamagable
     public void TakeDamage(int damage)
     {
         // Remove damage from health
-        health -= damage;
+        currentHealth -= damage;
     }
 
     public void ProcessHealthState(int health)
@@ -57,11 +57,11 @@ public class PlayerDamage : MonoBehaviour, IDamagable
             case "Enemy":
                 // This will probably always be 1 but it should be a variable for damage taken by physically crashing into enemy.
                 TakeDamage(1);
-                ProcessHealthState(health);
+                ProcessHealthState(currentHealth);
                 break;
             case "EnemyWeapon":
                 TakeDamage(other.GetComponent<BulletData>().shotDamage);
-                ProcessHealthState(health);
+                ProcessHealthState(currentHealth);
                 break;
             default:
                 Debug.Log($"Player collided with {other.transform.name}.");

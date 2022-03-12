@@ -8,7 +8,7 @@ public class EnemyDamage : MonoBehaviour, IDamagable
     GameObject parentGameObject;
 
     private EnemyData _data;
-    public int health { get; set; }
+    public int currentHealth { get; set; }
 
     private RigidBodyAddition _rb;
 
@@ -23,13 +23,13 @@ public class EnemyDamage : MonoBehaviour, IDamagable
 
         // Set current health for this game object as it's stored max health
         _data = GetComponent<EnemyData>();
-        health = _data.maxHealth;
+        currentHealth = _data.maxHealth;
     }
 
     public void TakeDamage(int damage)
     {
         // Remove damage from health
-        health -= damage;
+        currentHealth -= damage;
     }
 
     public void ProcessHealthState(int health)
@@ -61,7 +61,7 @@ public class EnemyDamage : MonoBehaviour, IDamagable
         {
             Debug.Log($"{transform.name} was hit by {other.transform.name}");
             TakeDamage(other.GetComponent<BulletData>().shotDamage);
-            ProcessHealthState(health);
+            ProcessHealthState(currentHealth);
         }
         else
             Debug.Log($"{transform.name} was hit by trigger collider {other.gameObject.name}");
