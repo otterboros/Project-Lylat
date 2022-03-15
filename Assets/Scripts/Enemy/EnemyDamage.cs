@@ -1,3 +1,6 @@
+// EnemyDamage.cs - Process OnTriggerEnter collision as damage that Enemies take
+//------------------------------------------------------------------------------
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -26,6 +29,18 @@ public class EnemyDamage : MonoBehaviour, IDamagable
         currentHealth = _data.maxHealth;
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        // Right now, "Weapon" refers only to the ChargedShot and PlayerLaserBullet
+        if (other.gameObject.CompareTag("PlayerLaser"))
+        {
+            Debug.Log($"{transform.name} was hit by {other.transform.name}");
+            TakeDamage(other.GetComponent<BulletData>().shotDamage);
+            ProcessHealthState(currentHealth);
+        }
+        else
+            Debug.Log($"{transform.name} was hit by trigger collider {other.gameObject.name}");
+    }
     public void TakeDamage(int damage)
     {
         // Remove damage from health
@@ -37,7 +52,6 @@ public class EnemyDamage : MonoBehaviour, IDamagable
         //if health is equal to or above 1, play damage effect.
         if (health >= 1)
         {
-
             Instantiate(Resources.Load<GameObject>("Prefabs/FX/HitVFX"), transform.position, Quaternion.identity, parentGameObject.transform);
             return;
         }
@@ -52,18 +66,5 @@ public class EnemyDamage : MonoBehaviour, IDamagable
 
             Destroy(gameObject);
         }
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        // Right now, "Weapon" refers only to the ChargedShot and PlayerLaserBullet
-        if (other.gameObject.CompareTag("PlayerLaser"))
-        {
-            Debug.Log($"{transform.name} was hit by {other.transform.name}");
-            TakeDamage(other.GetComponent<BulletData>().shotDamage);
-            ProcessHealthState(currentHealth);
-        }
-        else
-            Debug.Log($"{transform.name} was hit by trigger collider {other.gameObject.name}");
     }
 }
