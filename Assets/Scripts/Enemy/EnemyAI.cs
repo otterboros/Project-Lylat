@@ -38,10 +38,10 @@ public class EnemyAI : MonoBehaviour
         while(true)
         {
             // For Single Shot Enemy Type
-            GameObject bullet = Instantiate(Resources.Load<GameObject>("Prefabs/Enemies/EnemyAttack/EnemyLaserBullet"), transform.position - new Vector3(0, 1.23000002f, 13.2600002f), Quaternion.identity, parentGameObject.transform);
+            GameObject bullet = Instantiate(Resources.Load<GameObject>("Prefabs/Enemies/EnemyAttack/EnemyLaserBullet"), transform.position, Quaternion.identity, parentGameObject.transform);
             bullet.GetComponent<BulletData>().shotDamage = _data.shotDamage;
             bullet.GetComponent<BulletData>().shotSpeed = _data.shotSpeed;
-            bullet.GetComponent<BulletData>().distFromCamera = _data.distFromCamera;
+            bullet.GetComponent<BulletData>().distToDestroy = _data.distToDestroy;
             yield return new WaitForSeconds(_data.shotsPerSecond);
         }
     }

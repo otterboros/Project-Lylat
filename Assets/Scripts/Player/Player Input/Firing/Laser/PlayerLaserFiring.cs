@@ -40,7 +40,7 @@ public class PlayerLaserFiring : MonoBehaviour
             GameObject bullet = Instantiate(Resources.Load<GameObject>("Prefabs/Player/PlayerLaserBullet"), transform.position - new Vector3(0, -0.75f, 0.08f), Quaternion.identity, parentGameObject.transform);
             bullet.GetComponent<BulletData>().shotDamage = _data.shotDamage;
             bullet.GetComponent<BulletData>().shotSpeed = _data.shotSpeed;
-            bullet.GetComponent<BulletData>().distFromCamera = _data.distFromCamera;
+            bullet.GetComponent<BulletData>().distToDestroy = _data.distToDestroy;
 
             yield return new WaitForSeconds(_data.shotsPerSecond);
         }

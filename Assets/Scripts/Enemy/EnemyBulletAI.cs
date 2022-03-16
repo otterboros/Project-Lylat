@@ -27,6 +27,6 @@ public class EnemyBulletAI : MonoBehaviour
     private void Update()
     {
         _firing.FireObjectForward(_data.shotSpeed);
-        _cleaner.DestroyThisBehindObject(_data.distFromCamera, gameCamera.gameObject);
+        _cleaner.DestroyThisBehindObject(_data.distToDestroy, gameCamera.gameObject, this.gameObject);
     }
 }

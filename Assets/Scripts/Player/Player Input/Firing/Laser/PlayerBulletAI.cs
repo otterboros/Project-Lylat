@@ -10,8 +10,7 @@ public class PlayerBulletAI : MonoBehaviour
     private ObjectFiring _firing;
     private ObjectCleaner _cleaner;
 
-    private Camera gameCamera;
-
+    private float startingPosZ;
 
     private void Awake()
     {
@@ -22,12 +21,12 @@ public class PlayerBulletAI : MonoBehaviour
         _firing = GetComponent<ObjectFiring>();
         _cleaner = GetComponent<ObjectCleaner>();
 
-        gameCamera = Camera.main;
+        startingPosZ = transform.position.z;
     }
 
     private void Update()
     {
         _firing.FireObjectForward(_data.shotSpeed);
-        _cleaner.DestroyThisAheadOfObject(_data.distFromCamera, gameCamera.gameObject);
+        _cleaner.DestroyAfterDistance(_data.distToDestroy, startingPosZ, transform.position.z);
     }
 }

@@ -1401,7 +1401,7 @@ MonoBehaviour:
   shotsPerSecond: 0.3
   shotSpeed: 2
   shotDamage: 1
-  distFromCamera: 61
+  distFromCamera: 150
 --- !u!114 &4155308368838701597
 MonoBehaviour:
   m_ObjectHideFlags: 0

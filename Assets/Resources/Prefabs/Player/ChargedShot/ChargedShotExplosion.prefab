@@ -4875,6 +4875,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 666c0f9f66985bf43962958db857f1d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  radius: 10
-  chargedShotDamage: 2
-  playerShip: {fileID: 0}
+  radius: 15
+  timeTilDestroy: 1

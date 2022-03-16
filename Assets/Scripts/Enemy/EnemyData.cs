@@ -14,7 +14,7 @@ public class EnemyData : MonoBehaviour
     public float shotsPerSecond = 1;
     public float shotSpeed = 1;
     public int shotDamage = 1;
-    public int distFromCamera = 0;
+    public int distToDestroy = 0;
 
     public bool isArmored = false;
     public bool isShielded = false;

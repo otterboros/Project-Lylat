@@ -33,7 +33,7 @@ Transform:
   m_GameObject: {fileID: 7879070482740172874}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
+  m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -114,7 +114,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 1
   scoreValue: 1
-  attackRate: 1
+  shotsPerSecond: 1
+  shotSpeed: 1
+  shotDamage: 1
+  distToDestroy: -5
+  isArmored: 0
+  isShielded: 0
 --- !u!114 &5228230427657230609
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -127,7 +132,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c6f8a79e0236a8478662f4dd1d3ccb3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _data: {fileID: 0}
 --- !u!114 &5308490640626128350
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -152,11 +156,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2672adb70726d4346b9e45f17c14d88b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  triggerRangeZ: 100
-  bulletDamage: 1
-  bulletSpeed: 1
-  timeBetweenShots: 1
-  weaponType: SingleShot
 --- !u!95 &8335988777648882675
 Animator:
   serializedVersion: 3

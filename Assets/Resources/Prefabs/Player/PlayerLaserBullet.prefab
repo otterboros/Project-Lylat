@@ -252,7 +252,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shotDamage: 0
   shotSpeed: 0
-  distFromCamera: 100
+  distFromCamera: 150
 --- !u!114 &8522704271664466585
 MonoBehaviour:
   m_ObjectHideFlags: 0
