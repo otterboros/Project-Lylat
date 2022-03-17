@@ -15,6 +15,8 @@ public class EnemyDamage : MonoBehaviour, IDamagable
 
     private RigidBodyAddition _rb;
 
+    private DamageAnimator _da;
+
     void Start()
     {
         scoreboard = FindObjectOfType<Scoreboard>();
@@ -27,6 +29,9 @@ public class EnemyDamage : MonoBehaviour, IDamagable
         // Set current health for this game object as it's stored max health
         _data = GetComponent<EnemyData>();
         currentHealth = _data.maxHealth;
+
+        // Get Damage Animator
+        _da = GetComponent<DamageAnimator>();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -36,6 +41,7 @@ public class EnemyDamage : MonoBehaviour, IDamagable
         {
             Debug.Log($"{transform.name} was hit by {other.transform.name}");
             TakeDamage(other.GetComponent<BulletData>().shotDamage);
+            _da.StartAnimatingDamage();
             ProcessHealthState(currentHealth);
         }
         else

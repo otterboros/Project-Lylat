@@ -1,3 +1,7 @@
+// PlayerData.cs - Store Data Values for the player ship
+//                 and draw x,y movement range and max z firing range of ship
+//---------------------------------------------------------------------------
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -32,4 +36,13 @@ public class PlayerData : MonoBehaviour
     public float shotSpeed = 2;
     public int shotDamage = 1;
     public int distToDestroy = 150; // add the -z of camera to intended dist from player ship
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.yellow;
+
+        // The Cube's x and y ranges are the player's max movement range
+        // The Cube's z range is the max distance the player's shot can travel
+        Gizmos.DrawWireCube(transform.position + new Vector3(0,0,distToDestroy/2), new Vector3(2*xRange, 2*yRange, distToDestroy));
+    }
 }

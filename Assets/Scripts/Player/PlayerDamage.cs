@@ -16,6 +16,7 @@ public class PlayerDamage : MonoBehaviour, IDamagable
         // Set current health for this game object as it's stored max health
         _data = GetComponent<PlayerData>();
         currentHealth = _data.maxHealth;
+        HealthBarManager.instance.UpdateHealthBar(currentHealth);
 
         parentGameObject = GameObject.FindWithTag("CreateAtRuntime");
     }

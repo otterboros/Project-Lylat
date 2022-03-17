@@ -1,9 +1,12 @@
+// EnemyLaser.shader - A gradient shader to use for enemy lasers
+//                     Note: An improved version would place the gradient relative to local space 
+//                           on the object so that the laser could be all white at one vertex.
+//-------------------------------------------------------------------------------------------------
+
 Shader "Unlit/EnemyLaser"
 {
     Properties
     {
-        //_MainTex ("Texture", 2D) = "white" {}
-
         _ColorA ("Color A", Color) = (1,1,1,1)
         _ColorB("Color B", Color) = (1,0,0,1)
         _ColorStart("Color Start", Range(0,1)) = 0
@@ -62,6 +65,8 @@ Shader "Unlit/EnemyLaser"
 
             fixed4 frag(v2f i) : SV_Target
             {
+
+
                 // Shift UV Center
                 i.uv = (i.uv - 0.5) * 2;
 
