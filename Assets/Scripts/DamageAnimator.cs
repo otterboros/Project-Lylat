@@ -1,3 +1,6 @@
+// DamageAnimator.cs - Coroutine to pingpong a color change for this game object
+//---------------------------------------------------------------------------------
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,9 +9,9 @@ public class DamageAnimator : MonoBehaviour
 {
     Renderer rend;
     Material mat;
-    float duration = 1f;
-    Color colorStart;
-    Color colorEnd;
+    [SerializeField]  float duration = 0.2f;
+    Color colorStart = Color.black;
+    [SerializeField] Color colorEnd = Color.red;
 
     Coroutine animatingDamage;
     bool isAnimatingDamage { get { return animatingDamage != null; } }
@@ -22,14 +25,12 @@ public class DamageAnimator : MonoBehaviour
 
     public void StartAnimatingDamage()
     {
-        Debug.Log("Starting damage animation!");
         StopAnimatingDamage(); //If this ship is already animating damage, stop it.
         animatingDamage = StartCoroutine(AnimateDamage());
     }
 
     public void StopAnimatingDamage()
     {
-        Debug.Log("Stoping previous damage animation!");
         if (isAnimatingDamage)
         {
             StopCoroutine(animatingDamage);
@@ -40,24 +41,22 @@ public class DamageAnimator : MonoBehaviour
     IEnumerator AnimateDamage()
     {
         float ctr = duration;
+        mat.EnableKeyword("_EMISSION");
+
         while (ctr > 0)
         {
-            Debug.Log($"Damage animation counter is now {ctr}!");
-            ctr -= Time.deltaTime;
-
-            //colorStart = mat.GetColor("_Color");
-            colorStart = Color.blue;
-
-            //float emission = Mathf.PingPong(Time.deltaTime, 1.0f);
-            //Color finalColor = baseColor * Mathf.LinearToGammaSpace(emission);
+            ctr -= Time.deltaTime; 
 
             float lerp = Mathf.PingPong(Time.time, duration) / duration;
-            mat.color = Color.Lerp(colorStart, colorEnd, lerp);
-
-            //mat.SetColor("_Color", finalColor);
+            Color newColor = Color.Lerp(colorStart, colorEnd, lerp);
+            mat.SetColor("_EmissionColor", newColor);
 
             yield return new WaitForEndOfFrame();
         }
+
+        mat.SetColor("_EmissionColor", colorStart);
+        mat.DisableKeyword("_EMISSION");
+
 
         StopAnimatingDamage();
     }

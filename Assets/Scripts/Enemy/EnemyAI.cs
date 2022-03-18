@@ -1,3 +1,6 @@
+// EnemyAI.cs - Coroutine to instantiate enemy attack objects
+//-----------------------------------------------------------
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;

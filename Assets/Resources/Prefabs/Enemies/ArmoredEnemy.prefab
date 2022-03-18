@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: -3933728589754998127}
   - component: {fileID: 1732186900953302273}
   - component: {fileID: 3736936860398247848}
+  - component: {fileID: 4992897459925925741}
   m_Layer: 0
   m_Name: ArmoredEnemy
   m_TagString: Enemy
@@ -155,3 +156,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8079d72232aa404f9d27e8925435e66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &4992897459925925741
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1370644494486065065}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 672c4293e5f855f48af03f77eb9c131e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  duration: 0.2
+  colorEnd: {r: 1, g: 0, b: 0, a: 1}

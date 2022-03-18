@@ -62,10 +62,10 @@ Shader "Unlit/DamageTaken"
             fixed4 frag(v2f i) : SV_Target
             {
             #ifdef IS_DAMAGED
-                float startTime = _Time.y;
-                float pulse = sin(TAU * _Time.y * (_PulseSpeed / 2));
-                while ((_Time.y - startTime) < _Duration)
-                    return pulse * _ColorDamage;
+                //float startTime = _Time.y;
+                //float pulse = sin(TAU * _Time.y * (_PulseSpeed / 2));
+                //while ((_Time.y - startTime) < _Duration)
+                //    return pulse * _ColorDamage;
                 return _ColorBase;
                 _IsDamaged = 0;
             #else

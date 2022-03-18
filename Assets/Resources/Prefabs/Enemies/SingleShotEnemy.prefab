@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 5308490640626128350}
   - component: {fileID: 878041477412963645}
   - component: {fileID: 8335988777648882675}
+  - component: {fileID: 8937803125793953854}
   m_Layer: 0
   m_Name: SingleShotEnemy
   m_TagString: Enemy
@@ -175,3 +176,17 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &8937803125793953854
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7879070482740172874}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 672c4293e5f855f48af03f77eb9c131e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  duration: 0.2
+  colorEnd: {r: 1, g: 0, b: 0, a: 1}
