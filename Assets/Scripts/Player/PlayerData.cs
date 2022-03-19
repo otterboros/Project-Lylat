@@ -37,6 +37,16 @@ public class PlayerData : MonoBehaviour
     public int shotDamage = 1;
     public int distToDestroy = 150; // add the -z of camera to intended dist from player ship
 
+    [Header("Player Blocked by Environment")]
+    [Tooltip("If the character is blocked or not.")]
+    public bool blocked = false;
+    //[Tooltip("Useful for rough blocking")]
+    //public Vector3 blockedDimensions = new Vector3(5, 2, 5);
+    [Tooltip("The radius of the blocked check.")]
+    public float blockedRadius = 0.5f;
+    [Tooltip("What layers the character uses as blocked")]
+    public LayerMask blockedLayers;
+
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.yellow;

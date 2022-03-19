@@ -1,3 +1,8 @@
+// PlayerDamage.cs - Handle collisions with trigger colliders
+// TO-DO: Add collision with environment damage
+//        Add invincibility frames (likely in another script)
+//-----------------------------------------------------------
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -25,6 +30,7 @@ public class PlayerDamage : MonoBehaviour, IDamagable
     {
         // Remove damage from health
         currentHealth -= damage;
+        // Add invincibility frames
     }
 
     public void ProcessHealthState(int health)
@@ -64,8 +70,26 @@ public class PlayerDamage : MonoBehaviour, IDamagable
                 TakeDamage(other.GetComponent<BulletData>().shotDamage);
                 ProcessHealthState(currentHealth);
                 break;
+            //case "Environment":
+            //    // Run Script to process player interaction with environment
+            //    break;
+            //case "CollisionSafe":
+            //    // Stop player movement but deal no damage
+            //    break;
             default:
                 Debug.Log($"Player collided with {other.transform.name}.");
+                break;
+        }
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        // Process collisions with non-trigger objects like terrain
+        switch (collision.gameObject.tag)
+        {
+            case "Environment":
+                TakeDamage(1);
+                ProcessHealthState(currentHealth);
                 break;
         }
     }

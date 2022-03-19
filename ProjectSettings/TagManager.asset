@@ -11,6 +11,8 @@ TagManager:
   - EnemyWeapon
   - ChargedShot
   - PlayerLaser
+  - Environment
+  - CollisionSafe
   layers:
   - Default
   - TransparentFX
@@ -19,7 +21,7 @@ TagManager:
   - Water
   - UI
   - Post Processing
-  - 
+  - EnvironmentSafe
   - 
   - 
   - 
