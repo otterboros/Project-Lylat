@@ -21,7 +21,7 @@ public class ComboManager : MonoBehaviour
 
     public void StartCombo()
     {
-        comboValue = -1;
+        comboValue = 0;
     }
 
     public void AddToCombo()
@@ -31,13 +31,13 @@ public class ComboManager : MonoBehaviour
 
     public void FinishCombo()
     {
-        scoreboard.ModifyScore(comboValue);
-        if (comboValue >= 1)
+        if (comboValue >= 2)
         {
+            scoreboard.ModifyScore(comboValue - 1);
             // Add a UI Element that displays "Downed + comboValue"
-            Debug.Log("Downed +" + comboValue);
+            Debug.Log("Downed +" + (comboValue - 1));
         }
-        else if (comboValue < 1)
+        else if (comboValue < 2)
             Debug.Log("No combo!");
     }
 }

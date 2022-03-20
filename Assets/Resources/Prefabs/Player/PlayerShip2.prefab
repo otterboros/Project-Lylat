@@ -1390,6 +1390,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 20
+  numOfIFrames: 15
   xMoveSpeed: 40
   yMoveSpeed: 40
   xRange: 30
@@ -1402,6 +1403,11 @@ MonoBehaviour:
   shotSpeed: 2
   shotDamage: 1
   distToDestroy: 150
+  blocked: 0
+  blockedRadius: 0.5
+  blockedLayers:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!114 &4155308368838701597
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1428,6 +1434,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd8f81c8d5ee319459048775e90fe601, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isBlocked: 0
 --- !u!114 &6102465152981040187
 MonoBehaviour:
   m_ObjectHideFlags: 0

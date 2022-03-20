@@ -11,6 +11,7 @@ public class EnemyData : MonoBehaviour
 
     public int scoreValue = 1;
 
+    [Tooltip("How many shots per second. Processed as '1/shotsPerSecond' in EnemyAI.cs")]
     public float shotsPerSecond = 1;
     public float shotSpeed = 1;
     public int shotDamage = 1;
@@ -18,4 +19,7 @@ public class EnemyData : MonoBehaviour
 
     public bool isArmored = false;
     public bool isShielded = false;
+
+    public GameObject target;
+    public string firingMode;
 }

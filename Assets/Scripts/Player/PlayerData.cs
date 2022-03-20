@@ -11,6 +11,8 @@ public class PlayerData : MonoBehaviour
     [Header("Player Health Settings")]
     [Tooltip("The maximum health the player can have")]
     public int maxHealth = 20;
+    [Tooltip("How many invincibility frames does the player get?")]
+    public int numOfIFrames = 15;
 
     [Header("Ship Movement Settings")]
     [Tooltip("How fast ship moves in response to player input")]
@@ -40,15 +42,12 @@ public class PlayerData : MonoBehaviour
     [Header("Player Blocked by Environment")]
     [Tooltip("If the character is blocked or not.")]
     public bool blocked = false;
-    //[Tooltip("Useful for rough blocking")]
-    //public Vector3 blockedDimensions = new Vector3(5, 2, 5);
-    [Tooltip("The radius of the blocked check.")]
-    public float blockedRadius = 0.5f;
     [Tooltip("What layers the character uses as blocked")]
     public LayerMask blockedLayers;
 
     private void OnDrawGizmos()
     {
+        // Color a box to show player's max movement and attack range
         Gizmos.color = Color.yellow;
 
         // The Cube's x and y ranges are the player's max movement range

@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: 6855182679811733185}
   - component: {fileID: 656687325209496014}
   m_Layer: 0
-  m_Name: GroundAAEnemy
+  m_Name: Tank
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

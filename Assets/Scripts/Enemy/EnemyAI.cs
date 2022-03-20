@@ -12,6 +12,8 @@ public class EnemyAI : MonoBehaviour
 
     private GameObject parentGameObject;
 
+    private GameObject _bullet;
+
     private EnemyData _data;
 
     private void Awake()
@@ -23,6 +25,7 @@ public class EnemyAI : MonoBehaviour
 
     public void StartSpawningBullets()
     {
+        // Instantiate Bullet & Assign new properties
         StopSpawningBullets(); //If this ship is firing, stop firing.
         firing = StartCoroutine(SpawnBullet());
     }
@@ -40,12 +43,20 @@ public class EnemyAI : MonoBehaviour
     {
         while(true)
         {
-            // For Single Shot Enemy Type
-            GameObject bullet = Instantiate(Resources.Load<GameObject>("Prefabs/Enemies/EnemyAttack/EnemyLaserBullet"), transform.position, Quaternion.identity, parentGameObject.transform);
-            bullet.GetComponent<BulletData>().shotDamage = _data.shotDamage;
-            bullet.GetComponent<BulletData>().shotSpeed = _data.shotSpeed;
-            bullet.GetComponent<BulletData>().distToDestroy = _data.distToDestroy;
-            yield return new WaitForSeconds(_data.shotsPerSecond);
+            _bullet = Instantiate(Resources.Load<GameObject>("Prefabs/Enemies/EnemyAttack/EnemyLaserBullet"), transform.position, Quaternion.identity, parentGameObject.transform);
+            SetBulletProperties();
+            yield return new WaitForSeconds(1/_data.shotsPerSecond);
         }
+    }
+
+    private void SetBulletProperties()
+    {
+        BulletData _bd = _bullet.GetComponent<BulletData>();
+
+        _bd.shotDamage = _data.shotDamage;
+        _bd.shotSpeed = _data.shotSpeed;
+        _bd.distToDestroy = _data.distToDestroy;
+        _bd.target = _data.target;
+        _bd.firingMode = _data.firingMode;
     }
 }

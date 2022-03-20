@@ -121,6 +121,8 @@ MonoBehaviour:
   distToDestroy: -5
   isArmored: 0
   isShielded: 0
+  target: {fileID: 0}
+  firingMode: FireObjectAtTarget
 --- !u!114 &5228230427657230609
 MonoBehaviour:
   m_ObjectHideFlags: 0

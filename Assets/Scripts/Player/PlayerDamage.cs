@@ -16,6 +16,11 @@ public class PlayerDamage : MonoBehaviour, IDamagable
 
     public int currentHealth { get; set; }
 
+    private Coroutine _iFramesOn;
+    private bool _areIFramesOn { get { return _iFramesOn != null; } }
+
+    private Rigidbody _rb;
+
     private void Start()
     {
         // Set current health for this game object as it's stored max health
@@ -24,6 +29,8 @@ public class PlayerDamage : MonoBehaviour, IDamagable
         HealthBarManager.instance.UpdateHealthBar(currentHealth);
 
         parentGameObject = GameObject.FindWithTag("CreateAtRuntime");
+
+        _rb = GetComponent<Rigidbody>();
     }
 
     public void TakeDamage(int damage)
@@ -56,41 +63,87 @@ public class PlayerDamage : MonoBehaviour, IDamagable
     void OnTriggerEnter(Collider other)
     {
         // Process collisions with trigger-enabled objects like enemy lasers (tagged Enemy Weapon) & enemy ships (tagged Enemy)
-        switch (other.gameObject.tag)
+        if(!_areIFramesOn)
         {
-            case "NPC":
-                Debug.Log("Player collided with an NPC.");
-                break;
-            case "Enemy":
-                // This will probably always be 1 but it should be a variable for damage taken by physically crashing into enemy.
-                TakeDamage(1);
-                ProcessHealthState(currentHealth);
-                break;
-            case "EnemyWeapon":
-                TakeDamage(other.GetComponent<BulletData>().shotDamage);
-                ProcessHealthState(currentHealth);
-                break;
-            //case "Environment":
-            //    // Run Script to process player interaction with environment
-            //    break;
-            //case "CollisionSafe":
-            //    // Stop player movement but deal no damage
-            //    break;
-            default:
-                Debug.Log($"Player collided with {other.transform.name}.");
-                break;
+            switch (other.gameObject.tag)
+            {
+                case "NPC":
+                    Debug.Log("Player collided with an NPC.");
+                    break;
+                case "Enemy":
+                    // This will probably always be 1 but it should be a variable for damage taken by physically crashing into enemy.
+                    TakeDamage(1);
+                    ProcessHealthState(currentHealth);
+                    StartInvincibilityFrames();
+                    break;
+                case "EnemyWeapon":
+                    TakeDamage(other.GetComponent<BulletData>().shotDamage);
+                    ProcessHealthState(currentHealth);
+                    StartInvincibilityFrames();
+                    break;
+                //case "Environment":
+                //    // Run Script to process player interaction with environment
+                //    break;
+                //case "CollisionSafe":
+                //    // Stop player movement but deal no damage
+                //    break;
+                default:
+                    Debug.Log($"Player collided with {other.transform.name}.");
+                    break;
+            }
         }
     }
 
     private void OnCollisionEnter(Collision collision)
     {
-        // Process collisions with non-trigger objects like terrain
-        switch (collision.gameObject.tag)
+        if(!_areIFramesOn)
         {
-            case "Environment":
-                TakeDamage(1);
-                ProcessHealthState(currentHealth);
-                break;
+            // Process collisions with non-trigger objects like terrain
+            switch (collision.gameObject.tag)
+            {
+                case "Environment":
+                    TakeDamage(1);
+                    ProcessHealthState(currentHealth);
+                    Debug.Log($"Player collided with environment object {collision.gameObject.tag}.");
+                    StartInvincibilityFrames();
+                    break;
+                default:
+                    Debug.Log($"Player collided with {collision.gameObject.tag}.");
+                    break;
+            }
         }
+    }
+
+    private void StartInvincibilityFrames()
+    {
+        StopInvincibilityFrames(); //If Invincibility Frames are already active, stop them.
+        Debug.Log("Starting I Frames");
+        _iFramesOn = StartCoroutine(InvincibilityFramesOn());
+    }
+
+    private void StopInvincibilityFrames()
+    {
+        Debug.Log("Stopping I Frames");
+        if (_areIFramesOn)
+        {
+            StopCoroutine(_iFramesOn);
+        }
+        _iFramesOn = null;
+    }
+
+    IEnumerator InvincibilityFramesOn()
+    {
+        int ctr = 0;
+        while (ctr < _data.numOfIFrames)
+        {
+            _rb.Sleep();
+            ctr++;
+
+            yield return new WaitForEndOfFrame();
+        }
+
+        _rb.WakeUp();
+
+        StopInvincibilityFrames();
     }
 }

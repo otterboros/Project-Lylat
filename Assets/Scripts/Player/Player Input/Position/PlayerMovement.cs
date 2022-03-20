@@ -1,30 +1,36 @@
+// PlayerMovement.cs - Update player ship transform based on input
+//                     & check if ship has collided with an object
+//                     that doesn't impart damage but isn't passthru
+//------------------------------------------------------------------
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public bool isBlocked = false;
-
     private Vector2 playerInput;
 
     private PlayerData _data;
     private ProcessMovementInput _mInput;
 
+    private bool isBlocked = false;
     private Rigidbody _rb;
+    [SerializeField] GameObject _playerBoxCollider;
 
     private void Awake()
     {
         _data = GetComponent<PlayerData>();
         _mInput = GetComponent<ProcessMovementInput>();
+
         _rb = GetComponent<Rigidbody>();
+        //_playerBoxCollider = GetComponentInChildren<BoxCollider>().gameObject;
     }
 
     private void FixedUpdate()
     {
         ProcessShipPosition();
         BlockedCheck();
-        //VelocityCap();
     }
 
     private void ProcessShipPosition()
@@ -36,6 +42,11 @@ public class PlayerMovement : MonoBehaviour
 
         if (!isBlocked)
         {
+            // This allows for the ship to be pushed away in "Blocked" state but still keep velocities to a zero.
+            _rb.velocity = Vector3.zero;
+            _rb.angularVelocity = Vector3.zero;
+
+            // Regular movement, frame by frame
             transform.localPosition = new Vector3
                 (Mathf.Clamp(rawPosition.x, -_data.xRange, _data.xRange),
                 Mathf.Clamp(rawPosition.y, -_data.yRange, _data.yRange),
@@ -50,40 +61,14 @@ public class PlayerMovement : MonoBehaviour
 
     private void BlockedCheck()
     {
-        // set box position, with offset
-        Vector3 cubePosition = new Vector3(transform.position.x, transform.position.y, transform.position.z);
-        Vector3 blockedDimensions = new Vector3(3f, 1.5f, 3f);
-        isBlocked = Physics.CheckBox(cubePosition, blockedDimensions, Quaternion.identity, _data.blockedLayers, QueryTriggerInteraction.Collide);
+        isBlocked = Physics.CheckBox(_playerBoxCollider.transform.position, _playerBoxCollider.GetComponent<BoxCollider>().size/2, 
+                                     Quaternion.identity, _data.blockedLayers, QueryTriggerInteraction.Collide);
         _data.blocked = isBlocked;
     }
 
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
-        Gizmos.DrawWireCube(transform.position, new Vector3(6f, 3f, 6f));
+        Gizmos.DrawWireCube(_playerBoxCollider.transform.position, _playerBoxCollider.GetComponent<BoxCollider>().size);
     }
-
-    //private void VelocityCap()
-    //{
-    //    if(_rb.velocity.x > 1)
-    //    {
-    //        _rb.AddForce(new Vector3 (1,0,0), ForceMode.VelocityChange);
-    //    }
-
-    //    if (_rb.velocity.x < -1)
-    //    {
-    //        _rb.AddForce(new Vector3(-1, 0, 0), ForceMode.VelocityChange);
-    //    }
-
-    //    if (_rb.velocity.y > 1)
-    //    {
-    //        _rb.AddForce(new Vector3(0, 1, 0), ForceMode.VelocityChange);
-    //    }
-
-    //    if (_rb.velocity.y < -1)
-    //    {
-    //        _rb.AddForce(new Vector3(0, -1, 0), ForceMode.VelocityChange);
-    //    }
-
-    //}
 }
