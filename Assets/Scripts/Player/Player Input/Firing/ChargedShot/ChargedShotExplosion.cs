@@ -29,9 +29,8 @@ public class ChargedShotExplosion : MonoBehaviour
         }
         ComboManager.instance.FinishCombo();
 
-        // "this" is unnecessary, but helps me grok the code below
         ChargedShotData.isChargedShotSequenceEnded = true;
-        Destroy(this.gameObject, timeTilDestroy);
+        Destroy(this.gameObject, timeTilDestroy); // "this" is unnecessary, but helps me grok the code
     }
 
     private void OnDrawGizmos()

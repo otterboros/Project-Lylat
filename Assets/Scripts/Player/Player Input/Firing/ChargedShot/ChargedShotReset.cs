@@ -7,10 +7,12 @@ public class ChargedShotReset : MonoBehaviour
     private ChargedShotData _data;
     private ColorChanger _cc;
 
-    private void Start()
+    private void Awake()
     {
         _data = GetComponent<ChargedShotData>();
         _cc = GetComponent<ColorChanger>();
+
+        ResetChargedShotSequence(); // Reset at start of scene
     }
 
     private void Update()

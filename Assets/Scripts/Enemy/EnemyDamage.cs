@@ -17,7 +17,7 @@ public class EnemyDamage : MonoBehaviour, IDamagable
 
     private DamageAnimator _da;
 
-    void Start()
+    private void Awake()
     {
         scoreboard = FindObjectOfType<Scoreboard>();
         parentGameObject = GameObject.FindWithTag("CreateAtRuntime");

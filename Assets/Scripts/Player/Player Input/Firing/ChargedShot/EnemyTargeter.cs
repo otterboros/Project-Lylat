@@ -34,7 +34,6 @@ public class EnemyTargeter : MonoBehaviour
         {
             ChargedShotData.enemyTargeted = hit.collider.gameObject;
             ChargedShotData.enemyTargetedReticle = Instantiate(Resources.Load<GameObject>("Prefabs/Player/ChargedShot/EnemyTargetedReticle"), gameCamera.WorldToScreenPoint(ChargedShotData.enemyTargeted.transform.position), Quaternion.identity, uiCanvas.transform);
-            //_data.enemyTargetedReticle.SetActive(true);
             // Add sound
         }
     }

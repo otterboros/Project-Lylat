@@ -4,15 +4,11 @@ using UnityEngine;
 
 public class EnemyTargetReticlePosition : MonoBehaviour
 {
-    // Turn this into an abstract parent class!
-
     private Camera gameCamera;
-    private ChargedShotData _data;
 
-    private void Start()
+    private void Awake()
     {
         gameCamera = Camera.main;
-        _data = GetComponent<ChargedShotData>();
     }
 
     private void Update()
