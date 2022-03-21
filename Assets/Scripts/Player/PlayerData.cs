@@ -16,10 +16,13 @@ public class PlayerData : MonoBehaviour
 
     [Header("Ship Movement Settings")]
     [Tooltip("How fast ship moves in response to player input")]
-    public int xMoveSpeed = 40;
-    public int yMoveSpeed = 40;
+    public int xMoveSpeed = 30;
+    public int yMoveSpeed = 30;
+    [Tooltip("Max limit for velocity change per frame")]
+    public int xMaxSpeedChange = 10;
+    public int yMaxSpeedChange = 10;
 
-    [Tooltip("How far ship can move from 0,0 in response to player input")]
+    [Tooltip("Location of the boundaries")]
     public int xRange = 30;
     public int yRange = 15;
 
@@ -38,13 +41,6 @@ public class PlayerData : MonoBehaviour
     public float shotSpeed = 2;
     public int shotDamage = 1;
     public int distToDestroy = 150; // add the -z of camera to intended dist from player ship
-
-    [Header("Player Blocked by Environment")]
-    [Tooltip("If the character is blocked or not.")]
-    //public bool blocked = false;
-    public float blockedBoxYOffset = 1f;
-    [Tooltip("What layers the character uses as blocked")]
-    public LayerMask blockedLayers;
 
     private void OnDrawGizmos()
     {

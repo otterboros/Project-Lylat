@@ -1,6 +1,5 @@
-// PlayerDamage.cs - Handle collisions with trigger colliders
-// TO-DO: Add collision with environment damage
-//        Add invincibility frames (likely in another script)
+// PlayerDamage.cs - Handle collisions
+//                   & process invincibility frames
 //-----------------------------------------------------------
 
 using System.Collections;
@@ -37,7 +36,6 @@ public class PlayerDamage : MonoBehaviour, IDamagable
     {
         // Remove damage from health
         currentHealth -= damage;
-        // Add invincibility frames
     }
 
     public void ProcessHealthState(int health)
@@ -81,14 +79,8 @@ public class PlayerDamage : MonoBehaviour, IDamagable
                     ProcessHealthState(currentHealth);
                     StartInvincibilityFrames();
                     break;
-                //case "Environment":
-                //    // Run Script to process player interaction with environment
-                //    break;
-                //case "CollisionSafe":
-                //    // Stop player movement but deal no damage
-                //    break;
                 default:
-                    Debug.Log($"Player collided with {other.transform.name}.");
+                    Debug.Log($"Player collided with trigger {other.transform.name}.");
                     break;
             }
         }
@@ -106,6 +98,9 @@ public class PlayerDamage : MonoBehaviour, IDamagable
                     ProcessHealthState(currentHealth);
                     Debug.Log($"Player collided with environment object {collision.gameObject.tag}.");
                     StartInvincibilityFrames();
+                    break;
+                case "CollisionSafe":
+                    Debug.Log($"Player collided with safe environment object {collision.gameObject.tag}.");
                     break;
                 default:
                     Debug.Log($"Player collided with {collision.gameObject.tag}.");
@@ -136,14 +131,9 @@ public class PlayerDamage : MonoBehaviour, IDamagable
         int ctr = 0;
         while (ctr < _data.numOfIFrames)
         {
-            _rb.Sleep();
             ctr++;
-
             yield return new WaitForEndOfFrame();
         }
-
-        _rb.WakeUp();
-
         StopInvincibilityFrames();
     }
 }
