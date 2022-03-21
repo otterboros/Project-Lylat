@@ -12,63 +12,107 @@ public class PlayerMovement : MonoBehaviour
     private Vector2 playerInput;
 
     private PlayerData _data;
-    private ProcessMovementInput _mInput;
+    private ProcessMovementInput m_Input;
 
     private bool isBlocked = false;
     private Rigidbody _rb;
-    [SerializeField] GameObject _playerBoxCollider;
+    [SerializeField] GameObject playerBoxCollider;
+    private Vector3 contactNormal;
+    private Vector3 contactPoint;
+
+    // temp vars for force-based move speed. move to data later
+    [SerializeField] int xFMoveSPeed;
+    [SerializeField] int yFMoveSPeed;
+
+    [SerializeField] int xFMaxSpeedChange;
+    [SerializeField] int yFMaxSpeedChange;
 
     private void Awake()
     {
         _data = GetComponent<PlayerData>();
-        _mInput = GetComponent<ProcessMovementInput>();
-
+        m_Input = GetComponent<ProcessMovementInput>();
         _rb = GetComponent<Rigidbody>();
-        //_playerBoxCollider = GetComponentInChildren<BoxCollider>().gameObject;
+
     }
 
     private void FixedUpdate()
     {
         ProcessShipPosition();
-        BlockedCheck();
+        //BlockedCheck();
     }
 
     private void ProcessShipPosition()
     {
-        playerInput = new Vector2(_mInput.xThrow, _mInput.yThrow);
+        playerInput = new Vector2(m_Input.xThrow, -m_Input.yThrow);
 
-        Vector2 offset = new Vector2(playerInput.x * _data.xMoveSpeed * Time.deltaTime, playerInput.y * _data.yMoveSpeed * Time.deltaTime);
-        Vector2 rawPosition = new Vector2(transform.localPosition.x + offset.x, transform.localPosition.y - offset.y);
+        // Physics-based movement
+        Vector3 desiredVelocity = new Vector3(playerInput.x * xFMoveSPeed, playerInput.y * yFMoveSPeed, 0);
 
-        if (!isBlocked)
-        {
-            // This allows for the ship to be pushed away in "Blocked" state but still keep velocities to a zero.
-            _rb.velocity = Vector3.zero;
-            _rb.angularVelocity = Vector3.zero;
+        Vector3 velocity = _rb.velocity;
+        //float maxSpeedChange = maxAcceleration * Time.deltaTime;
+        velocity.x =
+            Mathf.MoveTowards(velocity.x, desiredVelocity.x, xFMaxSpeedChange);
+        velocity.y =
+            Mathf.MoveTowards(velocity.y, desiredVelocity.y, yFMaxSpeedChange);
+        velocity.z = 0;
+        _rb.velocity = velocity;
 
-            // Regular movement, frame by frame
-            transform.localPosition = new Vector3
-                (Mathf.Clamp(rawPosition.x, -_data.xRange, _data.xRange),
-                Mathf.Clamp(rawPosition.y, -_data.yRange, _data.yRange),
-                transform.localPosition.z);
-        }
-        else
-        {
-            Debug.Log("Blocked!!");
-        }
-      
+
+        // Direct transform movement
+        //Vector2 offset = new Vector2(playerInput.x * _data.xMoveSpeed * Time.deltaTime, playerInput.y * _data.yMoveSpeed * Time.deltaTime);
+        //Vector2 rawPosition = new Vector2(transform.localPosition.x + offset.x, transform.localPosition.y - offset.y);
+
+        //if (!isBlocked)
+        //{
+        //    This allows for the ship to be pushed away in "Blocked" state but still keep velocities to a zero.
+        //   _rb.velocity = Vector3.zero;
+        //    _rb.angularVelocity = Vector3.zero;
+
+        //    Regular movement, frame by frame
+        //    transform.localPosition = new Vector3
+        //        (Mathf.Clamp(rawPosition.x, -_data.xRange, _data.xRange),
+        //        Mathf.Clamp(rawPosition.y, -_data.yRange, _data.yRange),
+        //        transform.localPosition.z);
+
+
+
+        //}
+        //else
+        //{
+        //    Debug.Log("Blocked!!");
+        //}
+
     }
 
-    private void BlockedCheck()
+    private void OnCollisionEnter(Collision collision)
     {
-        isBlocked = Physics.CheckBox(_playerBoxCollider.transform.position, _playerBoxCollider.GetComponent<BoxCollider>().size/2, 
-                                     Quaternion.identity, _data.blockedLayers, QueryTriggerInteraction.Collide);
-        _data.blocked = isBlocked;
+        if(collision.transform.tag == "CollisionSafe")
+        {
+            isBlocked = true;
+
+            ContactPoint contact = collision.contacts[0];
+
+            print(contact.thisCollider.name + " hit " + contact.otherCollider.name);
+            // Visualize the contact point
+            Debug.DrawRay(contact.point, contact.normal, Color.red);
+            Debug.Log($"contact point is {contact.point}");
+            Debug.Log($"contact normal is {contact.normal}");
+
+            contactPoint = contact.point;
+            contactNormal = contact.normal;
+        }
     }
 
-    private void OnDrawGizmos()
-    {
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireCube(_playerBoxCollider.transform.position, _playerBoxCollider.GetComponent<BoxCollider>().size);
-    }
+    //private void BlockedCheck()
+    //{
+    //    isBlocked = Physics.CheckBox(playerBoxCollider.transform.position, playerBoxCollider.GetComponent<BoxCollider>().size / 2, 
+    //                                 playerBoxCollider.transform.rotation, _data.blockedLayers, QueryTriggerInteraction.Collide);
+    //    _data.blocked = isBlocked;
+    //}
+
+    //private void OnDrawGizmos()
+    //{
+    //    Gizmos.color = Color.red;
+    //    Gizmos.DrawWireCube(playerBoxCollider.transform.position, playerBoxCollider.GetComponent<BoxCollider>().size);
+    //}
 }

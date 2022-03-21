@@ -41,7 +41,8 @@ public class PlayerData : MonoBehaviour
 
     [Header("Player Blocked by Environment")]
     [Tooltip("If the character is blocked or not.")]
-    public bool blocked = false;
+    //public bool blocked = false;
+    public float blockedBoxYOffset = 1f;
     [Tooltip("What layers the character uses as blocked")]
     public LayerMask blockedLayers;
 
