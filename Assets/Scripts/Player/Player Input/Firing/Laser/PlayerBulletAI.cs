@@ -29,4 +29,16 @@ public class PlayerBulletAI : MonoBehaviour
         _firing.FireObjectForward(_data.shotSpeed);
         _cleaner.DestroyAfterDistance(_data.distToDestroy, startingPosZ, transform.position.z);
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        switch (other.transform.tag)
+        {
+            case "Environment": case "CollisionSafe": case "Enemy":
+                Destroy(gameObject);
+                break;
+            default:
+                break;
+        }
+    }
 }

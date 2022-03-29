@@ -4,19 +4,19 @@ using UnityEngine;
 
 public class ComboManager : MonoBehaviour
 {
-    Scoreboard scoreboard;
-    int comboValue;
-
     public static ComboManager instance;
+
+    private Scoreboard _scoreboard;
+    private DownedTextController _dtc;
+
+    private int comboValue;
 
     private void Awake()
     {
         instance = this;
-    }
 
-    private void Start()
-    {
-        scoreboard = FindObjectOfType<Scoreboard>();
+        _scoreboard = FindObjectOfType<Scoreboard>();
+        _dtc = FindObjectOfType<DownedTextController>();
     }
 
     public void StartCombo()
@@ -29,13 +29,17 @@ public class ComboManager : MonoBehaviour
         comboValue++;
     }
 
-    public void FinishCombo()
+    public void FinishCombo(Transform lastEnemyTransform)
     {
         if (comboValue >= 2)
         {
-            scoreboard.ModifyScore(comboValue - 1);
+            _scoreboard.ModifyScore(comboValue - 1);
+
             // Add a UI Element that displays "Downed + comboValue"
-            Debug.Log("Downed +" + (comboValue - 1));
+            _dtc.UpdateDownedTextPosition(lastEnemyTransform);
+            _dtc.UpdateDownedText(comboValue);
+            _dtc.StartResettingDownedText();
+            // Delay for 3 sec and move slightly, then reset
         }
         else if (comboValue < 2)
             Debug.Log("No combo!");

@@ -17,7 +17,7 @@ public class EnemyData : MonoBehaviour
     public int shotDamage = 1;
     public int distToDestroy = 0;
 
-    public bool isArmored = false;
+    public bool isArmored { get { return TryGetComponent(out ArmoredStateController asc); } }
     public bool isShielded = false;
 
     public GameObject target;

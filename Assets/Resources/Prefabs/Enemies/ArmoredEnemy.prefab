@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: -3933728589754998127}
   - component: {fileID: 1732186900953302273}
   - component: {fileID: 3736936860398247848}
+  - component: {fileID: 7097447173762223642}
   - component: {fileID: 4992897459925925741}
   m_Layer: 0
   m_Name: ArmoredEnemy
@@ -112,13 +113,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23ed6622513ec9e45b1712fcb69c5632, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 10
+  maxHealth: 8
   scoreValue: 3
   shotsPerSecond: 1
   shotSpeed: 1
   shotDamage: 1
   distToDestroy: 0
-  isArmored: 1
   isShielded: 0
   target: {fileID: 0}
   firingMode: 
@@ -156,6 +156,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c8079d72232aa404f9d27e8925435e66, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &7097447173762223642
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1370644494486065065}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d669c22ad0a165745a407346c1109a16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &4992897459925925741

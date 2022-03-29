@@ -12,9 +12,7 @@ public class EnemyDamage : MonoBehaviour, IDamagable
 
     private EnemyData _data;
     public int currentHealth { get; set; }
-
     private RigidBodyAddition _rb;
-
     private DamageAnimator _da;
 
     private void Awake()
@@ -36,13 +34,17 @@ public class EnemyDamage : MonoBehaviour, IDamagable
 
     private void OnTriggerEnter(Collider other)
     {
-        // Right now, "Weapon" refers only to the ChargedShot and PlayerLaserBullet
-        if (other.gameObject.CompareTag("PlayerLaser"))
+        if (other.gameObject.CompareTag("PlayerLaser") && _data.isArmored == false)
         {
             Debug.Log($"{transform.name} was hit by {other.transform.name}");
             TakeDamage(other.GetComponent<BulletData>().shotDamage);
             _da.StartAnimatingDamage();
             ProcessHealthState(currentHealth);
+        }
+        else if (other.gameObject.CompareTag("PlayerLaser") && _data.isArmored == true)
+        {
+            // reflect lasers
+            Debug.Log($"{transform.name} is Armored!");
         }
         else
             Debug.Log($"{transform.name} was hit by trigger collider {other.gameObject.name}");
@@ -72,5 +74,10 @@ public class EnemyDamage : MonoBehaviour, IDamagable
 
             Destroy(gameObject);
         }
+    }
+
+    public bool CheckIfArmored()
+    {
+        return _data.isArmored;
     }
 }

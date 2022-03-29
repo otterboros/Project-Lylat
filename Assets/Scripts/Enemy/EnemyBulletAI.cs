@@ -12,9 +12,6 @@ public class EnemyBulletAI : MonoBehaviour
 
     private void Awake()
     {
-        //target = GameObject.Find("PlayerShip2");
-        //transform.LookAt(target.transform);
-
         _bd = GetComponent<BulletData>();
         _firing = GetComponent<ObjectFiring>();
         _cleaner = GetComponent<ObjectCleaner>();
@@ -26,5 +23,17 @@ public class EnemyBulletAI : MonoBehaviour
     {
         _firing.SetFiringMode(_bd.firingMode, _bd.target, _bd.shotSpeed);
         _cleaner.DestroyThisBehindObject(_bd.distToDestroy, _gameCamera.gameObject, this.gameObject);
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        switch(other.transform.tag)
+        {
+            case "Environment": case "CollisionSafe": case "Player":
+                Destroy(gameObject);
+                break;
+            default:
+                break;
+        }
     }
 }
