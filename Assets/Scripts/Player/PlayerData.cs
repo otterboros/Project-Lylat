@@ -10,7 +10,7 @@ public class PlayerData : MonoBehaviour
 {
     [Header("Player Health Settings")]
     [Tooltip("The maximum health the player can have")]
-    public int maxHealth = 20;
+    public int maxHealth = 10;
     [Tooltip("How many invincibility frames does the player get?")]
     public int numOfIFrames = 15;
 

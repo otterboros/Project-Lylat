@@ -34,10 +34,11 @@ public class EnemyDamage : MonoBehaviour, IDamagable
 
     private void OnTriggerEnter(Collider other)
     {
+        // Process enemy laser damage, with charged shot damage processed in ChargedShotExplosion.cs
         if (other.gameObject.CompareTag("PlayerLaser") && _data.isArmored == false)
         {
             Debug.Log($"{transform.name} was hit by {other.transform.name}");
-            TakeDamage(other.GetComponent<BulletData>().shotDamage);
+            ChangeHealth(other.GetComponent<BulletData>().shotDamage);
             _da.StartAnimatingDamage();
             ProcessHealthState(currentHealth);
         }
@@ -46,13 +47,11 @@ public class EnemyDamage : MonoBehaviour, IDamagable
             // reflect lasers
             Debug.Log($"{transform.name} is Armored!");
         }
-        else
-            Debug.Log($"{transform.name} was hit by trigger collider {other.gameObject.name}");
     }
-    public void TakeDamage(int damage)
+    public void ChangeHealth(int damage)
     {
         // Remove damage from health
-        currentHealth -= damage;
+        currentHealth += damage;
     }
 
     public void ProcessHealthState(int health)

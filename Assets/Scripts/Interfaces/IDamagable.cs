@@ -5,6 +5,6 @@ using UnityEngine;
 public interface IDamagable
 {
     int currentHealth { get; set; }
-    void TakeDamage(int damage);
+    void ChangeHealth(int value);
     void ProcessHealthState(int health);
 }

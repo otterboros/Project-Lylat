@@ -1,3 +1,7 @@
+// HealthBarManager.cs - Calculate and update healthbar shader based on player health data
+// TO-DO: Replace 10.00f with a form of _data.maxHealth
+//----------------------------------------------------------------------------------------
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -19,7 +23,7 @@ public class HealthBarManager : MonoBehaviour
     {
         float unnormHealth = (float) health;
         
-        float normHealth = unnormHealth / 20.00f;
+        float normHealth = unnormHealth / 10.00f;
         return normHealth;
     }
 

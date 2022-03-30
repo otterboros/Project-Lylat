@@ -24,7 +24,7 @@ public class ChargedShotExplosion : MonoBehaviour
             {
                 if (!enemy.CheckIfArmored())
                 {
-                    enemy.TakeDamage(ChargedShotData.chargedShotDamage);
+                    enemy.ChangeHealth(ChargedShotData.chargedShotDamage);
                     enemy.ProcessHealthState(enemy.currentHealth);
                     if (enemy.currentHealth < 1)
                     {

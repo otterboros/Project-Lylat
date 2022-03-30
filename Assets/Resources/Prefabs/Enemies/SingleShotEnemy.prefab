@@ -117,9 +117,8 @@ MonoBehaviour:
   scoreValue: 1
   shotsPerSecond: 1
   shotSpeed: 1
-  shotDamage: 1
+  shotDamage: -1
   distToDestroy: -5
-  isArmored: 0
   isShielded: 0
   target: {fileID: 0}
   firingMode: FireObjectAtTarget

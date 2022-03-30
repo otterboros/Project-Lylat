@@ -9,7 +9,7 @@ public class ChargedShotData : MonoBehaviour
     public int maximumLockOnRange = 50;
     public Vector3 chargedShotPositionOffset = new Vector3(0f, -0.753000021f, 1.30999994f);
     public int chargedShotSpeed = 2;
-    public static int chargedShotDamage = 2;
+    public static int chargedShotDamage = -2;
 
     public static GameObject chargedShot { get; set; }
     public bool isChargedShotCreated

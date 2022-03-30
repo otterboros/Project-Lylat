@@ -1,5 +1,6 @@
 // PlayerDamage.cs - Handle collisions
 //                   & process invincibility frames
+// TO-DO: Combine TakeDamage and Add Health into one function
 //-----------------------------------------------------------
 
 using System.Collections;
@@ -20,6 +21,8 @@ public class PlayerDamage : MonoBehaviour, IDamagable
 
     private Rigidbody _rb;
 
+    private Scoreboard scoreboard;
+
     private void Start()
     {
         // Set current health for this game object as it's stored max health
@@ -30,12 +33,17 @@ public class PlayerDamage : MonoBehaviour, IDamagable
         parentGameObject = GameObject.FindWithTag("CreateAtRuntime");
 
         _rb = GetComponent<Rigidbody>();
+
+        scoreboard = FindObjectOfType<Scoreboard>();
     }
 
-    public void TakeDamage(int damage)
+    public void ChangeHealth(int value) // Change health value & play damage animation
     {
-        // Remove damage from health
-        currentHealth -= damage;
+        currentHealth += value;
+
+        // If player takes damage, play HitVFX
+        if (value < 0)
+            Instantiate(Resources.Load<GameObject>("Prefabs/FX/HitVFX"), transform.position, Quaternion.identity, parentGameObject.transform);
     }
 
     public void ProcessHealthState(int health)
@@ -44,7 +52,6 @@ public class PlayerDamage : MonoBehaviour, IDamagable
         if (health >= 1)
         {
             HealthBarManager.instance.UpdateHealthBar(health);
-            Instantiate(Resources.Load<GameObject>("Prefabs/FX/HitVFX"), transform.position, Quaternion.identity, parentGameObject.transform);
         }
 
         // If health is below 1, process death.
@@ -60,22 +67,43 @@ public class PlayerDamage : MonoBehaviour, IDamagable
 
     void OnTriggerEnter(Collider other)
     {
-        // Process collisions with trigger-enabled objects like enemy lasers (tagged Enemy Weapon) & enemy ships (tagged Enemy)
+        // Process trigger collisions whether or not IFrames are off
+        switch (other.gameObject.tag)
+        {
+            case "PickupHealth":
+                var _pd = other.gameObject.GetComponent<PickupData>();
+                if (currentHealth < _data.maxHealth)
+                {
+                    ChangeHealth(_pd.healthValue);
+                    ProcessHealthState(currentHealth);
+                }
+                else if (currentHealth == _data.maxHealth)
+                {
+                    scoreboard.ModifyScore(_pd.scoreValue);
+                }
+                else
+                {
+                    Debug.Log("Error! Player health is above maxhealth!");
+                }
+                // Add Sound
+                // Add Animation
+                Destroy(other.gameObject);
+                break;
+        }
+
+        // Process trigger collisions if IFrames are off
         if(!_areIFramesOn)
         {
             switch (other.gameObject.tag)
             {
-                case "NPC":
-                    Debug.Log("Player collided with an NPC.");
-                    break;
                 case "Enemy":
-                    // This will probably always be 1 but it should be a variable for damage taken by physically crashing into enemy.
-                    TakeDamage(1);
+                    // This will probably always be -1 but it should be a variable for damage taken by physically crashing into enemy.
+                    ChangeHealth(-1);
                     ProcessHealthState(currentHealth);
                     StartInvincibilityFrames();
                     break;
                 case "EnemyWeapon":
-                    TakeDamage(other.GetComponent<BulletData>().shotDamage);
+                    ChangeHealth(other.GetComponent<BulletData>().shotDamage);
                     ProcessHealthState(currentHealth);
                     StartInvincibilityFrames();
                     break;
@@ -88,19 +116,15 @@ public class PlayerDamage : MonoBehaviour, IDamagable
 
     private void OnCollisionEnter(Collision collision)
     {
-        if(!_areIFramesOn)
+        // Process non-trigger collisions if Iframes are off
+        if (!_areIFramesOn)
         {
-            // Process collisions with non-trigger objects like terrain
             switch (collision.gameObject.tag)
             {
                 case "Environment":
-                    TakeDamage(1);
+                    ChangeHealth(1);
                     ProcessHealthState(currentHealth);
-                    Debug.Log($"Player collided with environment object {collision.gameObject.tag}.");
                     StartInvincibilityFrames();
-                    break;
-                case "CollisionSafe":
-                    Debug.Log($"Player collided with safe environment object {collision.gameObject.tag}.");
                     break;
                 default:
                     Debug.Log($"Player collided with {collision.gameObject.tag}.");
@@ -112,13 +136,11 @@ public class PlayerDamage : MonoBehaviour, IDamagable
     private void StartInvincibilityFrames()
     {
         StopInvincibilityFrames(); //If Invincibility Frames are already active, stop them.
-        Debug.Log("Starting I Frames");
         _iFramesOn = StartCoroutine(InvincibilityFramesOn());
     }
 
     private void StopInvincibilityFrames()
     {
-        Debug.Log("Stopping I Frames");
         if (_areIFramesOn)
         {
             StopCoroutine(_iFramesOn);
