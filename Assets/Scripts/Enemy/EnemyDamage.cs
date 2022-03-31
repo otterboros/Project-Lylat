@@ -71,6 +71,20 @@ public class EnemyDamage : MonoBehaviour, IDamagable
             // Update player score based on score value of killed enemy
             scoreboard.ModifyScore(_data.scoreValue);
 
+            // If the enemy should instantiate an item on death, instantiate it
+            switch(_data.spawnPickup)
+            {
+                case "PickupLaser":
+                    Instantiate(Resources.Load<GameObject>("Prefabs/Pickups/PickupLaser"), transform.position, new Quaternion(0, 0, 0.382f, 0.923f), parentGameObject.transform);
+                    break;
+                case "PickupHealth":
+                    Instantiate(Resources.Load<GameObject>("Prefabs/Pickups/PickupHealth"), transform.position, new Quaternion(0, 0, 0.382f, 0.923f), parentGameObject.transform);
+                    break;
+                default:
+                    break;
+            }
+
+            // Destroy this enemy object
             Destroy(gameObject);
         }
     }

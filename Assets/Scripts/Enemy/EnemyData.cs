@@ -22,4 +22,6 @@ public class EnemyData : MonoBehaviour
 
     public GameObject target;
     public string firingMode;
+
+    public string spawnPickup = "";
 }

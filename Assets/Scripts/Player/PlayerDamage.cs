@@ -1,7 +1,9 @@
 // PlayerDamage.cs - Handle collisions
 //                   & process invincibility frames
 // TO-DO: Combine TakeDamage and Add Health into one function
-//-----------------------------------------------------------
+//        Move assignment of laserLevel and make laserLevel persist across levels
+//        Add sounds and animation to Pickup
+//-------------------------------------------------------------------------------
 
 using System.Collections;
 using System.Collections.Generic;
@@ -11,30 +13,32 @@ using UnityEngine.SceneManagement;
 
 public class PlayerDamage : MonoBehaviour, IDamagable
 {
-    private GameObject parentGameObject;
+    private GameObject _parentGameObject;
     private PlayerData _data;
+    private Rigidbody _rb;
+    private Scoreboard _scoreboard;
 
     public int currentHealth { get; set; }
 
-    private Coroutine _iFramesOn;
-    private bool _areIFramesOn { get { return _iFramesOn != null; } }
+    private Coroutine iFramesOn;
+    private bool areIFramesOn { get { return iFramesOn != null; } }
 
-    private Rigidbody _rb;
 
-    private Scoreboard scoreboard;
 
-    private void Start()
+    private void Awake()
     {
         // Set current health for this game object as it's stored max health
         _data = GetComponent<PlayerData>();
+        _parentGameObject = GameObject.FindWithTag("CreateAtRuntime");
+        _rb = GetComponent<Rigidbody>();
+        _scoreboard = FindObjectOfType<Scoreboard>();
+    }
+
+    private void Start()
+    {
         currentHealth = _data.maxHealth;
         HealthBarManager.instance.UpdateHealthBar(currentHealth);
-
-        parentGameObject = GameObject.FindWithTag("CreateAtRuntime");
-
-        _rb = GetComponent<Rigidbody>();
-
-        scoreboard = FindObjectOfType<Scoreboard>();
+        PlayerDataStatic.laserLevel = 0;
     }
 
     public void ChangeHealth(int value) // Change health value & play damage animation
@@ -43,7 +47,7 @@ public class PlayerDamage : MonoBehaviour, IDamagable
 
         // If player takes damage, play HitVFX
         if (value < 0)
-            Instantiate(Resources.Load<GameObject>("Prefabs/FX/HitVFX"), transform.position, Quaternion.identity, parentGameObject.transform);
+            Instantiate(Resources.Load<GameObject>("Prefabs/FX/HitVFX"), transform.position, Quaternion.identity, _parentGameObject.transform);
     }
 
     public void ProcessHealthState(int health)
@@ -57,7 +61,7 @@ public class PlayerDamage : MonoBehaviour, IDamagable
         // If health is below 1, process death.
         else if (health < 1)
         {
-            Instantiate(Resources.Load<GameObject>("Prefabs/FX/PlayerDeathVFX"), transform.position, Quaternion.identity, parentGameObject.transform);
+            Instantiate(Resources.Load<GameObject>("Prefabs/FX/PlayerDeathVFX"), transform.position, Quaternion.identity, _parentGameObject.transform);
 
             GetComponent<PlayerDeath>().DisablePlayerControls();
             GetComponent<ReloadLevel>().RestartLevel();
@@ -67,32 +71,51 @@ public class PlayerDamage : MonoBehaviour, IDamagable
 
     void OnTriggerEnter(Collider other)
     {
-        // Process trigger collisions whether or not IFrames are off
-        switch (other.gameObject.tag)
+        // Process trigger collisions if component PickupData is found and whether or not IFrames are off
+        if(other.gameObject.TryGetComponent(out PickupData _pd))
         {
-            case "PickupHealth":
-                var _pd = other.gameObject.GetComponent<PickupData>();
-                if (currentHealth < _data.maxHealth)
-                {
-                    ChangeHealth(_pd.healthValue);
-                    ProcessHealthState(currentHealth);
-                }
-                else if (currentHealth == _data.maxHealth)
-                {
-                    scoreboard.ModifyScore(_pd.scoreValue);
-                }
-                else
-                {
-                    Debug.Log("Error! Player health is above maxhealth!");
-                }
-                // Add Sound
-                // Add Animation
-                Destroy(other.gameObject);
-                break;
+            switch (other.gameObject.tag)
+            {
+                case "PickupHealth":
+                    if (currentHealth < _data.maxHealth)
+                    {
+                        ChangeHealth(_pd.healthValue);
+                        ProcessHealthState(currentHealth);
+                    }
+                    else if (currentHealth == _data.maxHealth)
+                    {
+                        _scoreboard.ModifyScore(_pd.scoreValue);
+                    }
+                    else
+                    {
+                        Debug.Log("Error! Player health is above maxhealth!");
+                    }
+                    // Add Sound
+                    // Add Animation
+                    Destroy(other.gameObject);
+                    break;
+                case "PickupLaser":
+                    if (PlayerDataStatic.laserLevel < 1)
+                    {
+                        PlayerDataStatic.laserLevel += 1;
+                    }
+                    else if (PlayerDataStatic.laserLevel == 1)
+                    {
+                        _scoreboard.ModifyScore(_pd.scoreValue);
+                    }
+                    else
+                    {
+                        Debug.Log("Error! Player laser level is above 1!");
+                    }
+                    // Add Sound
+                    // Add Animation
+                    Destroy(other.gameObject);
+                    break;
+            }
         }
 
         // Process trigger collisions if IFrames are off
-        if(!_areIFramesOn)
+        if(!areIFramesOn)
         {
             switch (other.gameObject.tag)
             {
@@ -117,7 +140,7 @@ public class PlayerDamage : MonoBehaviour, IDamagable
     private void OnCollisionEnter(Collision collision)
     {
         // Process non-trigger collisions if Iframes are off
-        if (!_areIFramesOn)
+        if (!areIFramesOn)
         {
             switch (collision.gameObject.tag)
             {
@@ -136,16 +159,16 @@ public class PlayerDamage : MonoBehaviour, IDamagable
     private void StartInvincibilityFrames()
     {
         StopInvincibilityFrames(); //If Invincibility Frames are already active, stop them.
-        _iFramesOn = StartCoroutine(InvincibilityFramesOn());
+        iFramesOn = StartCoroutine(InvincibilityFramesOn());
     }
 
     private void StopInvincibilityFrames()
     {
-        if (_areIFramesOn)
+        if (areIFramesOn)
         {
-            StopCoroutine(_iFramesOn);
+            StopCoroutine(iFramesOn);
         }
-        _iFramesOn = null;
+        iFramesOn = null;
     }
 
     IEnumerator InvincibilityFramesOn()

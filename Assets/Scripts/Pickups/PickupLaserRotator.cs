@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PickupRotator : MonoBehaviour
+public class PickupLaserRotator : MonoBehaviour
 {
     private PickupData _pd;
     private void Awake()

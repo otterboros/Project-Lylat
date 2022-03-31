@@ -14,6 +14,7 @@ TagManager:
   - Environment
   - CollisionSafe
   - PickupHealth
+  - PickupLaser
   layers:
   - Default
   - TransparentFX
