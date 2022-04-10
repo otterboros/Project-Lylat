@@ -15,11 +15,11 @@ C:/Users/Shadow/Desktop/Unity 3D/Project-Lylat
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-59735
+53622
 Successfully changed project path to: C:/Users/Shadow/Desktop/Unity 3D/Project-Lylat
 C:/Users/Shadow/Desktop/Unity 3D/Project-Lylat
 Using Asset Import Pipeline V2.
-Refreshing native plugins compatible for Editor in 267.96 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 139.76 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2020.3.21f1 (a38c86f6690f)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2020.3.21f1/Editor/Data/Resources/UnitySubsystems
@@ -41,39 +41,2849 @@ Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2020.3.21f1/Editor/Data/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2020.3.21f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.356241 seconds.
+Registered in 0.011250 seconds.
 Native extension for WindowsStandalone target not found
 Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 124.05 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 146.73 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  7.587 seconds
+- Completed reload, in  2.894 seconds
 Domain Reload Profiling:
-	ReloadAssembly (7587ms)
-		BeginReloadAssembly (3848ms)
+	ReloadAssembly (2894ms)
+		BeginReloadAssembly (143ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (0ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (2ms)
-		EndReloadAssembly (1265ms)
-			LoadAssemblies (3840ms)
+			CreateAndSetChildDomain (1ms)
+		EndReloadAssembly (856ms)
+			LoadAssemblies (131ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (670ms)
+			SetupTypeCache (253ms)
 			ReleaseScriptCaches (0ms)
-			RebuildScriptCaches (52ms)
-			SetupLoadedEditorAssemblies (336ms)
+			RebuildScriptCaches (50ms)
+			SetupLoadedEditorAssemblies (367ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (8ms)
+				InitializePlatformSupportModulesInManaged (11ms)
 				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (124ms)
-				BeforeProcessingInitializeOnLoad (26ms)
-				ProcessInitializeOnLoadAttributes (127ms)
-				ProcessInitializeOnLoadMethodAttributes (49ms)
+				RefreshPlugins (147ms)
+				BeforeProcessingInitializeOnLoad (29ms)
+				ProcessInitializeOnLoadAttributes (134ms)
+				ProcessInitializeOnLoadMethodAttributes (46ms)
 				AfterProcessingInitializeOnLoad (0ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
 			AwakeInstancesAfterBackupRestoration (0ms)
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 1.186824 seconds.
+Registered in 0.028004 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 130.41 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  3.140 seconds
+Domain Reload Profiling:
+	ReloadAssembly (3142ms)
+		BeginReloadAssembly (317ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (7ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (31ms)
+		EndReloadAssembly (2662ms)
+			LoadAssemblies (263ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (605ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (111ms)
+			SetupLoadedEditorAssemblies (1487ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (9ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (131ms)
+				BeforeProcessingInitializeOnLoad (208ms)
+				ProcessInitializeOnLoadAttributes (1085ms)
+				ProcessInitializeOnLoadMethodAttributes (15ms)
+				AfterProcessingInitializeOnLoad (40ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (10ms)
+Platform modules already initialized, skipping
+========================================================================
+Worker process is ready to serve import requests
+Shader 'AngryBots/PlanarRealtimeReflection': fallback shader 'AngryBots/Fallback' not found
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.11 seconds
+Refreshing native plugins compatible for Editor in 1.16 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3362 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 164.1 MB.
+System memory in use after: 164.2 MB.
+
+Unloading 41 unused Assets to reduce memory usage. Loaded Objects now: 3836.
+Total: 5.845800 ms (FindLiveObjects: 0.529600 ms CreateObjectMapping: 0.231100 ms MarkObjects: 4.715000 ms  DeleteObjects: 0.368100 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  path: Assets/Scripts/Player/Player Input/Firing/ChargedShot/EnemyTargetReticlePosition.cs
+  artifactKey: Guid(349b378730bcf284abb8a07db945f796) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Player/Player Input/Firing/ChargedShot/EnemyTargetReticlePosition.cs using Guid(349b378730bcf284abb8a07db945f796) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '166c221ecf7cea2479e4253d57a5d6a3') in 0.064435 seconds 
+  Import took 0.072899 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000291 seconds.
+  path: Assets/Scripts/Player/Player Input/Firing/ChargedShot/ChargedShotData.cs
+  artifactKey: Guid(89ffe84a0e7318e48ac3896351d178f3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Player/Player Input/Firing/ChargedShot/ChargedShotData.cs using Guid(89ffe84a0e7318e48ac3896351d178f3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4eda2c10ed7e8bc03e13a00f369e5e8a') in 0.009383 seconds 
+  Import took 0.017675 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000290 seconds.
+  path: Assets/Scripts/Player/Player Input/Firing/ChargedShot/ChargedShotExplosion.cs
+  artifactKey: Guid(666c0f9f66985bf43962958db857f1d1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Player/Player Input/Firing/ChargedShot/ChargedShotExplosion.cs using Guid(666c0f9f66985bf43962958db857f1d1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'df80cf23a1438aff50b024fe658c6384') in 0.009854 seconds 
+  Import took 0.017917 seconds .
+
+========================================================================
+Received Prepare
+Shader 'AngryBots/PlanarRealtimeReflection': fallback shader 'AngryBots/Fallback' not found
+Refreshing native plugins compatible for Editor in 20.09 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 21 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 88.5 MB.
+System memory in use after: 88.6 MB.
+
+Unloading 21 unused Assets to reduce memory usage. Loaded Objects now: 3836.
+Total: 7.310900 ms (FindLiveObjects: 0.699000 ms CreateObjectMapping: 0.242000 ms MarkObjects: 6.072300 ms  DeleteObjects: 0.295000 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.029144 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 1.70 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  3.114 seconds
+Domain Reload Profiling:
+	ReloadAssembly (3114ms)
+		BeginReloadAssembly (295ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (10ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (79ms)
+		EndReloadAssembly (2659ms)
+			LoadAssemblies (252ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (675ms)
+			ReleaseScriptCaches (2ms)
+			RebuildScriptCaches (99ms)
+			SetupLoadedEditorAssemblies (1392ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (15ms)
+				SetLoadedEditorAssemblies (1ms)
+				RefreshPlugins (2ms)
+				BeforeProcessingInitializeOnLoad (230ms)
+				ProcessInitializeOnLoadAttributes (1080ms)
+				ProcessInitializeOnLoadMethodAttributes (18ms)
+				AfterProcessingInitializeOnLoad (47ms)
+				EditorAssembliesLoaded (1ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (11ms)
+Platform modules already initialized, skipping
+Shader 'AngryBots/PlanarRealtimeReflection': fallback shader 'AngryBots/Fallback' not found
+Refreshing native plugins compatible for Editor in 1.28 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3238 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 152.5 MB.
+System memory in use after: 152.6 MB.
+
+Unloading 24 unused Assets to reduce memory usage. Loaded Objects now: 3839.
+Total: 7.063300 ms (FindLiveObjects: 0.397400 ms CreateObjectMapping: 0.244300 ms MarkObjects: 6.054800 ms  DeleteObjects: 0.364500 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 899.020225 seconds.
+  path: Assets/Scripts/Player/Player Input/Firing/ChargedShot/ChargedShotManager.cs
+  artifactKey: Guid(259bf9e34d1e64c489b874ca3ac9a37b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Player/Player Input/Firing/ChargedShot/ChargedShotManager.cs using Guid(259bf9e34d1e64c489b874ca3ac9a37b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd9d4f546bf5c1998ea6c52869b330c9e') in 0.020440 seconds 
+  Import took 0.032131 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.027020 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 1.36 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  2.973 seconds
+Domain Reload Profiling:
+	ReloadAssembly (2974ms)
+		BeginReloadAssembly (267ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (7ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (77ms)
+		EndReloadAssembly (2548ms)
+			LoadAssemblies (252ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (646ms)
+			ReleaseScriptCaches (2ms)
+			RebuildScriptCaches (85ms)
+			SetupLoadedEditorAssemblies (1368ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (9ms)
+				SetLoadedEditorAssemblies (1ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (204ms)
+				ProcessInitializeOnLoadAttributes (1095ms)
+				ProcessInitializeOnLoadMethodAttributes (15ms)
+				AfterProcessingInitializeOnLoad (42ms)
+				EditorAssembliesLoaded (1ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (12ms)
+Platform modules already initialized, skipping
+Shader 'AngryBots/PlanarRealtimeReflection': fallback shader 'AngryBots/Fallback' not found
+Refreshing native plugins compatible for Editor in 1.29 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3238 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 152.6 MB.
+System memory in use after: 152.7 MB.
+
+Unloading 24 unused Assets to reduce memory usage. Loaded Objects now: 3841.
+Total: 5.931100 ms (FindLiveObjects: 0.562500 ms CreateObjectMapping: 0.224800 ms MarkObjects: 4.847900 ms  DeleteObjects: 0.294000 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 28.062879 seconds.
+  path: Assets/Scripts/Player/PlayerDamage.cs
+  artifactKey: Guid(b3e86c747ba534b4187205244103adfb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Player/PlayerDamage.cs using Guid(b3e86c747ba534b4187205244103adfb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '89dfde6ca87f0b73e0164a4e1f22f7fb') in 0.017417 seconds 
+  Import took 0.025806 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000358 seconds.
+  path: Assets/Scripts/Player/PlayerDataStatic.cs
+  artifactKey: Guid(50ce74c383cfc404eabfdd076f3de990) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Player/PlayerDataStatic.cs using Guid(50ce74c383cfc404eabfdd076f3de990) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '06972c22236aee43827bba66b058b65d') in 0.010126 seconds 
+  Import took 0.019517 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 996.690494 seconds.
+  path: Assets/Scripts/Player/Player Input/Firing/ChargedShot/Manager
+  artifactKey: Guid(a7040f0e75d9fe04dad4267ddf018a00) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Player/Player Input/Firing/ChargedShot/Manager using Guid(a7040f0e75d9fe04dad4267ddf018a00) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8e7fe5ca12bc9c96b00a6dc730160480') in 0.010146 seconds 
+  Import took 0.020626 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 2.115437 seconds.
+  path: Assets/Scripts/Player/Player Input/Firing/ChargedShot/ChargedShotCollisionHandler.cs
+  artifactKey: Guid(c5e478668678d124db14cb5362936eaf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Player/Player Input/Firing/ChargedShot/ChargedShotCollisionHandler.cs using Guid(c5e478668678d124db14cb5362936eaf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '21ce913d6ab4093f171802afc9d3ab77') in 0.009770 seconds 
+  Import took 0.019135 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 4.674505 seconds.
+  path: Assets/Scripts/Player/Player Input/Firing/ChargedShot/Manager/ChargedShotManager.cs
+  artifactKey: Guid(259bf9e34d1e64c489b874ca3ac9a37b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Player/Player Input/Firing/ChargedShot/Manager/ChargedShotManager.cs using Guid(259bf9e34d1e64c489b874ca3ac9a37b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4dabedc91e39e3c40ed3f3ae78ca3bc9') in 0.006251 seconds 
+  Import took 0.016332 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.029089 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 1.23 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  3.034 seconds
+Domain Reload Profiling:
+	ReloadAssembly (3035ms)
+		BeginReloadAssembly (272ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (7ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (69ms)
+		EndReloadAssembly (2600ms)
+			LoadAssemblies (261ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (635ms)
+			ReleaseScriptCaches (2ms)
+			RebuildScriptCaches (86ms)
+			SetupLoadedEditorAssemblies (1432ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (10ms)
+				SetLoadedEditorAssemblies (1ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (202ms)
+				ProcessInitializeOnLoadAttributes (1142ms)
+				ProcessInitializeOnLoadMethodAttributes (19ms)
+				AfterProcessingInitializeOnLoad (57ms)
+				EditorAssembliesLoaded (1ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (12ms)
+Platform modules already initialized, skipping
+Shader 'AngryBots/PlanarRealtimeReflection': fallback shader 'AngryBots/Fallback' not found
+Refreshing native plugins compatible for Editor in 1.18 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3238 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 152.7 MB.
+System memory in use after: 152.7 MB.
+
+Unloading 24 unused Assets to reduce memory usage. Loaded Objects now: 3843.
+Total: 6.173500 ms (FindLiveObjects: 0.531100 ms CreateObjectMapping: 0.252800 ms MarkObjects: 5.058000 ms  DeleteObjects: 0.329700 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 41.909178 seconds.
+  path: Assets/Scripts/Player/Player Input/Position/PlayerMovement.cs
+  artifactKey: Guid(bd8f81c8d5ee319459048775e90fe601) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Player/Player Input/Position/PlayerMovement.cs using Guid(bd8f81c8d5ee319459048775e90fe601) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ec53bba8fbfdbc63ac37fb53ebc9078c') in 0.022782 seconds 
+  Import took 0.033494 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 99.225229 seconds.
+  path: Assets/Scripts/Player/Player Input/Firing/ChargedShot/Manager/PositionUpdater.cs
+  artifactKey: Guid(44b115556651437408b5454c8e37352c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Player/Player Input/Firing/ChargedShot/Manager/PositionUpdater.cs using Guid(44b115556651437408b5454c8e37352c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '506e5ce42a3f2345445f96e8194d4ee8') in 0.012032 seconds 
+  Import took 0.027113 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.028857 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 1.28 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  3.043 seconds
+Domain Reload Profiling:
+	ReloadAssembly (3044ms)
+		BeginReloadAssembly (281ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (7ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (77ms)
+		EndReloadAssembly (2599ms)
+			LoadAssemblies (269ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (646ms)
+			ReleaseScriptCaches (2ms)
+			RebuildScriptCaches (81ms)
+			SetupLoadedEditorAssemblies (1406ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (11ms)
+				SetLoadedEditorAssemblies (1ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (246ms)
+				ProcessInitializeOnLoadAttributes (1088ms)
+				ProcessInitializeOnLoadMethodAttributes (13ms)
+				AfterProcessingInitializeOnLoad (44ms)
+				EditorAssembliesLoaded (1ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (11ms)
+Platform modules already initialized, skipping
+Shader 'AngryBots/PlanarRealtimeReflection': fallback shader 'AngryBots/Fallback' not found
+Refreshing native plugins compatible for Editor in 1.23 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3239 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 152.7 MB.
+System memory in use after: 152.7 MB.
+
+Unloading 24 unused Assets to reduce memory usage. Loaded Objects now: 3846.
+Total: 6.135400 ms (FindLiveObjects: 0.691400 ms CreateObjectMapping: 0.233900 ms MarkObjects: 4.881800 ms  DeleteObjects: 0.326200 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.030279 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 1.37 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  2.970 seconds
+Domain Reload Profiling:
+	ReloadAssembly (2972ms)
+		BeginReloadAssembly (319ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (10ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (96ms)
+		EndReloadAssembly (2490ms)
+			LoadAssemblies (268ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (616ms)
+			ReleaseScriptCaches (2ms)
+			RebuildScriptCaches (82ms)
+			SetupLoadedEditorAssemblies (1344ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (10ms)
+				SetLoadedEditorAssemblies (1ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (210ms)
+				ProcessInitializeOnLoadAttributes (1065ms)
+				ProcessInitializeOnLoadMethodAttributes (14ms)
+				AfterProcessingInitializeOnLoad (43ms)
+				EditorAssembliesLoaded (1ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (12ms)
+Platform modules already initialized, skipping
+Shader 'AngryBots/PlanarRealtimeReflection': fallback shader 'AngryBots/Fallback' not found
+Refreshing native plugins compatible for Editor in 1.38 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3239 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 152.7 MB.
+System memory in use after: 152.7 MB.
+
+Unloading 24 unused Assets to reduce memory usage. Loaded Objects now: 3848.
+Total: 5.956100 ms (FindLiveObjects: 0.453300 ms CreateObjectMapping: 0.222300 ms MarkObjects: 4.868900 ms  DeleteObjects: 0.409400 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 2854.930409 seconds.
+  path: Assets/Resources/Prefabs/Score/UI.prefab
+  artifactKey: Guid(f906c74843af4694fa9ed7f01ddcb3fe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Prefabs/Score/UI.prefab using Guid(f906c74843af4694fa9ed7f01ddcb3fe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '24b1c72cd720594ba686c51da937064a') in 0.156476 seconds 
+  Import took 0.169403 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 2.387422 seconds.
+  path: Assets/Resources/Prefabs/Player/ChargedShot/ChargedShot 1.prefab
+  artifactKey: Guid(c0a271c691e89f94187d3eff6712d5f6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Prefabs/Player/ChargedShot/ChargedShot 1.prefab using Guid(c0a271c691e89f94187d3eff6712d5f6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ca212ba7a3bc02f2f58efa8e68f5cb40') in 0.122025 seconds 
+  Import took 0.131452 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 10.456512 seconds.
+  path: Assets/Resources/Prefabs/Player/ChargedShot/ChargedShotManaged.prefab
+  artifactKey: Guid(c0a271c691e89f94187d3eff6712d5f6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Prefabs/Player/ChargedShot/ChargedShotManaged.prefab using Guid(c0a271c691e89f94187d3eff6712d5f6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0ce24b40034136cd457c09beaa5114c4') in 0.027400 seconds 
+  Import took 0.037347 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 7.011762 seconds.
+  path: Assets/Resources/Prefabs/Player/ChargedShot/ChargedShotManaged.prefab
+  artifactKey: Guid(c0a271c691e89f94187d3eff6712d5f6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Prefabs/Player/ChargedShot/ChargedShotManaged.prefab using Guid(c0a271c691e89f94187d3eff6712d5f6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '95d096f02193747f24a37ec13d2e9615') in 0.028898 seconds 
+  Import took 0.038635 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 2.235994 seconds.
+  path: Assets/Resources/Prefabs/Player/ChargedShot/ChargedShotManaged.prefab
+  artifactKey: Guid(c0a271c691e89f94187d3eff6712d5f6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Prefabs/Player/ChargedShot/ChargedShotManaged.prefab using Guid(c0a271c691e89f94187d3eff6712d5f6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8f317c141660b7e0896478fb0955fef9') in 0.022108 seconds 
+  Import took 0.031689 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.839305 seconds.
+  path: Assets/Resources/Prefabs/Player/ChargedShot/ChargedShotManaged.prefab
+  artifactKey: Guid(c0a271c691e89f94187d3eff6712d5f6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Prefabs/Player/ChargedShot/ChargedShotManaged.prefab using Guid(c0a271c691e89f94187d3eff6712d5f6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b5dbd85d05f115ab5d6b0f6f2fa7a31e') in 0.019926 seconds 
+  Import took 0.029542 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.028500 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 1.25 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  2.940 seconds
+Domain Reload Profiling:
+	ReloadAssembly (2940ms)
+		BeginReloadAssembly (281ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (7ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (77ms)
+		EndReloadAssembly (2499ms)
+			LoadAssemblies (264ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (612ms)
+			ReleaseScriptCaches (2ms)
+			RebuildScriptCaches (83ms)
+			SetupLoadedEditorAssemblies (1346ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (10ms)
+				SetLoadedEditorAssemblies (1ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (207ms)
+				ProcessInitializeOnLoadAttributes (1068ms)
+				ProcessInitializeOnLoadMethodAttributes (14ms)
+				AfterProcessingInitializeOnLoad (44ms)
+				EditorAssembliesLoaded (1ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (15ms)
+Platform modules already initialized, skipping
+Shader 'AngryBots/PlanarRealtimeReflection': fallback shader 'AngryBots/Fallback' not found
+Refreshing native plugins compatible for Editor in 1.46 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3239 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 155.7 MB.
+System memory in use after: 155.8 MB.
+
+Unloading 24 unused Assets to reduce memory usage. Loaded Objects now: 3858.
+Total: 7.044800 ms (FindLiveObjects: 0.486900 ms CreateObjectMapping: 0.215400 ms MarkObjects: 6.037100 ms  DeleteObjects: 0.303100 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.031847 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 1.23 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  2.884 seconds
+Domain Reload Profiling:
+	ReloadAssembly (2885ms)
+		BeginReloadAssembly (266ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (8ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (65ms)
+		EndReloadAssembly (2446ms)
+			LoadAssemblies (257ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (588ms)
+			ReleaseScriptCaches (2ms)
+			RebuildScriptCaches (79ms)
+			SetupLoadedEditorAssemblies (1329ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (10ms)
+				SetLoadedEditorAssemblies (1ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (206ms)
+				ProcessInitializeOnLoadAttributes (1046ms)
+				ProcessInitializeOnLoadMethodAttributes (14ms)
+				AfterProcessingInitializeOnLoad (51ms)
+				EditorAssembliesLoaded (1ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (13ms)
+Platform modules already initialized, skipping
+Shader 'AngryBots/PlanarRealtimeReflection': fallback shader 'AngryBots/Fallback' not found
+Refreshing native plugins compatible for Editor in 1.67 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3239 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 155.8 MB.
+System memory in use after: 155.8 MB.
+
+Unloading 24 unused Assets to reduce memory usage. Loaded Objects now: 3860.
+Total: 5.705800 ms (FindLiveObjects: 0.385800 ms CreateObjectMapping: 0.255200 ms MarkObjects: 4.704400 ms  DeleteObjects: 0.358400 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 753.286972 seconds.
+  path: Assets/Scripts/Player/Player Input/Firing/ChargedShot/EnemyTargeter.cs
+  artifactKey: Guid(02698df4ef7d8f5459bd405cdb87f9b2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Player/Player Input/Firing/ChargedShot/EnemyTargeter.cs using Guid(02698df4ef7d8f5459bd405cdb87f9b2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '049c5d1212dcba0c7554257196b674a2') in 0.025871 seconds 
+  Import took 0.036247 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.029463 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 1.31 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  2.989 seconds
+Domain Reload Profiling:
+	ReloadAssembly (2990ms)
+		BeginReloadAssembly (289ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (9ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (76ms)
+		EndReloadAssembly (2534ms)
+			LoadAssemblies (268ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (623ms)
+			ReleaseScriptCaches (3ms)
+			RebuildScriptCaches (87ms)
+			SetupLoadedEditorAssemblies (1365ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (10ms)
+				SetLoadedEditorAssemblies (1ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (212ms)
+				ProcessInitializeOnLoadAttributes (1082ms)
+				ProcessInitializeOnLoadMethodAttributes (13ms)
+				AfterProcessingInitializeOnLoad (45ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (12ms)
+Platform modules already initialized, skipping
+Shader 'AngryBots/PlanarRealtimeReflection': fallback shader 'AngryBots/Fallback' not found
+Refreshing native plugins compatible for Editor in 1.20 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3239 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 155.8 MB.
+System memory in use after: 155.8 MB.
+
+Unloading 24 unused Assets to reduce memory usage. Loaded Objects now: 3862.
+Total: 6.302500 ms (FindLiveObjects: 0.536800 ms CreateObjectMapping: 0.218400 ms MarkObjects: 5.229700 ms  DeleteObjects: 0.315000 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 377.792036 seconds.
+  path: Assets/Scripts/Player/Player Input/ProcessInput/ProcessFireInput.cs
+  artifactKey: Guid(c5f53a99db4708e498a9ee483bd86d06) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Player/Player Input/ProcessInput/ProcessFireInput.cs using Guid(c5f53a99db4708e498a9ee483bd86d06) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '57c968352a5466eedc0c6eeffb6061df') in 0.023565 seconds 
+  Import took 0.033971 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.029419 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 1.39 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  2.892 seconds
+Domain Reload Profiling:
+	ReloadAssembly (2893ms)
+		BeginReloadAssembly (265ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (9ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (61ms)
+		EndReloadAssembly (2462ms)
+			LoadAssemblies (257ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (586ms)
+			ReleaseScriptCaches (2ms)
+			RebuildScriptCaches (83ms)
+			SetupLoadedEditorAssemblies (1354ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (10ms)
+				SetLoadedEditorAssemblies (1ms)
+				RefreshPlugins (2ms)
+				BeforeProcessingInitializeOnLoad (205ms)
+				ProcessInitializeOnLoadAttributes (1077ms)
+				ProcessInitializeOnLoadMethodAttributes (13ms)
+				AfterProcessingInitializeOnLoad (46ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (11ms)
+Platform modules already initialized, skipping
+Shader 'AngryBots/PlanarRealtimeReflection': fallback shader 'AngryBots/Fallback' not found
+Refreshing native plugins compatible for Editor in 1.34 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3239 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 155.8 MB.
+System memory in use after: 155.8 MB.
+
+Unloading 24 unused Assets to reduce memory usage. Loaded Objects now: 3864.
+Total: 5.782100 ms (FindLiveObjects: 0.556500 ms CreateObjectMapping: 0.243400 ms MarkObjects: 4.593300 ms  DeleteObjects: 0.386600 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 261.029972 seconds.
+  path: Assets/Scripts/Player/Player Input/Firing/ChargedShot/Manager/PositionUpdater.cs
+  artifactKey: Guid(44b115556651437408b5454c8e37352c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Player/Player Input/Firing/ChargedShot/Manager/PositionUpdater.cs using Guid(44b115556651437408b5454c8e37352c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6ebff90b1fb4a4140c9b618dee78a6cd') in 0.019219 seconds 
+  Import took 0.030471 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.030678 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 1.35 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  2.939 seconds
+Domain Reload Profiling:
+	ReloadAssembly (2939ms)
+		BeginReloadAssembly (272ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (8ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (67ms)
+		EndReloadAssembly (2502ms)
+			LoadAssemblies (272ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (595ms)
+			ReleaseScriptCaches (2ms)
+			RebuildScriptCaches (81ms)
+			SetupLoadedEditorAssemblies (1376ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (9ms)
+				SetLoadedEditorAssemblies (1ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (208ms)
+				ProcessInitializeOnLoadAttributes (1095ms)
+				ProcessInitializeOnLoadMethodAttributes (14ms)
+				AfterProcessingInitializeOnLoad (47ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (14ms)
+Platform modules already initialized, skipping
+Shader 'AngryBots/PlanarRealtimeReflection': fallback shader 'AngryBots/Fallback' not found
+Refreshing native plugins compatible for Editor in 1.20 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3239 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 155.8 MB.
+System memory in use after: 155.8 MB.
+
+Unloading 24 unused Assets to reduce memory usage. Loaded Objects now: 3866.
+Total: 5.755900 ms (FindLiveObjects: 0.376800 ms CreateObjectMapping: 0.224500 ms MarkObjects: 4.835600 ms  DeleteObjects: 0.317100 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 89.983902 seconds.
+  path: Assets/Scripts/Player/Player Input/Firing/ChargedShot/Manager/PositionUpdater.cs
+  artifactKey: Guid(44b115556651437408b5454c8e37352c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Player/Player Input/Firing/ChargedShot/Manager/PositionUpdater.cs using Guid(44b115556651437408b5454c8e37352c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '10496f57bd5b64fbc39748aace1ead67') in 0.013697 seconds 
+  Import took 0.022111 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.033621 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 1.25 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  2.952 seconds
+Domain Reload Profiling:
+	ReloadAssembly (2953ms)
+		BeginReloadAssembly (267ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (8ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (67ms)
+		EndReloadAssembly (2520ms)
+			LoadAssemblies (259ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (583ms)
+			ReleaseScriptCaches (2ms)
+			RebuildScriptCaches (81ms)
+			SetupLoadedEditorAssemblies (1394ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (10ms)
+				SetLoadedEditorAssemblies (1ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (211ms)
+				ProcessInitializeOnLoadAttributes (1111ms)
+				ProcessInitializeOnLoadMethodAttributes (13ms)
+				AfterProcessingInitializeOnLoad (47ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (11ms)
+Platform modules already initialized, skipping
+Shader 'AngryBots/PlanarRealtimeReflection': fallback shader 'AngryBots/Fallback' not found
+Refreshing native plugins compatible for Editor in 1.30 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3239 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 155.8 MB.
+System memory in use after: 155.8 MB.
+
+Unloading 24 unused Assets to reduce memory usage. Loaded Objects now: 3868.
+Total: 6.040300 ms (FindLiveObjects: 0.543400 ms CreateObjectMapping: 0.231700 ms MarkObjects: 4.931700 ms  DeleteObjects: 0.331600 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.030540 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 1.18 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  2.926 seconds
+Domain Reload Profiling:
+	ReloadAssembly (2926ms)
+		BeginReloadAssembly (276ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (8ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (73ms)
+		EndReloadAssembly (2490ms)
+			LoadAssemblies (264ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (593ms)
+			ReleaseScriptCaches (2ms)
+			RebuildScriptCaches (85ms)
+			SetupLoadedEditorAssemblies (1347ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (9ms)
+				SetLoadedEditorAssemblies (1ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (206ms)
+				ProcessInitializeOnLoadAttributes (1066ms)
+				ProcessInitializeOnLoadMethodAttributes (14ms)
+				AfterProcessingInitializeOnLoad (49ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (11ms)
+Platform modules already initialized, skipping
+Shader 'AngryBots/PlanarRealtimeReflection': fallback shader 'AngryBots/Fallback' not found
+Refreshing native plugins compatible for Editor in 1.25 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3239 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 155.8 MB.
+System memory in use after: 155.8 MB.
+
+Unloading 24 unused Assets to reduce memory usage. Loaded Objects now: 3870.
+Total: 6.355700 ms (FindLiveObjects: 0.405700 ms CreateObjectMapping: 0.219500 ms MarkObjects: 5.257200 ms  DeleteObjects: 0.470900 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.032819 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 1.31 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  3.020 seconds
+Domain Reload Profiling:
+	ReloadAssembly (3021ms)
+		BeginReloadAssembly (277ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (8ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (68ms)
+		EndReloadAssembly (2566ms)
+			LoadAssemblies (264ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (638ms)
+			ReleaseScriptCaches (2ms)
+			RebuildScriptCaches (78ms)
+			SetupLoadedEditorAssemblies (1401ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (10ms)
+				SetLoadedEditorAssemblies (1ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (227ms)
+				ProcessInitializeOnLoadAttributes (1101ms)
+				ProcessInitializeOnLoadMethodAttributes (15ms)
+				AfterProcessingInitializeOnLoad (47ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (12ms)
+Platform modules already initialized, skipping
+Shader 'AngryBots/PlanarRealtimeReflection': fallback shader 'AngryBots/Fallback' not found
+Refreshing native plugins compatible for Editor in 1.51 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3239 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 155.8 MB.
+System memory in use after: 155.9 MB.
+
+Unloading 24 unused Assets to reduce memory usage. Loaded Objects now: 3872.
+Total: 6.109000 ms (FindLiveObjects: 0.512900 ms CreateObjectMapping: 0.333500 ms MarkObjects: 4.925100 ms  DeleteObjects: 0.335900 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 642.830459 seconds.
+  path: Assets/Scripts/Attacking/ObjectFiring.cs
+  artifactKey: Guid(7bc23378597b8074aa4bc9f5263363a8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Attacking/ObjectFiring.cs using Guid(7bc23378597b8074aa4bc9f5263363a8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cce96b3d4fe6965bf36d69fc862a099e') in 0.021280 seconds 
+  Import took 0.032400 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.034369 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 1.21 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  2.962 seconds
+Domain Reload Profiling:
+	ReloadAssembly (2963ms)
+		BeginReloadAssembly (284ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (8ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (77ms)
+		EndReloadAssembly (2510ms)
+			LoadAssemblies (268ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (602ms)
+			ReleaseScriptCaches (2ms)
+			RebuildScriptCaches (86ms)
+			SetupLoadedEditorAssemblies (1360ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (11ms)
+				SetLoadedEditorAssemblies (1ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (215ms)
+				ProcessInitializeOnLoadAttributes (1073ms)
+				ProcessInitializeOnLoadMethodAttributes (14ms)
+				AfterProcessingInitializeOnLoad (45ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (15ms)
+Platform modules already initialized, skipping
+Shader 'AngryBots/PlanarRealtimeReflection': fallback shader 'AngryBots/Fallback' not found
+Refreshing native plugins compatible for Editor in 1.11 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3239 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 155.8 MB.
+System memory in use after: 155.9 MB.
+
+Unloading 24 unused Assets to reduce memory usage. Loaded Objects now: 3874.
+Total: 6.061700 ms (FindLiveObjects: 0.367300 ms CreateObjectMapping: 0.285000 ms MarkObjects: 5.092100 ms  DeleteObjects: 0.315500 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 206.238287 seconds.
+  path: Assets/Scripts/Attacking/ObjectFiring.cs
+  artifactKey: Guid(7bc23378597b8074aa4bc9f5263363a8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Attacking/ObjectFiring.cs using Guid(7bc23378597b8074aa4bc9f5263363a8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ef4ee3365bdf9184a5ad80b29ee91e76') in 0.012769 seconds 
+  Import took 0.021384 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.028306 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 1.38 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  2.934 seconds
+Domain Reload Profiling:
+	ReloadAssembly (2935ms)
+		BeginReloadAssembly (279ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (9ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (69ms)
+		EndReloadAssembly (2498ms)
+			LoadAssemblies (258ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (605ms)
+			ReleaseScriptCaches (2ms)
+			RebuildScriptCaches (80ms)
+			SetupLoadedEditorAssemblies (1367ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (10ms)
+				SetLoadedEditorAssemblies (1ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (218ms)
+				ProcessInitializeOnLoadAttributes (1078ms)
+				ProcessInitializeOnLoadMethodAttributes (13ms)
+				AfterProcessingInitializeOnLoad (45ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (11ms)
+Platform modules already initialized, skipping
+Shader 'AngryBots/PlanarRealtimeReflection': fallback shader 'AngryBots/Fallback' not found
+Refreshing native plugins compatible for Editor in 1.19 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3239 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 155.8 MB.
+System memory in use after: 155.9 MB.
+
+Unloading 24 unused Assets to reduce memory usage. Loaded Objects now: 3876.
+Total: 5.932500 ms (FindLiveObjects: 0.437900 ms CreateObjectMapping: 0.245000 ms MarkObjects: 4.915000 ms  DeleteObjects: 0.332400 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.029923 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 1.27 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  2.977 seconds
+Domain Reload Profiling:
+	ReloadAssembly (2978ms)
+		BeginReloadAssembly (266ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (7ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (66ms)
+		EndReloadAssembly (2539ms)
+			LoadAssemblies (262ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (616ms)
+			ReleaseScriptCaches (2ms)
+			RebuildScriptCaches (87ms)
+			SetupLoadedEditorAssemblies (1382ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (9ms)
+				SetLoadedEditorAssemblies (1ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (221ms)
+				ProcessInitializeOnLoadAttributes (1092ms)
+				ProcessInitializeOnLoadMethodAttributes (13ms)
+				AfterProcessingInitializeOnLoad (45ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (11ms)
+Platform modules already initialized, skipping
+Shader 'AngryBots/PlanarRealtimeReflection': fallback shader 'AngryBots/Fallback' not found
+Refreshing native plugins compatible for Editor in 1.26 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3239 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 155.8 MB.
+System memory in use after: 155.9 MB.
+
+Unloading 24 unused Assets to reduce memory usage. Loaded Objects now: 3878.
+Total: 6.275000 ms (FindLiveObjects: 0.422100 ms CreateObjectMapping: 0.202000 ms MarkObjects: 5.263900 ms  DeleteObjects: 0.385300 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.033139 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 1.46 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  2.881 seconds
+Domain Reload Profiling:
+	ReloadAssembly (2882ms)
+		BeginReloadAssembly (276ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (9ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (73ms)
+		EndReloadAssembly (2436ms)
+			LoadAssemblies (260ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (588ms)
+			ReleaseScriptCaches (2ms)
+			RebuildScriptCaches (82ms)
+			SetupLoadedEditorAssemblies (1323ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (10ms)
+				SetLoadedEditorAssemblies (1ms)
+				RefreshPlugins (2ms)
+				BeforeProcessingInitializeOnLoad (211ms)
+				ProcessInitializeOnLoadAttributes (1039ms)
+				ProcessInitializeOnLoadMethodAttributes (13ms)
+				AfterProcessingInitializeOnLoad (46ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (11ms)
+Platform modules already initialized, skipping
+Shader 'AngryBots/PlanarRealtimeReflection': fallback shader 'AngryBots/Fallback' not found
+Refreshing native plugins compatible for Editor in 1.39 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3239 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 155.9 MB.
+System memory in use after: 155.9 MB.
+
+Unloading 24 unused Assets to reduce memory usage. Loaded Objects now: 3880.
+Total: 6.566100 ms (FindLiveObjects: 0.678500 ms CreateObjectMapping: 0.336500 ms MarkObjects: 5.222700 ms  DeleteObjects: 0.326500 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.033227 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 1.49 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  2.947 seconds
+Domain Reload Profiling:
+	ReloadAssembly (2947ms)
+		BeginReloadAssembly (287ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (8ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (73ms)
+		EndReloadAssembly (2500ms)
+			LoadAssemblies (278ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (601ms)
+			ReleaseScriptCaches (2ms)
+			RebuildScriptCaches (84ms)
+			SetupLoadedEditorAssemblies (1355ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (12ms)
+				SetLoadedEditorAssemblies (1ms)
+				RefreshPlugins (2ms)
+				BeforeProcessingInitializeOnLoad (216ms)
+				ProcessInitializeOnLoadAttributes (1064ms)
+				ProcessInitializeOnLoadMethodAttributes (14ms)
+				AfterProcessingInitializeOnLoad (47ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (11ms)
+Platform modules already initialized, skipping
+Shader 'AngryBots/PlanarRealtimeReflection': fallback shader 'AngryBots/Fallback' not found
+Refreshing native plugins compatible for Editor in 1.30 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3239 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 155.9 MB.
+System memory in use after: 155.9 MB.
+
+Unloading 24 unused Assets to reduce memory usage. Loaded Objects now: 3882.
+Total: 6.251100 ms (FindLiveObjects: 0.477300 ms CreateObjectMapping: 0.295600 ms MarkObjects: 5.165000 ms  DeleteObjects: 0.311600 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.031950 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 1.37 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  2.919 seconds
+Domain Reload Profiling:
+	ReloadAssembly (2919ms)
+		BeginReloadAssembly (273ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (8ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (65ms)
+		EndReloadAssembly (2479ms)
+			LoadAssemblies (266ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (598ms)
+			ReleaseScriptCaches (2ms)
+			RebuildScriptCaches (84ms)
+			SetupLoadedEditorAssemblies (1348ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (11ms)
+				SetLoadedEditorAssemblies (1ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (212ms)
+				ProcessInitializeOnLoadAttributes (1065ms)
+				ProcessInitializeOnLoadMethodAttributes (13ms)
+				AfterProcessingInitializeOnLoad (45ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (11ms)
+Platform modules already initialized, skipping
+Shader 'AngryBots/PlanarRealtimeReflection': fallback shader 'AngryBots/Fallback' not found
+Refreshing native plugins compatible for Editor in 1.28 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3239 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 155.8 MB.
+System memory in use after: 155.9 MB.
+
+Unloading 24 unused Assets to reduce memory usage. Loaded Objects now: 3884.
+Total: 6.656000 ms (FindLiveObjects: 0.730400 ms CreateObjectMapping: 0.276500 ms MarkObjects: 5.295700 ms  DeleteObjects: 0.351100 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.031740 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 1.23 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  2.942 seconds
+Domain Reload Profiling:
+	ReloadAssembly (2943ms)
+		BeginReloadAssembly (273ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (9ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (69ms)
+		EndReloadAssembly (2506ms)
+			LoadAssemblies (265ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (610ms)
+			ReleaseScriptCaches (2ms)
+			RebuildScriptCaches (87ms)
+			SetupLoadedEditorAssemblies (1357ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (10ms)
+				SetLoadedEditorAssemblies (1ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (213ms)
+				ProcessInitializeOnLoadAttributes (1071ms)
+				ProcessInitializeOnLoadMethodAttributes (13ms)
+				AfterProcessingInitializeOnLoad (47ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (12ms)
+Platform modules already initialized, skipping
+Shader 'AngryBots/PlanarRealtimeReflection': fallback shader 'AngryBots/Fallback' not found
+Refreshing native plugins compatible for Editor in 1.20 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3239 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 155.9 MB.
+System memory in use after: 155.9 MB.
+
+Unloading 24 unused Assets to reduce memory usage. Loaded Objects now: 3886.
+Total: 5.996200 ms (FindLiveObjects: 0.437600 ms CreateObjectMapping: 0.203700 ms MarkObjects: 5.022900 ms  DeleteObjects: 0.330300 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 1275.769910 seconds.
+  path: Assets/Resources/Prefabs/Player/ChargedShot/EnemyTargetedReticle.prefab
+  artifactKey: Guid(09cd693f593859d4e965d6a13d487eab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Prefabs/Player/ChargedShot/EnemyTargetedReticle.prefab using Guid(09cd693f593859d4e965d6a13d487eab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '94dfae16a166e76689a522da9eb3597e') in 0.086587 seconds 
+  Import took 0.096737 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.033737 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 1.14 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  2.910 seconds
+Domain Reload Profiling:
+	ReloadAssembly (2910ms)
+		BeginReloadAssembly (281ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (7ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (79ms)
+		EndReloadAssembly (2468ms)
+			LoadAssemblies (266ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (576ms)
+			ReleaseScriptCaches (2ms)
+			RebuildScriptCaches (81ms)
+			SetupLoadedEditorAssemblies (1370ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (9ms)
+				SetLoadedEditorAssemblies (1ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (210ms)
+				ProcessInitializeOnLoadAttributes (1088ms)
+				ProcessInitializeOnLoadMethodAttributes (14ms)
+				AfterProcessingInitializeOnLoad (47ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (11ms)
+Platform modules already initialized, skipping
+Shader 'AngryBots/PlanarRealtimeReflection': fallback shader 'AngryBots/Fallback' not found
+Refreshing native plugins compatible for Editor in 1.25 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3239 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 155.9 MB.
+System memory in use after: 155.9 MB.
+
+Unloading 24 unused Assets to reduce memory usage. Loaded Objects now: 3888.
+Total: 5.818700 ms (FindLiveObjects: 0.459200 ms CreateObjectMapping: 0.210600 ms MarkObjects: 4.833900 ms  DeleteObjects: 0.313100 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.029255 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 1.46 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  2.915 seconds
+Domain Reload Profiling:
+	ReloadAssembly (2915ms)
+		BeginReloadAssembly (271ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (8ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (69ms)
+		EndReloadAssembly (2485ms)
+			LoadAssemblies (259ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (603ms)
+			ReleaseScriptCaches (2ms)
+			RebuildScriptCaches (93ms)
+			SetupLoadedEditorAssemblies (1345ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (10ms)
+				SetLoadedEditorAssemblies (1ms)
+				RefreshPlugins (2ms)
+				BeforeProcessingInitializeOnLoad (217ms)
+				ProcessInitializeOnLoadAttributes (1052ms)
+				ProcessInitializeOnLoadMethodAttributes (14ms)
+				AfterProcessingInitializeOnLoad (49ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (10ms)
+Platform modules already initialized, skipping
+Shader 'AngryBots/PlanarRealtimeReflection': fallback shader 'AngryBots/Fallback' not found
+Refreshing native plugins compatible for Editor in 1.19 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3239 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 155.9 MB.
+System memory in use after: 155.9 MB.
+
+Unloading 24 unused Assets to reduce memory usage. Loaded Objects now: 3890.
+Total: 5.982200 ms (FindLiveObjects: 0.459800 ms CreateObjectMapping: 0.213300 ms MarkObjects: 4.997300 ms  DeleteObjects: 0.306500 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.032556 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 1.35 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  2.923 seconds
+Domain Reload Profiling:
+	ReloadAssembly (2924ms)
+		BeginReloadAssembly (282ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (8ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (70ms)
+		EndReloadAssembly (2470ms)
+			LoadAssemblies (271ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (613ms)
+			ReleaseScriptCaches (2ms)
+			RebuildScriptCaches (82ms)
+			SetupLoadedEditorAssemblies (1321ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (10ms)
+				SetLoadedEditorAssemblies (1ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (209ms)
+				ProcessInitializeOnLoadAttributes (1037ms)
+				ProcessInitializeOnLoadMethodAttributes (16ms)
+				AfterProcessingInitializeOnLoad (47ms)
+				EditorAssembliesLoaded (1ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (13ms)
+Platform modules already initialized, skipping
+Shader 'AngryBots/PlanarRealtimeReflection': fallback shader 'AngryBots/Fallback' not found
+Refreshing native plugins compatible for Editor in 1.13 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3239 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 155.9 MB.
+System memory in use after: 155.9 MB.
+
+Unloading 24 unused Assets to reduce memory usage. Loaded Objects now: 3892.
+Total: 6.011000 ms (FindLiveObjects: 0.412700 ms CreateObjectMapping: 0.284700 ms MarkObjects: 4.995000 ms  DeleteObjects: 0.316800 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 397.573753 seconds.
+  path: Assets/Resources/Prefabs/Player/ChargedShot/ChargedShotManaged.prefab
+  artifactKey: Guid(c0a271c691e89f94187d3eff6712d5f6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Prefabs/Player/ChargedShot/ChargedShotManaged.prefab using Guid(c0a271c691e89f94187d3eff6712d5f6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd639f8ab4911f3946d7d60c9a5ad14d5') in 0.121773 seconds 
+  Import took 0.130518 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.030467 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 1.47 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  3.031 seconds
+Domain Reload Profiling:
+	ReloadAssembly (3032ms)
+		BeginReloadAssembly (296ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (9ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (83ms)
+		EndReloadAssembly (2568ms)
+			LoadAssemblies (269ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (630ms)
+			ReleaseScriptCaches (2ms)
+			RebuildScriptCaches (84ms)
+			SetupLoadedEditorAssemblies (1390ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (11ms)
+				SetLoadedEditorAssemblies (1ms)
+				RefreshPlugins (2ms)
+				BeforeProcessingInitializeOnLoad (223ms)
+				ProcessInitializeOnLoadAttributes (1093ms)
+				ProcessInitializeOnLoadMethodAttributes (14ms)
+				AfterProcessingInitializeOnLoad (46ms)
+				EditorAssembliesLoaded (1ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (13ms)
+Platform modules already initialized, skipping
+Shader 'AngryBots/PlanarRealtimeReflection': fallback shader 'AngryBots/Fallback' not found
+Refreshing native plugins compatible for Editor in 1.66 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3239 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 155.9 MB.
+System memory in use after: 155.9 MB.
+
+Unloading 24 unused Assets to reduce memory usage. Loaded Objects now: 3895.
+Total: 6.265500 ms (FindLiveObjects: 0.513100 ms CreateObjectMapping: 0.338400 ms MarkObjects: 5.061000 ms  DeleteObjects: 0.351000 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 122.603602 seconds.
+  path: Assets/Resources/Prefabs/Player/ChargedShot/ChargedShotManaged.prefab
+  artifactKey: Guid(c0a271c691e89f94187d3eff6712d5f6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Prefabs/Player/ChargedShot/ChargedShotManaged.prefab using Guid(c0a271c691e89f94187d3eff6712d5f6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c460645f5faeb5429db3430ee93ab416') in 0.116564 seconds 
+  Import took 0.130126 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 4.296313 seconds.
+  path: Assets/Resources/Prefabs/Player/ChargedShot/ChargedShotManaged.prefab
+  artifactKey: Guid(c0a271c691e89f94187d3eff6712d5f6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Prefabs/Player/ChargedShot/ChargedShotManaged.prefab using Guid(c0a271c691e89f94187d3eff6712d5f6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fe39d0ac7f3bb4e9906d8108c4b56ab5') in 0.023369 seconds 
+  Import took 0.035138 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 5.083166 seconds.
+  path: Assets/Resources/Prefabs/Player/ChargedShot/ChargedShotManaged.prefab
+  artifactKey: Guid(c0a271c691e89f94187d3eff6712d5f6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Prefabs/Player/ChargedShot/ChargedShotManaged.prefab using Guid(c0a271c691e89f94187d3eff6712d5f6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'da2728f41d24d1fbf0b28b95baed45e3') in 0.028194 seconds 
+  Import took 0.037566 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 29.655716 seconds.
+  path: Assets/Resources/Prefabs/Player/ChargedShot/ChargedShotManaged.prefab
+  artifactKey: Guid(c0a271c691e89f94187d3eff6712d5f6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Prefabs/Player/ChargedShot/ChargedShotManaged.prefab using Guid(c0a271c691e89f94187d3eff6712d5f6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f036fc5a785d2239cc107ce2810edb41') in 0.020360 seconds 
+  Import took 0.030447 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 6.584238 seconds.
+  path: Assets/AssetPacks/_Creepy_Cat/3D Games Effects Pack Free
+  artifactKey: Guid(7292dec1ffce6498b9c0b57fedbcc2f0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetPacks/_Creepy_Cat/3D Games Effects Pack Free using Guid(7292dec1ffce6498b9c0b57fedbcc2f0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '88d7d3f084523e3260abb65b5c8c899b') in 0.009765 seconds 
+  Import took 0.018668 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.929770 seconds.
+  path: Assets/AssetPacks/_Creepy_Cat/3D Games Effects Pack Free/_Materials
+  artifactKey: Guid(d087af424f52948adbb83d5c7f4e4d9e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetPacks/_Creepy_Cat/3D Games Effects Pack Free/_Materials using Guid(d087af424f52948adbb83d5c7f4e4d9e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7e8c321042d038f3c770ddf3a1eeb240') in 0.009301 seconds 
+  Import took 0.019032 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.066082 seconds.
+  path: Assets/AssetPacks/_Creepy_Cat/3D Games Effects Pack Free/_Materials/Effect_08_8x4-32.png
+  artifactKey: Guid(ab1845f625a5f4d69a0d517d25674ea6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetPacks/_Creepy_Cat/3D Games Effects Pack Free/_Materials/Effect_08_8x4-32.png using Guid(ab1845f625a5f4d69a0d517d25674ea6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5a2f8b32d8e08c7cda555163f6f94570') in 0.157392 seconds 
+  Import took 0.166230 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 48.785941 seconds.
+  path: Assets/Scenes/Sandbox.unity
+  artifactKey: Guid(f38679c4bc35dfb43ab95a6d72ef206f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/Sandbox.unity using Guid(f38679c4bc35dfb43ab95a6d72ef206f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6cc30ee8c8237e32127f45dcd8312e20') in 0.011213 seconds 
+  Import took 0.021913 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 85.879575 seconds.
+  path: Assets/Scenes/Level01.unity
+  artifactKey: Guid(9fc0d4010bbf28b4594072e72b8655ab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/Level01.unity using Guid(9fc0d4010bbf28b4594072e72b8655ab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5637c21bcae848c49525304b3a55aacf') in 0.012127 seconds 
+  Import took 0.023054 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 168.360740 seconds.
+  path: Assets/AssetPacks/_Creepy_Cat/3D Games Effects Pack Free/_Materials/Effect_08_8x4-32.png
+  artifactKey: Guid(ab1845f625a5f4d69a0d517d25674ea6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetPacks/_Creepy_Cat/3D Games Effects Pack Free/_Materials/Effect_08_8x4-32.png using Guid(ab1845f625a5f4d69a0d517d25674ea6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '44c73de245639f2382ffeeaef308061a') in 0.039440 seconds 
+  Import took 0.049778 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.029587 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 1.49 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  2.930 seconds
+Domain Reload Profiling:
+	ReloadAssembly (2931ms)
+		BeginReloadAssembly (271ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (8ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (66ms)
+		EndReloadAssembly (2492ms)
+			LoadAssemblies (263ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (605ms)
+			ReleaseScriptCaches (2ms)
+			RebuildScriptCaches (83ms)
+			SetupLoadedEditorAssemblies (1352ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (10ms)
+				SetLoadedEditorAssemblies (1ms)
+				RefreshPlugins (2ms)
+				BeforeProcessingInitializeOnLoad (212ms)
+				ProcessInitializeOnLoadAttributes (1068ms)
+				ProcessInitializeOnLoadMethodAttributes (14ms)
+				AfterProcessingInitializeOnLoad (45ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (10ms)
+Platform modules already initialized, skipping
+Shader 'AngryBots/PlanarRealtimeReflection': fallback shader 'AngryBots/Fallback' not found
+Refreshing native plugins compatible for Editor in 1.29 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3240 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 156.1 MB.
+System memory in use after: 156.1 MB.
+
+Unloading 24 unused Assets to reduce memory usage. Loaded Objects now: 3901.
+Total: 5.838000 ms (FindLiveObjects: 0.490100 ms CreateObjectMapping: 0.229600 ms MarkObjects: 4.820700 ms  DeleteObjects: 0.296000 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 195.742430 seconds.
+  path: Assets/AssetPacks/_Creepy_Cat/3D Games Effects Pack Free/_Materials/Effect_01.mat
+  artifactKey: Guid(acd51d388e03b43ee91f50f360703603) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetPacks/_Creepy_Cat/3D Games Effects Pack Free/_Materials/Effect_01.mat using Guid(acd51d388e03b43ee91f50f360703603) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7ef2cc1f32cc23ec6178e6fb06aa7b73') in 0.155873 seconds 
+  Import took 0.171923 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000380 seconds.
+  path: Assets/AssetPacks/_Creepy_Cat/3D Games Effects Pack Free/_Materials/Effect_05.mat
+  artifactKey: Guid(a551b9b2ea53445be86fd523d3a8aa60) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetPacks/_Creepy_Cat/3D Games Effects Pack Free/_Materials/Effect_05.mat using Guid(a551b9b2ea53445be86fd523d3a8aa60) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2384f44af4e91a759625ffdef851b54f') in 0.063600 seconds 
+  Import took 0.080648 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000273 seconds.
+  path: Assets/AssetPacks/_Creepy_Cat/3D Games Effects Pack Free/_Materials/Effect_06_8x6-48.png
+  artifactKey: Guid(424e16d271aa34549b27cc6f687d71e7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetPacks/_Creepy_Cat/3D Games Effects Pack Free/_Materials/Effect_06_8x6-48.png using Guid(424e16d271aa34549b27cc6f687d71e7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b20011d4741037b587422643af852e94') in 0.067816 seconds 
+  Import took 0.083852 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000242 seconds.
+  path: Assets/AssetPacks/_Creepy_Cat/3D Games Effects Pack Free/_Materials/Effect_04_8x4-32.png
+  artifactKey: Guid(fd38e967a28d645b9a29968c3cc113cc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetPacks/_Creepy_Cat/3D Games Effects Pack Free/_Materials/Effect_04_8x4-32.png using Guid(fd38e967a28d645b9a29968c3cc113cc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '303854b8f9349a1b3c34eccf8e20d074') in 0.026420 seconds 
+  Import took 0.041764 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000291 seconds.
+  path: Assets/AssetPacks/_Creepy_Cat/3D Games Effects Pack Free/_Materials/Effect_03_8x4-32.png
+  artifactKey: Guid(611ab02a1b0c34eacac1a04aa2bdcddc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetPacks/_Creepy_Cat/3D Games Effects Pack Free/_Materials/Effect_03_8x4-32.png using Guid(611ab02a1b0c34eacac1a04aa2bdcddc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '52ca967e678fdf524d8c31ec743d9a28') in 0.030425 seconds 
+  Import took 0.039457 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000259 seconds.
+  path: Assets/AssetPacks/_Creepy_Cat/3D Games Effects Pack Free/_Materials/Effect_06.mat
+  artifactKey: Guid(a520c59bd52a84761853f1676c85041d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetPacks/_Creepy_Cat/3D Games Effects Pack Free/_Materials/Effect_06.mat using Guid(a520c59bd52a84761853f1676c85041d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '156ea0e3eb410070df0103860c7eb4d0') in 0.055237 seconds 
+  Import took 0.069074 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000273 seconds.
+  path: Assets/AssetPacks/_Creepy_Cat/3D Games Effects Pack Free/_Materials/Effect_05_8x8-64.png
+  artifactKey: Guid(5031a0115db7440e7b931c0503af22f6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetPacks/_Creepy_Cat/3D Games Effects Pack Free/_Materials/Effect_05_8x8-64.png using Guid(5031a0115db7440e7b931c0503af22f6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8f4a1741a379a6cf32fed4f27a99f519') in 0.043913 seconds 
+  Import took 0.056981 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000249 seconds.
+  path: Assets/AssetPacks/_Creepy_Cat/3D Games Effects Pack Free/_Materials/Skybox.mat
+  artifactKey: Guid(d21694616239d4aec9013b5c3490bc36) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetPacks/_Creepy_Cat/3D Games Effects Pack Free/_Materials/Skybox.mat using Guid(d21694616239d4aec9013b5c3490bc36) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a770c4f4bd513abaf931fd59453a832d') in 0.107891 seconds 
+  Import took 0.129734 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000260 seconds.
+  path: Assets/AssetPacks/_Creepy_Cat/3D Games Effects Pack Free/_Materials/Effect_02.mat
+  artifactKey: Guid(00be78a98231c449996461ca749d5808) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetPacks/_Creepy_Cat/3D Games Effects Pack Free/_Materials/Effect_02.mat using Guid(00be78a98231c449996461ca749d5808) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6e340d246269319646472b0f6a9e3bde') in 0.049734 seconds 
+  Import took 0.059708 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000294 seconds.
+  path: Assets/AssetPacks/_Creepy_Cat/3D Games Effects Pack Free/_Materials/Effect_04.mat
+  artifactKey: Guid(9d7b7705dd2cc450c991a93f6474f081) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetPacks/_Creepy_Cat/3D Games Effects Pack Free/_Materials/Effect_04.mat using Guid(9d7b7705dd2cc450c991a93f6474f081) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f34ce2e79b5c1cb71d394a7ad9509f4b') in 0.034224 seconds 
+  Import took 0.044007 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000230 seconds.
+  path: Assets/AssetPacks/_Creepy_Cat/3D Games Effects Pack Free/_Materials/Effect_08.mat
+  artifactKey: Guid(02fe6122f18ad42c98742a5c28931947) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetPacks/_Creepy_Cat/3D Games Effects Pack Free/_Materials/Effect_08.mat using Guid(02fe6122f18ad42c98742a5c28931947) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8f3379b3493215b617d7f1c45dd593fa') in 0.031973 seconds 
+  Import took 0.040230 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000280 seconds.
+  path: Assets/AssetPacks/_Creepy_Cat/3D Games Effects Pack Free/_Materials/Effect_07.mat
+  artifactKey: Guid(6ae42f94864774b79bd2f0c91e849c6e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetPacks/_Creepy_Cat/3D Games Effects Pack Free/_Materials/Effect_07.mat using Guid(6ae42f94864774b79bd2f0c91e849c6e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c0fd666ebec6bea2243525c4304786f5') in 0.047761 seconds 
+  Import took 0.058454 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000300 seconds.
+  path: Assets/AssetPacks/_Creepy_Cat/3D Games Effects Pack Free/_Materials/Effect_07_8x8-64.png
+  artifactKey: Guid(411d5d12701d34c578b3282ddfab9b0c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetPacks/_Creepy_Cat/3D Games Effects Pack Free/_Materials/Effect_07_8x8-64.png using Guid(411d5d12701d34c578b3282ddfab9b0c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'adb5ec2feb0a54c54361c1fa5043a823') in 0.043923 seconds 
+  Import took 0.057868 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000324 seconds.
+  path: Assets/AssetPacks/_Creepy_Cat/3D Games Effects Pack Free/_Materials/Effect_01_8x4-32.png
+  artifactKey: Guid(4ff5de4bdb9704c38a0cd21ac3191c64) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetPacks/_Creepy_Cat/3D Games Effects Pack Free/_Materials/Effect_01_8x4-32.png using Guid(4ff5de4bdb9704c38a0cd21ac3191c64) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9ba5989252afea4bb1be5443b2575aab') in 0.032400 seconds 
+  Import took 0.041872 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000293 seconds.
+  path: Assets/AssetPacks/_Creepy_Cat/3D Games Effects Pack Free/_Materials/Effect_03.mat
+  artifactKey: Guid(75666bafa7f7243d7a69ef0cb5137fe7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetPacks/_Creepy_Cat/3D Games Effects Pack Free/_Materials/Effect_03.mat using Guid(75666bafa7f7243d7a69ef0cb5137fe7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '51069481b0e09089ad2262f09b4d6082') in 0.030231 seconds 
+  Import took 0.038418 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000299 seconds.
+  path: Assets/AssetPacks/_Creepy_Cat/3D Games Effects Pack Free/_Materials/Effect_02_8x6-48.png
+  artifactKey: Guid(a9d562fa15fa947ea834e675c0c490fc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetPacks/_Creepy_Cat/3D Games Effects Pack Free/_Materials/Effect_02_8x6-48.png using Guid(a9d562fa15fa947ea834e675c0c490fc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a25cb4f87c5df048f4cffd4f4ae7e353') in 0.041376 seconds 
+  Import took 0.052256 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 10.697784 seconds.
+  path: Assets/AssetPacks/_Creepy_Cat/3D Games Effects Pack Free/_Showroom/Scenes/Camera Profile.asset
+  artifactKey: Guid(6fb110d92f9ce5446b3478baff832b70) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetPacks/_Creepy_Cat/3D Games Effects Pack Free/_Showroom/Scenes/Camera Profile.asset using Guid(6fb110d92f9ce5446b3478baff832b70) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '28f53c92922692aa471cc6c1c33c4e39') in 0.031037 seconds 
+  Import took 0.042685 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.932921 seconds.
+  path: Assets/AssetPacks/_Creepy_Cat/3D Games Effects Pack Free/_Showroom/Scenes/SampleScene.unity
+  artifactKey: Guid(0ef4c1f97186e404fabb3eeef6a8dc14) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetPacks/_Creepy_Cat/3D Games Effects Pack Free/_Showroom/Scenes/SampleScene.unity using Guid(0ef4c1f97186e404fabb3eeef6a8dc14) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd5b70cfd32865f2e39e9c0fd310d35bd') in 0.010828 seconds 
+  Import took 0.019689 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 30.462405 seconds.
+  path: Assets/AssetPacks/_Creepy_Cat/3D Games Effects Pack Free/_Showroom/Prefabs/P_Corridor_End.prefab
+  artifactKey: Guid(c73073a1e7dbc8c44b01dce4ef7cfb5c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetPacks/_Creepy_Cat/3D Games Effects Pack Free/_Showroom/Prefabs/P_Corridor_End.prefab using Guid(c73073a1e7dbc8c44b01dce4ef7cfb5c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4e71cc1b636f140425880c06ca6a5615') in 0.919844 seconds 
+  Import took 0.973327 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000298 seconds.
+  path: Assets/AssetPacks/_Creepy_Cat/3D Games Effects Pack Free/_Showroom/Prefabs/P_Logo.prefab
+  artifactKey: Guid(9be053ba5f51c4d4fad82e394da388e7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetPacks/_Creepy_Cat/3D Games Effects Pack Free/_Showroom/Prefabs/P_Logo.prefab using Guid(9be053ba5f51c4d4fad82e394da388e7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '12daddcd30df7fe6f9d4825f2bf07492') in 0.027679 seconds 
+  Import took 0.038002 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000312 seconds.
+  path: Assets/AssetPacks/_Creepy_Cat/3D Games Effects Pack Free/_Showroom/Prefabs/P_Roof_Normal_01.prefab
+  artifactKey: Guid(18a91a4d870ac664c92379393597d081) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetPacks/_Creepy_Cat/3D Games Effects Pack Free/_Showroom/Prefabs/P_Roof_Normal_01.prefab using Guid(18a91a4d870ac664c92379393597d081) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fbd8000c5c33108383943883a511d25d') in 0.512198 seconds 
+  Import took 0.562627 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000289 seconds.
+  path: Assets/AssetPacks/_Creepy_Cat/3D Games Effects Pack Free/_Showroom/Prefabs/P_Podium_02.prefab
+  artifactKey: Guid(43aca86b5fc799c47a5194f4e6a64f08) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetPacks/_Creepy_Cat/3D Games Effects Pack Free/_Showroom/Prefabs/P_Podium_02.prefab using Guid(43aca86b5fc799c47a5194f4e6a64f08) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3081463d594e99cef141cbc13ce86979') in 0.532094 seconds 
+  Import took 0.586548 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000312 seconds.
+  path: Assets/AssetPacks/_Creepy_Cat/3D Games Effects Pack Free/_Showroom/Prefabs/P_Floor_Normal_01.prefab
+  artifactKey: Guid(e579e46691db2e54cb2fe9109120173e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetPacks/_Creepy_Cat/3D Games Effects Pack Free/_Showroom/Prefabs/P_Floor_Normal_01.prefab using Guid(e579e46691db2e54cb2fe9109120173e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4cc5841bd2bfe1a487e35d5459eadda2') in 0.521163 seconds 
+  Import took 0.573071 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000269 seconds.
+  path: Assets/AssetPacks/_Creepy_Cat/3D Games Effects Pack Free/_Showroom/Prefabs/P_Showroom_01.prefab
+  artifactKey: Guid(9fd65da602ae57746b4a20725b9a69d1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetPacks/_Creepy_Cat/3D Games Effects Pack Free/_Showroom/Prefabs/P_Showroom_01.prefab using Guid(9fd65da602ae57746b4a20725b9a69d1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '556dfc3ddc56898bc10e9dab66fd0b97') in 0.557256 seconds 
+  Import took 0.609450 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000331 seconds.
+  path: Assets/AssetPacks/_Creepy_Cat/3D Games Effects Pack Free/_Showroom/Prefabs/P_Corridor_Part_01.prefab
+  artifactKey: Guid(cb7775518c732034ba7488ec54c51511) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetPacks/_Creepy_Cat/3D Games Effects Pack Free/_Showroom/Prefabs/P_Corridor_Part_01.prefab using Guid(cb7775518c732034ba7488ec54c51511) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '39e5cef685602dfab20491c023c7edad') in 0.509987 seconds 
+  Import took 0.560380 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000241 seconds.
+  path: Assets/AssetPacks/_Creepy_Cat/3D Games Effects Pack Free/_Showroom/Prefabs/P_Floor_Angle_01.prefab
+  artifactKey: Guid(431edb26e74a30841afe223730630335) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetPacks/_Creepy_Cat/3D Games Effects Pack Free/_Showroom/Prefabs/P_Floor_Angle_01.prefab using Guid(431edb26e74a30841afe223730630335) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '77f5a4061696277bfbd01c9f64734403') in 0.502033 seconds 
+  Import took 0.553261 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000356 seconds.
+  path: Assets/AssetPacks/_Creepy_Cat/3D Games Effects Pack Free/_Prefabs/Effect_01.prefab
+  artifactKey: Guid(e48c7d7ec43014ad882cf23f3bb48ac8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetPacks/_Creepy_Cat/3D Games Effects Pack Free/_Prefabs/Effect_01.prefab using Guid(e48c7d7ec43014ad882cf23f3bb48ac8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cd576446e1432ca521bcd33e2c70f353') in 0.033837 seconds 
+  Import took 0.044244 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000289 seconds.
+  path: Assets/AssetPacks/_Creepy_Cat/3D Games Effects Pack Free/_Prefabs/Effect_04.prefab
+  artifactKey: Guid(11380b47be58c4fa78a82752a3f61daa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetPacks/_Creepy_Cat/3D Games Effects Pack Free/_Prefabs/Effect_04.prefab using Guid(11380b47be58c4fa78a82752a3f61daa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a4b45fed0c2afd476251033d253948b3') in 0.029999 seconds 
+  Import took 0.039678 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000293 seconds.
+  path: Assets/AssetPacks/_Creepy_Cat/3D Games Effects Pack Free/_Prefabs/Effect_08.prefab
+  artifactKey: Guid(d50f5f5d5a171443fa76bc1f6fc90473) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetPacks/_Creepy_Cat/3D Games Effects Pack Free/_Prefabs/Effect_08.prefab using Guid(d50f5f5d5a171443fa76bc1f6fc90473) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c913f586a627c37675727c81e486774e') in 0.029299 seconds 
+  Import took 0.038351 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000265 seconds.
+  path: Assets/AssetPacks/_Creepy_Cat/3D Games Effects Pack Free/_Prefabs/Logo.prefab
+  artifactKey: Guid(5aa01cae601f94746aa79edb7eb2380f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetPacks/_Creepy_Cat/3D Games Effects Pack Free/_Prefabs/Logo.prefab using Guid(5aa01cae601f94746aa79edb7eb2380f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1b9b3bb3b45931de6df3b5a7f5363cc4') in 0.022274 seconds 
+  Import took 0.030717 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000279 seconds.
+  path: Assets/AssetPacks/_Creepy_Cat/3D Games Effects Pack Free/_Prefabs/Effect_03.prefab
+  artifactKey: Guid(c17698f595aa942cab4326f0ffaf25c2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetPacks/_Creepy_Cat/3D Games Effects Pack Free/_Prefabs/Effect_03.prefab using Guid(c17698f595aa942cab4326f0ffaf25c2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '060d7ae7c9bb7bc33f2619e6efa80027') in 0.030065 seconds 
+  Import took 0.039022 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000397 seconds.
+  path: Assets/AssetPacks/_Creepy_Cat/3D Games Effects Pack Free/_Showroom/Prefabs/P_Wall_Angle_01.prefab
+  artifactKey: Guid(d12ad7ade1b48b24c9d3f325484e602b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetPacks/_Creepy_Cat/3D Games Effects Pack Free/_Showroom/Prefabs/P_Wall_Angle_01.prefab using Guid(d12ad7ade1b48b24c9d3f325484e602b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '17f0e04d6de5da04cdcb9a2c10ad983a') in 0.520228 seconds 
+  Import took 0.568139 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000266 seconds.
+  path: Assets/AssetPacks/_Creepy_Cat/3D Games Effects Pack Free/_Showroom/Prefabs/P_Roof_Hole_01.prefab
+  artifactKey: Guid(37da26db6e587dd489a461a945071d0e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetPacks/_Creepy_Cat/3D Games Effects Pack Free/_Showroom/Prefabs/P_Roof_Hole_01.prefab using Guid(37da26db6e587dd489a461a945071d0e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2691066016d316de622773cd54bb57ec') in 0.524035 seconds 
+  Import took 0.572824 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000299 seconds.
+  path: Assets/AssetPacks/_Creepy_Cat/3D Games Effects Pack Free/_Prefabs/Effect_02.prefab
+  artifactKey: Guid(f7efb0d9df2264096af57128df85dddb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetPacks/_Creepy_Cat/3D Games Effects Pack Free/_Prefabs/Effect_02.prefab using Guid(f7efb0d9df2264096af57128df85dddb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f74c1ae213ae3dcb498acf6508ad4c62') in 0.044518 seconds 
+  Import took 0.057488 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000233 seconds.
+  path: Assets/AssetPacks/_Creepy_Cat/3D Games Effects Pack Free/_Showroom/Prefabs/P_Wall_Normal_01.prefab
+  artifactKey: Guid(71319aefacea33c4d81222ec99f1b049) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetPacks/_Creepy_Cat/3D Games Effects Pack Free/_Showroom/Prefabs/P_Wall_Normal_01.prefab using Guid(71319aefacea33c4d81222ec99f1b049) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8ffbf8a8234d3316f2a8a3781255d1e4') in 0.507481 seconds 
+  Import took 0.559496 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000311 seconds.
+  path: Assets/AssetPacks/_Creepy_Cat/3D Games Effects Pack Free/_Showroom/Prefabs/P_Podium_01.prefab
+  artifactKey: Guid(44b221b011123034f87457bdca00c56e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetPacks/_Creepy_Cat/3D Games Effects Pack Free/_Showroom/Prefabs/P_Podium_01.prefab using Guid(44b221b011123034f87457bdca00c56e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '02e093502f556050282cfeb7c4f1d2b6') in 0.518480 seconds 
+  Import took 0.574515 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000293 seconds.
+  path: Assets/AssetPacks/_Creepy_Cat/3D Games Effects Pack Free/_Prefabs/Effect_07.prefab
+  artifactKey: Guid(1625b0df15965450c86850dd6d345e87) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetPacks/_Creepy_Cat/3D Games Effects Pack Free/_Prefabs/Effect_07.prefab using Guid(1625b0df15965450c86850dd6d345e87) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd1d76ea383144ba4e009e16d70036668') in 0.046890 seconds 
+  Import took 0.060000 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000275 seconds.
+  path: Assets/AssetPacks/_Creepy_Cat/3D Games Effects Pack Free/_Prefabs/Effect_05.prefab
+  artifactKey: Guid(6746092d79f3e4fe1bfa983603238e26) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetPacks/_Creepy_Cat/3D Games Effects Pack Free/_Prefabs/Effect_05.prefab using Guid(6746092d79f3e4fe1bfa983603238e26) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '178e569a2de49b89f0ce7703d62621cb') in 0.047557 seconds 
+  Import took 0.059414 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000291 seconds.
+  path: Assets/AssetPacks/_Creepy_Cat/3D Games Effects Pack Free/_Showroom/Prefabs/P_Floor_Normal_02.prefab
+  artifactKey: Guid(6a70de0042255a74c8191793a4ba6e59) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetPacks/_Creepy_Cat/3D Games Effects Pack Free/_Showroom/Prefabs/P_Floor_Normal_02.prefab using Guid(6a70de0042255a74c8191793a4ba6e59) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '77c7f680a7196afa83e070814d66a676') in 0.514028 seconds 
+  Import took 0.565925 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000352 seconds.
+  path: Assets/AssetPacks/_Creepy_Cat/3D Games Effects Pack Free/_Prefabs/Effect_06.prefab
+  artifactKey: Guid(876cb26c7c6ab42e49a9cace28b90b8b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetPacks/_Creepy_Cat/3D Games Effects Pack Free/_Prefabs/Effect_06.prefab using Guid(876cb26c7c6ab42e49a9cace28b90b8b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '32b71976319c115979f0665dfcb98193') in 0.044324 seconds 
+  Import took 0.059493 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.031732 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 1.43 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  2.941 seconds
+Domain Reload Profiling:
+	ReloadAssembly (2942ms)
+		BeginReloadAssembly (271ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (7ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (72ms)
+		EndReloadAssembly (2505ms)
+			LoadAssemblies (258ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (610ms)
+			ReleaseScriptCaches (2ms)
+			RebuildScriptCaches (84ms)
+			SetupLoadedEditorAssemblies (1357ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (10ms)
+				SetLoadedEditorAssemblies (1ms)
+				RefreshPlugins (2ms)
+				BeforeProcessingInitializeOnLoad (211ms)
+				ProcessInitializeOnLoadAttributes (1074ms)
+				ProcessInitializeOnLoadMethodAttributes (13ms)
+				AfterProcessingInitializeOnLoad (46ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (11ms)
+Platform modules already initialized, skipping
+Shader 'AngryBots/PlanarRealtimeReflection': fallback shader 'AngryBots/Fallback' not found
+Refreshing native plugins compatible for Editor in 1.34 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3240 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 156.3 MB.
+System memory in use after: 156.3 MB.
+
+Unloading 24 unused Assets to reduce memory usage. Loaded Objects now: 3937.
+Total: 5.900500 ms (FindLiveObjects: 0.452900 ms CreateObjectMapping: 0.258700 ms MarkObjects: 4.880400 ms  DeleteObjects: 0.306400 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 35.467466 seconds.
+  path: Assets/AssetPacks/_Creepy_Cat/3D Games Effects Pack Free/_Showroom/Textures/Hard_Surface_01_Norm.png
+  artifactKey: Guid(0f30554eca854f44d8e3c6ee49d1cd65) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetPacks/_Creepy_Cat/3D Games Effects Pack Free/_Showroom/Textures/Hard_Surface_01_Norm.png using Guid(0f30554eca854f44d8e3c6ee49d1cd65) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '69c85289f6327791f39f3e51499bc754') in 0.428098 seconds 
+  Import took 0.465805 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000272 seconds.
+  path: Assets/AssetPacks/_Creepy_Cat/3D Games Effects Pack Free/Example_01/LightingData.asset
+  artifactKey: Guid(0b3b5526cb8dd4511813f2c8c4c5bec6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetPacks/_Creepy_Cat/3D Games Effects Pack Free/Example_01/LightingData.asset using Guid(0b3b5526cb8dd4511813f2c8c4c5bec6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f1609cbf38aaf0fd60f44386d4cc9dcc') in 0.051750 seconds 
+  Import took 0.063430 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000346 seconds.
+  path: Assets/AssetPacks/_Creepy_Cat/3D Games Effects Pack Free/_Showroom/Meshes/Roof_Hole_01.FBX
+  artifactKey: Guid(dd6f8434804a93349bed4fa13ccf0da5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetPacks/_Creepy_Cat/3D Games Effects Pack Free/_Showroom/Meshes/Roof_Hole_01.FBX using Guid(dd6f8434804a93349bed4fa13ccf0da5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00000000000000000000000000000000') in 4.402219 seconds  code(4) message(Build asset version error: assets/assetpacks/_creepy_cat/3d games effects pack free/_showroom/meshes/roof_hole_01.fbx in SourceAssetDB has modification time of '2021-09-28T00:04:14Z' while content on disk has modification time of '0001-01-01T00:00:00Z' with error code 2
+Stacktrace:
+0x00007ff6bcc3b6fc (Unity) StackWalker::GetCurrentCallstack
+0x00007ff6bcc43d99 (Unity) StackWalker::ShowCallstack
+0x00007ff6be171cac (Unity) GetStacktrace
+0x00007ff6be355067 (Unity) GetAssetHashAndValidate
+0x00007ff6be350233 (Unity) AssetVersionBuilder::BuildHashOfSourceAssetArray
+0x00007ff6be34e1a2 (Unity) AssetVersionBuilder::BuildAssetVersion
+0x00007ff6be3285bd (Unity) CreateAssetVersionBuilder
+0x00007ff6be32f2bd (Unity) ImportToObjects
+0x00007ff6be32e0d8 (Unity) ImportAsset
+0x00007ff6be28fe38 (Unity) AssetImportWorker::Import
+0x00007ff6be2e31ca (Unity) <lambda_7448d646502792db0127dc89657ec83e>::operator()
+0x00007ff6be3878a2 (Unity) asio::detail::completion_handler<core::mutable_function<void __cdecl(void)> >::do_complete
+0x00007ff6be389a00 (Unity) asio::detail::win_iocp_io_service::do_one
+0x00007ff6be38d18e (Unity) asio::io_service::run
+0x00007ff6be31002b (Unity) RunAssetImportWorkerClientV2
+0x00007ff6be310080 (Unity) RunAssetImporterV2
+0x00007ff6bd7cb046 (Unity) Application::InitializeProject
+0x00007ff6be17f212 (Unity) WinMain
+0x00007ff6bffddef6 (Unity) __scrt_common_main_seh
+0x00007ffe53fc7c24 (KERNEL32) BaseThreadInitThunk
+0x00007ffe5464d721 (ntdll) RtlUserThreadStart
+)
+  ERROR: Build asset version error: assets/assetpacks/_creepy_cat/3d games effects pack free/_showroom/meshes/roof_hole_01.fbx in SourceAssetDB has modification time of '2021-09-28T00:04:14Z' while content on disk has modification time of '0001-01-01T00:00:00Z' with error code 2
+Stacktrace:
+0x00007ff6bcc3b6fc (Unity) StackWalker::GetCurrentCallstack
+0x00007ff6bcc43d99 (Unity) StackWalker::ShowCallstack
+0x00007ff6be171cac (Unity) GetStacktrace
+0x00007ff6be355067 (Unity) GetAssetHashAndValidate
+0x00007ff6be350233 (Unity) AssetVersionBuilder::BuildHashOfSourceAssetArray
+0x00007ff6be34e1a2 (Unity) AssetVersionBuilder::BuildAssetVersion
+0x00007ff6be3285bd (Unity) CreateAssetVersionBuilder
+0x00007ff6be32f2bd (Unity) ImportToObjects
+0x00007ff6be32e0d8 (Unity) ImportAsset
+0x00007ff6be28fe38 (Unity) AssetImportWorker::Import
+0x00007ff6be2e31ca (Unity) <lambda_7448d646502792db0127dc89657ec83e>::operator()
+0x00007ff6be3878a2 (Unity) asio::detail::completion_handler<core::mutable_function<void __cdecl(void)> >::do_complete
+0x00007ff6be389a00 (Unity) asio::detail::win_iocp_io_service::do_one
+0x00007ff6be38d18e (Unity) asio::io_service::run
+0x00007ff6be31002b (Unity) RunAssetImportWorkerClientV2
+0x00007ff6be310080 (Unity) RunAssetImporterV2
+0x00007ff6bd7cb046 (Unity) Application::InitializeProject
+0x00007ff6be17f212 (Unity) WinMain
+0x00007ff6bffddef6 (Unity) __scrt_common_main_seh
+0x00007ffe53fc7c24 (KERNEL32) BaseThreadInitThunk
+0x00007ffe5464d721 (ntdll) RtlUserThreadStart
+
+  Import took 4.464189 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.028426 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 1.25 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  2.930 seconds
+Domain Reload Profiling:
+	ReloadAssembly (2930ms)
+		BeginReloadAssembly (270ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (8ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (66ms)
+		EndReloadAssembly (2493ms)
+			LoadAssemblies (262ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (615ms)
+			ReleaseScriptCaches (2ms)
+			RebuildScriptCaches (83ms)
+			SetupLoadedEditorAssemblies (1351ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (10ms)
+				SetLoadedEditorAssemblies (1ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (217ms)
+				ProcessInitializeOnLoadAttributes (1061ms)
+				ProcessInitializeOnLoadMethodAttributes (16ms)
+				AfterProcessingInitializeOnLoad (45ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (11ms)
+Platform modules already initialized, skipping
+Shader 'AngryBots/PlanarRealtimeReflection': fallback shader 'AngryBots/Fallback' not found
+Refreshing native plugins compatible for Editor in 1.28 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3239 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 156.9 MB.
+System memory in use after: 156.9 MB.
+
+Unloading 25 unused Assets to reduce memory usage. Loaded Objects now: 3944.
+Total: 5.691100 ms (FindLiveObjects: 0.440600 ms CreateObjectMapping: 0.258500 ms MarkObjects: 4.669800 ms  DeleteObjects: 0.317900 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 17.178369 seconds.
+  path: Assets/AssetPacks/_Creepy_Cat/3D Games Effects Pack Free/_FAQ - Informations/Particle For One Shoot.png
+  artifactKey: Guid(f7b6623e79d4f41aba868e78ed5256ef) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetPacks/_Creepy_Cat/3D Games Effects Pack Free/_FAQ - Informations/Particle For One Shoot.png using Guid(f7b6623e79d4f41aba868e78ed5256ef) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ef89e82e03687092b3ef6904be3b25f0') in 0.070944 seconds 
+  Import took 0.081255 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000231 seconds.
+  path: Assets/AssetPacks/_Creepy_Cat/3D Games Effects Pack Free/_FAQ - Informations/Particle Start Delay Remove.png
+  artifactKey: Guid(99ccc10f8273447ac997bb763aa00ca8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetPacks/_Creepy_Cat/3D Games Effects Pack Free/_FAQ - Informations/Particle Start Delay Remove.png using Guid(99ccc10f8273447ac997bb763aa00ca8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4dd1611ee35fa335b03fc8e2d1fe1487') in 0.020862 seconds 
+  Import took 0.030419 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000282 seconds.
+  path: Assets/AssetPacks/_Creepy_Cat/3D Games Effects Pack Free/_FAQ - Informations/Particle Loop Remove.png
+  artifactKey: Guid(a1d5201b719c74ccaa8afd7f96ed5380) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetPacks/_Creepy_Cat/3D Games Effects Pack Free/_FAQ - Informations/Particle Loop Remove.png using Guid(a1d5201b719c74ccaa8afd7f96ed5380) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2e643a71d2fa3f1be63211c5d8f1c994') in 0.020345 seconds 
+  Import took 0.030435 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 5.293442 seconds.
+  path: Assets/AssetPacks/_Creepy_Cat/3D Games Effects Pack Free/Example_01.unity
+  artifactKey: Guid(1c9c192b640a84fe1b8ee2945cb84af1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetPacks/_Creepy_Cat/3D Games Effects Pack Free/Example_01.unity using Guid(1c9c192b640a84fe1b8ee2945cb84af1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd840c0389bf5f2cdb904abc316d2118d') in 0.014679 seconds 
+  Import took 0.028919 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.030354 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 1.31 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  3.175 seconds
+Domain Reload Profiling:
+	ReloadAssembly (3176ms)
+		BeginReloadAssembly (295ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (7ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (73ms)
+		EndReloadAssembly (2693ms)
+			LoadAssemblies (323ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (676ms)
+			ReleaseScriptCaches (2ms)
+			RebuildScriptCaches (87ms)
+			SetupLoadedEditorAssemblies (1383ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (11ms)
+				SetLoadedEditorAssemblies (1ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (225ms)
+				ProcessInitializeOnLoadAttributes (1084ms)
+				ProcessInitializeOnLoadMethodAttributes (14ms)
+				AfterProcessingInitializeOnLoad (47ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (11ms)
+Platform modules already initialized, skipping
+Shader 'AngryBots/PlanarRealtimeReflection': fallback shader 'AngryBots/Fallback' not found
+Refreshing native plugins compatible for Editor in 1.35 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3238 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 156.9 MB.
+System memory in use after: 156.9 MB.
+
+Unloading 25 unused Assets to reduce memory usage. Loaded Objects now: 3946.
+Total: 6.120900 ms (FindLiveObjects: 0.469800 ms CreateObjectMapping: 0.234700 ms MarkObjects: 5.098300 ms  DeleteObjects: 0.316300 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.028498 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 1.30 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  2.938 seconds
+Domain Reload Profiling:
+	ReloadAssembly (2939ms)
+		BeginReloadAssembly (269ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (10ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (65ms)
+		EndReloadAssembly (2500ms)
+			LoadAssemblies (263ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (604ms)
+			ReleaseScriptCaches (2ms)
+			RebuildScriptCaches (84ms)
+			SetupLoadedEditorAssemblies (1358ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (10ms)
+				SetLoadedEditorAssemblies (1ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (208ms)
+				ProcessInitializeOnLoadAttributes (1077ms)
+				ProcessInitializeOnLoadMethodAttributes (15ms)
+				AfterProcessingInitializeOnLoad (45ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (12ms)
+Platform modules already initialized, skipping
+Shader 'AngryBots/PlanarRealtimeReflection': fallback shader 'AngryBots/Fallback' not found
+Refreshing native plugins compatible for Editor in 1.26 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3238 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 156.9 MB.
+System memory in use after: 157.0 MB.
+
+Unloading 24 unused Assets to reduce memory usage. Loaded Objects now: 3948.
+Total: 6.152300 ms (FindLiveObjects: 0.478400 ms CreateObjectMapping: 0.236400 ms MarkObjects: 4.971800 ms  DeleteObjects: 0.463700 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 131.976643 seconds.
+  path: Assets/Resources/Prefabs/Player/ChargedShot/ChargedShot.prefab
+  artifactKey: Guid(012396427756533428717b82571f11f3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Prefabs/Player/ChargedShot/ChargedShot.prefab using Guid(012396427756533428717b82571f11f3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ea32fe3b693d578da5e58a21349fb29e') in 0.092309 seconds 
+  Import took 0.104152 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.029772 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 1.31 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  2.892 seconds
+Domain Reload Profiling:
+	ReloadAssembly (2893ms)
+		BeginReloadAssembly (265ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (7ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (65ms)
+		EndReloadAssembly (2465ms)
+			LoadAssemblies (257ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (610ms)
+			ReleaseScriptCaches (2ms)
+			RebuildScriptCaches (81ms)
+			SetupLoadedEditorAssemblies (1331ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (9ms)
+				SetLoadedEditorAssemblies (1ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (214ms)
+				ProcessInitializeOnLoadAttributes (1047ms)
+				ProcessInitializeOnLoadMethodAttributes (15ms)
+				AfterProcessingInitializeOnLoad (44ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (11ms)
+Platform modules already initialized, skipping
+Shader 'AngryBots/PlanarRealtimeReflection': fallback shader 'AngryBots/Fallback' not found
+Refreshing native plugins compatible for Editor in 1.22 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3238 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 156.9 MB.
+System memory in use after: 157.0 MB.
+
+Unloading 24 unused Assets to reduce memory usage. Loaded Objects now: 3951.
+Total: 6.822000 ms (FindLiveObjects: 0.796200 ms CreateObjectMapping: 0.381300 ms MarkObjects: 5.277000 ms  DeleteObjects: 0.363600 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.029650 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 1.28 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  2.934 seconds
+Domain Reload Profiling:
+	ReloadAssembly (2935ms)
+		BeginReloadAssembly (274ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (8ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (68ms)
+		EndReloadAssembly (2499ms)
+			LoadAssemblies (267ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (608ms)
+			ReleaseScriptCaches (2ms)
+			RebuildScriptCaches (83ms)
+			SetupLoadedEditorAssemblies (1350ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (10ms)
+				SetLoadedEditorAssemblies (1ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (214ms)
+				ProcessInitializeOnLoadAttributes (1064ms)
+				ProcessInitializeOnLoadMethodAttributes (13ms)
+				AfterProcessingInitializeOnLoad (47ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (11ms)
+Platform modules already initialized, skipping
+Shader 'AngryBots/PlanarRealtimeReflection': fallback shader 'AngryBots/Fallback' not found
+Refreshing native plugins compatible for Editor in 1.19 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3237 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 156.9 MB.
+System memory in use after: 157.0 MB.
+
+Unloading 25 unused Assets to reduce memory usage. Loaded Objects now: 3952.
+Total: 5.816200 ms (FindLiveObjects: 0.498600 ms CreateObjectMapping: 0.283000 ms MarkObjects: 4.711400 ms  DeleteObjects: 0.321300 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 152.031910 seconds.
+  path: Assets/Scripts/Player/Player Input/Firing/ChargedShot/EnemyTargeter.cs
+  artifactKey: Guid(02698df4ef7d8f5459bd405cdb87f9b2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Player/Player Input/Firing/ChargedShot/EnemyTargeter.cs using Guid(02698df4ef7d8f5459bd405cdb87f9b2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4c24ef9a1854edac8b8ad4ba612d8dbd') in 0.018108 seconds 
+  Import took 0.028490 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.671003 seconds.
+  path: Assets/Scripts/Player/Player Input/Firing/ChargedShot/EnemyTargetReticlePosition.cs
+  artifactKey: Guid(349b378730bcf284abb8a07db945f796) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Player/Player Input/Firing/ChargedShot/EnemyTargetReticlePosition.cs using Guid(349b378730bcf284abb8a07db945f796) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9eb6422322d77d27819491682998ba21') in 0.009136 seconds 
+  Import took 0.018268 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.030565 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 1.27 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  2.934 seconds
+Domain Reload Profiling:
+	ReloadAssembly (2935ms)
+		BeginReloadAssembly (266ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (8ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (63ms)
+		EndReloadAssembly (2497ms)
+			LoadAssemblies (259ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (609ms)
+			ReleaseScriptCaches (2ms)
+			RebuildScriptCaches (85ms)
+			SetupLoadedEditorAssemblies (1355ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (10ms)
+				SetLoadedEditorAssemblies (1ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (211ms)
+				ProcessInitializeOnLoadAttributes (1071ms)
+				ProcessInitializeOnLoadMethodAttributes (14ms)
+				AfterProcessingInitializeOnLoad (47ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (11ms)
+Platform modules already initialized, skipping
+Shader 'AngryBots/PlanarRealtimeReflection': fallback shader 'AngryBots/Fallback' not found
+Refreshing native plugins compatible for Editor in 1.31 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3236 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 156.9 MB.
+System memory in use after: 156.9 MB.
+
+Unloading 25 unused Assets to reduce memory usage. Loaded Objects now: 3953.
+Total: 6.038600 ms (FindLiveObjects: 0.521700 ms CreateObjectMapping: 0.216200 ms MarkObjects: 4.982700 ms  DeleteObjects: 0.316000 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 406.899303 seconds.
+  path: Assets/Resources/Prefabs/Player/Player 1.prefab
+  artifactKey: Guid(68c7937e8268d9d42b23590f5ea31a7f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Prefabs/Player/Player 1.prefab using Guid(68c7937e8268d9d42b23590f5ea31a7f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '742d1f730dc7cc166153d2e17bde0bc9') in 0.287864 seconds 
+  Import took 0.311194 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000261 seconds.
+  path: Assets/Resources/Prefabs/Player/PlayerShip2.prefab
+  artifactKey: Guid(3715a73d88eee534aaaa6e92c9931381) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Prefabs/Player/PlayerShip2.prefab using Guid(3715a73d88eee534aaaa6e92c9931381) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '82a93c89acc518354e0307c3187db659') in 0.054538 seconds 
+  Import took 0.074162 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 4.681840 seconds.
+  path: Assets/Resources/Prefabs/Player/Player 1.prefab
+  artifactKey: Guid(68c7937e8268d9d42b23590f5ea31a7f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Prefabs/Player/Player 1.prefab using Guid(68c7937e8268d9d42b23590f5ea31a7f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c989af7b29c557197f2870eeea9032e6') in 0.154138 seconds 
+  Import took 0.184177 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000244 seconds.
+  path: Assets/Resources/Prefabs/Player/PlayerShip2.prefab
+  artifactKey: Guid(3715a73d88eee534aaaa6e92c9931381) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Prefabs/Player/PlayerShip2.prefab using Guid(3715a73d88eee534aaaa6e92c9931381) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4780e76d941637ebc34d0677cd6353e6') in 0.045930 seconds 
+  Import took 0.061121 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.029509 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 1.32 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  2.939 seconds
+Domain Reload Profiling:
+	ReloadAssembly (2939ms)
+		BeginReloadAssembly (273ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (7ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (70ms)
+		EndReloadAssembly (2497ms)
+			LoadAssemblies (263ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (609ms)
+			ReleaseScriptCaches (3ms)
+			RebuildScriptCaches (83ms)
+			SetupLoadedEditorAssemblies (1347ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (9ms)
+				SetLoadedEditorAssemblies (1ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (213ms)
+				ProcessInitializeOnLoadAttributes (1064ms)
+				ProcessInitializeOnLoadMethodAttributes (13ms)
+				AfterProcessingInitializeOnLoad (45ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (11ms)
+Platform modules already initialized, skipping
+Shader 'AngryBots/PlanarRealtimeReflection': fallback shader 'AngryBots/Fallback' not found
+Refreshing native plugins compatible for Editor in 1.39 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3236 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 157.0 MB.
+System memory in use after: 157.1 MB.
+
+Unloading 24 unused Assets to reduce memory usage. Loaded Objects now: 3957.
+Total: 5.987200 ms (FindLiveObjects: 0.436200 ms CreateObjectMapping: 0.257900 ms MarkObjects: 4.986400 ms  DeleteObjects: 0.305100 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.028297 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 1.19 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  2.937 seconds
+Domain Reload Profiling:
+	ReloadAssembly (2937ms)
+		BeginReloadAssembly (278ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (9ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (63ms)
+		EndReloadAssembly (2489ms)
+			LoadAssemblies (272ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (596ms)
+			ReleaseScriptCaches (2ms)
+			RebuildScriptCaches (82ms)
+			SetupLoadedEditorAssemblies (1356ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (9ms)
+				SetLoadedEditorAssemblies (1ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (209ms)
+				ProcessInitializeOnLoadAttributes (1070ms)
+				ProcessInitializeOnLoadMethodAttributes (15ms)
+				AfterProcessingInitializeOnLoad (50ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (11ms)
+Platform modules already initialized, skipping
+Shader 'AngryBots/PlanarRealtimeReflection': fallback shader 'AngryBots/Fallback' not found
+Refreshing native plugins compatible for Editor in 1.24 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3236 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 157.0 MB.
+System memory in use after: 157.1 MB.
+
+Unloading 24 unused Assets to reduce memory usage. Loaded Objects now: 3959.
+Total: 6.872500 ms (FindLiveObjects: 0.545900 ms CreateObjectMapping: 0.269000 ms MarkObjects: 5.739800 ms  DeleteObjects: 0.315800 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+AssetImportWorkerClient::OnTransportError - code=2 error=End of file

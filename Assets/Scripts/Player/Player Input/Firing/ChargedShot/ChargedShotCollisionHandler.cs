@@ -13,11 +13,9 @@ public class ChargedShotCollisionHandler : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Player") || other.gameObject.CompareTag("Friendly") || other.gameObject.CompareTag("EnemyWeapon"))
-            return;
-        else
+        if (other.gameObject.CompareTag("Enemy") || other.gameObject.CompareTag("Environment") || other.gameObject.CompareTag("CollisionSafe"))
         {
             Instantiate(Resources.Load<GameObject>("Prefabs/Player/ChargedShot/ChargedShotExplosion"), transform.position, Quaternion.identity, parentGameObject.transform);
-        }   
+        }
     }
 }

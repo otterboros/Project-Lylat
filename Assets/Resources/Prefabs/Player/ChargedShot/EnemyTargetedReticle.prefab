@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 3438625928589120905}
   - component: {fileID: 7941044179987394681}
-  - component: {fileID: 6482957986304739213}
   - component: {fileID: 6458173032030888007}
   m_Layer: 5
   m_Name: EnemyTargetedReticle
@@ -46,18 +45,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8018522826883899299}
   m_CullTransparentMesh: 1
---- !u!114 &6482957986304739213
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8018522826883899299}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 349b378730bcf284abb8a07db945f796, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &6458173032030888007
 MonoBehaviour:
   m_ObjectHideFlags: 0

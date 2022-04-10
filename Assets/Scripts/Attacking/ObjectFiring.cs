@@ -11,15 +11,12 @@ public class ObjectFiring : MonoBehaviour
         switch (firingMode)
         {
             case ("FireObjectForward"):
-                Debug.Log("Firing forward!");
                 FireObjectForward(speed);
                 break;
             case ("FireObjectAtTarget"):
-                Debug.Log("Firing object at target!");
                 FireObjectAtTarget(target.transform, speed);
                 break;
             case ("FireHomingObjectAtTarget"):
-                Debug.Log("Firing homing object at target!");
                 FireHomingObjectAtTarget(target.transform, speed);
                 break;
             default:
@@ -45,8 +42,15 @@ public class ObjectFiring : MonoBehaviour
 
     public void FireHomingObjectAtTarget(Transform target, float speed)
     {
-        // Object will continually home in on target, inevitably chasing it from behind after it overshoots
+        // Object will continually home in on target, chasing it from behind if it overshoots
         transform.LookAt(target);
         transform.Translate(Vector3.forward * speed);
+    }
+
+    public void FireHomingObjectAtTarget(Transform target, Transform thisObject, float speed)
+    {
+        // Overloaded version that moves something this isn't attached to
+        thisObject.transform.LookAt(target);
+        thisObject.transform.Translate(Vector3.forward * speed);
     }
 }
