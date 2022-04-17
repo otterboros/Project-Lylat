@@ -15,6 +15,7 @@ TagManager:
   - CollisionSafe
   - PickupHealth
   - PickupLaser
+  - DialogueTrigger
   layers:
   - Default
   - TransparentFX

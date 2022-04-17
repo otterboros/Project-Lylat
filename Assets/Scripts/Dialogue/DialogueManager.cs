@@ -34,6 +34,9 @@ public class DialogueManager : MonoBehaviour
         _tb = dialogueParent.GetComponentInChildren<TextBuilder>();
         dialogueText = dialogueParent.transform.GetChild(0).GetComponent<TMP_Text>();
         characterText = dialogueParent.transform.GetChild(1).GetComponent<TMP_Text>();
+
+        // Abstract loading to scene number
+        LoadScriptDoc("test.txt");
     }
     #endregion
 
@@ -43,16 +46,6 @@ public class DialogueManager : MonoBehaviour
     /// </summary>
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.T))
-        {
-            LoadScriptDoc("test.txt");
-        }
-
-        if (Input.GetKeyDown(KeyCode.Y))
-        {
-            Next();
-        }
-
         if (Input.GetKeyDown(KeyCode.U))
         {
             StartClosingDialogue();
@@ -161,7 +154,7 @@ public class DialogueManager : MonoBehaviour
     /// <summary>
     /// Trigger that advances progress through a chapter file.
     /// </summary>
-    static bool _next = false;
+    bool _next = false;
     /// <summary>
     /// Move to the next line of the chapter when _next = true;
     /// </summary>

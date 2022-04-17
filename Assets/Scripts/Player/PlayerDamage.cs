@@ -1,6 +1,6 @@
 // PlayerDamage.cs - Handle collisions
 //                   & process invincibility frames
-// TO-DO: Combine TakeDamage and Add Health into one function
+// TO-DO: Combine Player and Enemy Damage into parent class
 //        Move assignment of laserLevel and make laserLevel persist across levels
 //        Add sounds and animation to Pickup
 //-------------------------------------------------------------------------------
@@ -23,8 +23,6 @@ public class PlayerDamage : MonoBehaviour, IDamagable
     private Coroutine iFramesOn;
     private bool areIFramesOn { get { return iFramesOn != null; } }
 
-
-
     private void Awake()
     {
         // Set current health for this game object as it's stored max health
@@ -41,6 +39,7 @@ public class PlayerDamage : MonoBehaviour, IDamagable
         PlayerDataStatic.laserLevel = 0;
     }
 
+    #region Manage Health Changes
     public void ChangeHealth(int value) // Change health value & play damage animation
     {
         currentHealth += value;
@@ -67,11 +66,12 @@ public class PlayerDamage : MonoBehaviour, IDamagable
             GetComponent<ReloadLevel>().RestartLevel();
         }
     }
+    #endregion
 
-
+    #region OnTriggerEnter
     void OnTriggerEnter(Collider other)
     {
-        // Process trigger collisions if component PickupData is found and whether or not IFrames are off
+        // Process trigger collisions if component PickupData is found
         if(other.gameObject.TryGetComponent(out PickupData _pd))
         {
             switch (other.gameObject.tag)
@@ -136,26 +136,27 @@ public class PlayerDamage : MonoBehaviour, IDamagable
             }
         }
     }
+    #endregion
 
+    #region OnCollisionEnter
     private void OnCollisionEnter(Collision collision)
     {
-        // Process non-trigger collisions if Iframes are off
-        if (!areIFramesOn)
+        if(collision.gameObject.tag == "DialogueTrigger")
         {
-            switch (collision.gameObject.tag)
-            {
-                case "Environment":
-                    ChangeHealth(1);
-                    ProcessHealthState(currentHealth);
-                    StartInvincibilityFrames();
-                    break;
-                default:
-                    Debug.Log($"Player collided with {collision.gameObject.tag}.");
-                    break;
-            }
+            Debug.Log("Loading next linear script line!");
+            DialogueManager.instance.Next();
+            //DialogueManager.instance.StartClosingDialogue();
+        }
+        else if (collision.gameObject.tag == "Environment" && !areIFramesOn)
+        {
+            ChangeHealth(1);
+            ProcessHealthState(currentHealth);
+            StartInvincibilityFrames();
         }
     }
+    #endregion
 
+    #region Invincibility Frames
     private void StartInvincibilityFrames()
     {
         StopInvincibilityFrames(); //If Invincibility Frames are already active, stop them.
@@ -181,4 +182,5 @@ public class PlayerDamage : MonoBehaviour, IDamagable
         }
         StopInvincibilityFrames();
     }
+    #endregion
 }

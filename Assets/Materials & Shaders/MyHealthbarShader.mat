@@ -25,7 +25,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Floats:
     - _BorderWidth: 0.2
-    - _Health: 1
+    - _Health: 0.9
     - _PulseSpeed: 1
     - _ThresholdHigh: 0.8
     - _ThresholdLow: 0.2

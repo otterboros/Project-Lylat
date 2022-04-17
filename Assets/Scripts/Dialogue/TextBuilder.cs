@@ -59,6 +59,7 @@ public class TextBuilder : MonoBehaviour
             yield return new WaitForSeconds(txtSpd);
         }
         StopTextReveal();
+        DialogueManager.instance.StartClosingDialogue();
     }
     #endregion
 }
