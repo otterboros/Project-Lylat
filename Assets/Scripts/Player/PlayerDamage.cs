@@ -35,7 +35,7 @@ public class PlayerDamage : MonoBehaviour, IDamagable
     private void Start()
     {
         currentHealth = _data.maxHealth;
-        HealthBarManager.instance.UpdateHealthBar(currentHealth);
+        HealthBarManager.instance.UpdateHealthBar(currentHealth, "Player");
         PlayerDataStatic.laserLevel = 0;
     }
 
@@ -54,7 +54,7 @@ public class PlayerDamage : MonoBehaviour, IDamagable
         //if health is equal to or above 1, play damage effect.
         if (health >= 1)
         {
-            HealthBarManager.instance.UpdateHealthBar(health);
+            HealthBarManager.instance.UpdateHealthBar(health, "Player");
         }
 
         // If health is below 1, process death.

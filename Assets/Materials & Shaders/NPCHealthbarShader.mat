@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: MyHealthbarShader
+  m_Name: NPCHealthbarShader
   m_Shader: {fileID: 4800000, guid: 3e7e9cfcae107804d82bee78a9e5dd28, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
@@ -25,7 +25,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Floats:
     - _BorderWidth: 0.2
-    - _Health: 0.9
+    - _Health: 0.8
     - _PulseSpeed: 1
     - _ThresholdHigh: 0.8
     - _ThresholdLow: 0.2

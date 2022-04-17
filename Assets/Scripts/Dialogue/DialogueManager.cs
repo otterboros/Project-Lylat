@@ -17,6 +17,7 @@ public class DialogueManager : MonoBehaviour
 {
     public static DialogueManager instance;
 
+    private GameObject dialogueParent;
     private TMP_Text dialogueText;
     private TMP_Text characterText;
     private TextBuilder _tb;
@@ -30,26 +31,18 @@ public class DialogueManager : MonoBehaviour
     {
         instance = this;
 
-        GameObject dialogueParent = GameObject.Find("Dialogue");
+        dialogueParent = GameObject.Find("DialogueParent");
         _tb = dialogueParent.GetComponentInChildren<TextBuilder>();
-        dialogueText = dialogueParent.transform.GetChild(0).GetComponent<TMP_Text>();
-        characterText = dialogueParent.transform.GetChild(1).GetComponent<TMP_Text>();
+        characterText = dialogueParent.transform.GetChild(0).GetComponent<TMP_Text>();
+        dialogueText = dialogueParent.transform.GetChild(1).GetChild(0).GetComponent<TMP_Text>();
 
         // Abstract loading to scene number
         LoadScriptDoc("test.txt");
-    }
-    #endregion
 
-    #region Testing DELETE WHEN DONE
-    /// <summary>
-    /// For testing, delete when done!
-    /// </summary>
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.U))
-        {
-            StartClosingDialogue();
-        }
+        // Load Barks Doc
+
+        // Deactivate Dialogue on Awake
+        dialogueParent.SetActive(false);
     }
     #endregion
 
@@ -62,7 +55,6 @@ public class DialogueManager : MonoBehaviour
         cachedLastSpeaker = "";
 
         data = FileManager.LoadFile(FileManager.savPath + "Resources/Dialogue/LevelScripts/" + fileName);
-        Debug.Log($"Loading file {fileName}");
 
         if (handlingScriptFile != null)
         {
@@ -107,9 +99,10 @@ public class DialogueManager : MonoBehaviour
     void ReadLine(string rawLine)
     {
         LINE line = Interpret(rawLine);
-        
+
         characterText.text = line.speaker; // Update naming, previous speaker is always current speaker after a Line is processed.
         dialogueText.text = line.currentLine;
+
         _tb.StartTextReveal();
     }
 
@@ -156,10 +149,11 @@ public class DialogueManager : MonoBehaviour
     /// </summary>
     bool _next = false;
     /// <summary>
-    /// Move to the next line of the chapter when _next = true;
+    /// Set dialogueParent to active & move to the next line of the chapter when _next = true;
     /// </summary>
     public void Next()
     {
+        dialogueParent.SetActive(true);
         _next = true;
     }
     #endregion
@@ -200,8 +194,9 @@ public class DialogueManager : MonoBehaviour
 
         yield return new WaitForSeconds(closingSpeed); // Wait closingSpeed seconds
         // Play closing animation & sound
-        dialogueText.text = "";
-        characterText.text = "";
+        dialogueParent.SetActive(false);
+        //dialogueText.text = "";
+        //characterText.text = "";
         StopClosingDialogue();
     }
     #endregion

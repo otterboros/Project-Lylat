@@ -16,6 +16,8 @@ TagManager:
   - PickupHealth
   - PickupLaser
   - DialogueTrigger
+  - NPC
+  - Healthbar
   layers:
   - Default
   - TransparentFX

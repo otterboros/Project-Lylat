@@ -30,7 +30,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3315304266031366359}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -8}
+  m_LocalPosition: {x: 0, y: 3, z: -11}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3315304266721250917}
@@ -204,9 +204,9 @@ GameObject:
   - component: {fileID: 3315304266721250917}
   - component: {fileID: 3315304266721250914}
   m_Layer: 0
-  m_Name: Player 1
+  m_Name: Player
   m_TagString: Player
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 3936346786652291628, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -252,34 +252,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3315304266721250917}
     m_Modifications:
-    - target: {fileID: 112310687823145711, guid: 3715a73d88eee534aaaa6e92c9931381, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3061915564696084213, guid: 3715a73d88eee534aaaa6e92c9931381, type: 3}
-      propertyPath: m_Name
-      value: CloseReticleTargetOff
-      objectReference: {fileID: 0}
-    - target: {fileID: 3061915564696084213, guid: 3715a73d88eee534aaaa6e92c9931381, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3360771872381048247, guid: 3715a73d88eee534aaaa6e92c9931381, type: 3}
-      propertyPath: m_Name
-      value: FarReticleTargetOff
-      objectReference: {fileID: 0}
-    - target: {fileID: 3360771872381048247, guid: 3715a73d88eee534aaaa6e92c9931381, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4590049320576156769, guid: 3715a73d88eee534aaaa6e92c9931381, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5955202905175819478, guid: 3715a73d88eee534aaaa6e92c9931381, type: 3}
-      propertyPath: shipYawRatio
-      value: 60
-      objectReference: {fileID: 0}
     - target: {fileID: 6081734556815140609, guid: 3715a73d88eee534aaaa6e92c9931381, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -290,7 +262,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6081734556815140609, guid: 3715a73d88eee534aaaa6e92c9931381, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 6081734556815140609, guid: 3715a73d88eee534aaaa6e92c9931381, type: 3}
       propertyPath: m_LocalPosition.z
@@ -328,46 +300,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerShip2
       objectReference: {fileID: 0}
-    - target: {fileID: 6083777436945969431, guid: 3715a73d88eee534aaaa6e92c9931381, type: 3}
-      propertyPath: m_TagString
-      value: Player
-      objectReference: {fileID: 0}
     - target: {fileID: 6093717307201130453, guid: 3715a73d88eee534aaaa6e92c9931381, type: 3}
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 3315304266031366357}
-    - target: {fileID: 7387528410501973334, guid: 3715a73d88eee534aaaa6e92c9931381, type: 3}
-      propertyPath: playerShipMesh
-      value: 
-      objectReference: {fileID: 5829557242754095069}
-    - target: {fileID: 7741925922053199130, guid: 3715a73d88eee534aaaa6e92c9931381, type: 3}
-      propertyPath: m_Name
-      value: FarReticleTargetOff
-      objectReference: {fileID: 0}
-    - target: {fileID: 7741925922053199130, guid: 3715a73d88eee534aaaa6e92c9931381, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8047122563555925592, guid: 3715a73d88eee534aaaa6e92c9931381, type: 3}
-      propertyPath: m_Name
-      value: CloseReticleTargetOff
-      objectReference: {fileID: 0}
-    - target: {fileID: 8047122563555925592, guid: 3715a73d88eee534aaaa6e92c9931381, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8600856457073820000, guid: 3715a73d88eee534aaaa6e92c9931381, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8600856457073820005, guid: 3715a73d88eee534aaaa6e92c9931381, type: 3}
-      propertyPath: m_Name
-      value: Player Death VFX
-      objectReference: {fileID: 0}
-    - target: {fileID: 8818088906995795148, guid: 3715a73d88eee534aaaa6e92c9931381, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3715a73d88eee534aaaa6e92c9931381, type: 3}
 --- !u!1 &8524465265688175337 stripped
@@ -378,10 +314,5 @@ GameObject:
 --- !u!4 &8522985318346110207 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6081734556815140609, guid: 3715a73d88eee534aaaa6e92c9931381, type: 3}
-  m_PrefabInstance: {fileID: 2459265180443120638}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &5829557242754095069 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8270772531076875299, guid: 3715a73d88eee534aaaa6e92c9931381, type: 3}
   m_PrefabInstance: {fileID: 2459265180443120638}
   m_PrefabAsset: {fileID: 0}

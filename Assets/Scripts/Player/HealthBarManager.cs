@@ -1,4 +1,4 @@
-// HealthBarManager.cs - Calculate and update healthbar shader based on player health data
+// HealthBarManager.cs - Calculate and update healthbar shaders for NPC and Player
 // TO-DO: Replace 10.00f with a form of _data.maxHealth
 //----------------------------------------------------------------------------------------
 
@@ -9,14 +9,21 @@ using UnityEngine.UI;
 
 public class HealthBarManager : MonoBehaviour
 {
-    private Material m_healthbar;
-    private PlayerData _data;
     public static HealthBarManager instance;
 
-    private void Start()
+    [SerializeField] GameObject PCHealthbar;
+    [SerializeField] GameObject NPCHealthbar;
+
+    private Material m_PCHealthbar;
+    private Material m_NPCHealthbar;
+    //private PlayerData _data;
+
+    private void Awake()
     {
-        m_healthbar = GetComponent<Image>().material;
         instance = this;
+
+        m_PCHealthbar = PCHealthbar.GetComponent<Image>().material;
+        m_NPCHealthbar = NPCHealthbar.GetComponent<Image>().material;
     }
 
     private float NormalizeHealth(int health)
@@ -27,9 +34,16 @@ public class HealthBarManager : MonoBehaviour
         return normHealth;
     }
 
-    public void UpdateHealthBar(int health)
+    public void UpdateHealthBar(int health, string hbType)
     {
         float shaderHealth = NormalizeHealth(health);
-        m_healthbar.SetFloat("_Health", shaderHealth);
+        if(hbType == "Player")
+        {
+            m_PCHealthbar.SetFloat("_Health", shaderHealth);
+        }
+        else if(hbType == "NPC")
+        {
+            m_NPCHealthbar.SetFloat("_Health", shaderHealth);
+        }
     }
 }
