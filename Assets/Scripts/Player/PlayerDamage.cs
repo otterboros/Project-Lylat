@@ -13,6 +13,7 @@ using UnityEngine.SceneManagement;
 
 public class PlayerDamage : MonoBehaviour, IDamagable
 {
+    #region Initalization
     private GameObject _parentGameObject;
     private PlayerData _data;
     private Rigidbody _rb;
@@ -38,6 +39,8 @@ public class PlayerDamage : MonoBehaviour, IDamagable
         HealthBarManager.instance.UpdateHealthBar(currentHealth, "Player");
         PlayerDataStatic.laserLevel = 0;
     }
+
+    #endregion
 
     #region Manage Health Changes
     public void ChangeHealth(int value) // Change health value & play damage animation
@@ -149,7 +152,7 @@ public class PlayerDamage : MonoBehaviour, IDamagable
         }
         else if (collision.gameObject.tag == "Environment" && !areIFramesOn)
         {
-            ChangeHealth(1);
+            ChangeHealth(-1);
             ProcessHealthState(currentHealth);
             StartInvincibilityFrames();
         }

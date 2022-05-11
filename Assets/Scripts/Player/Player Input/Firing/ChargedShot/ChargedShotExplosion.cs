@@ -6,6 +6,7 @@ public class ChargedShotExplosion : MonoBehaviour
 {
     [SerializeField] float radius;
     [SerializeField] float timeTilDestroy = 1f;
+
     private Transform enemyTransform;
 
     private void OnEnable() => Explode();
@@ -30,6 +31,7 @@ public class ChargedShotExplosion : MonoBehaviour
                     {
                         ComboManager.instance.AddToCombo();
                         enemyTransform = enemy.transform;
+
                     }
                 }
 

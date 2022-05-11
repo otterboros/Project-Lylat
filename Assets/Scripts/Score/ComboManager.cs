@@ -7,15 +7,16 @@ public class ComboManager : MonoBehaviour
     public static ComboManager instance;
 
     private Scoreboard _scoreboard;
-    private DownedTextController _dtc;
 
     private int comboValue;
+    private DownedTextController _dtc;
 
     private void Awake()
     {
         instance = this;
 
         _scoreboard = FindObjectOfType<Scoreboard>();
+
         _dtc = FindObjectOfType<DownedTextController>();
     }
 
@@ -29,17 +30,16 @@ public class ComboManager : MonoBehaviour
         comboValue++;
     }
 
-    public void FinishCombo(Transform lastEnemyTransform)
+    public void FinishCombo(Transform enemyTransform)
     {
         if (comboValue >= 2)
         {
             _scoreboard.ModifyScore(comboValue - 1);
 
-            // Add a UI Element that displays "Downed + comboValue"
-            _dtc.UpdateDownedTextPosition(lastEnemyTransform);
+            Debug.Log($"Downed + {comboValue - 1}!");
+            _dtc.UpdateDownedTextPosition(enemyTransform);
             _dtc.UpdateDownedText(comboValue);
             _dtc.StartResettingDownedText();
-            // Delay for 3 sec and move slightly, then reset
         }
         else if (comboValue < 2)
             Debug.Log("No combo!");
