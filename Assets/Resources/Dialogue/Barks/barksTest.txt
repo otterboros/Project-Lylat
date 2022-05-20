@@ -1,5 +1,0 @@
-Octave:
-{Damage}	damage1
-{Damage}	damage2
-{Enemy Downed}	enemyDowned1
-{Enemy Downed}	enemyDowned2

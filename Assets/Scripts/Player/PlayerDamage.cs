@@ -144,13 +144,7 @@ public class PlayerDamage : MonoBehaviour, IDamagable
     #region OnCollisionEnter
     private void OnCollisionEnter(Collision collision)
     {
-        if(collision.gameObject.tag == "DialogueTrigger")
-        {
-            Debug.Log("Loading next linear script line!");
-            DialogueManager.instance.Next();
-            //DialogueManager.instance.StartClosingDialogue();
-        }
-        else if (collision.gameObject.tag == "Environment" && !areIFramesOn)
+        if (collision.gameObject.tag == "Environment" && !areIFramesOn)
         {
             ChangeHealth(-1);
             ProcessHealthState(currentHealth);
