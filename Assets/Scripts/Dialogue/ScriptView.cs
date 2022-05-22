@@ -1,7 +1,7 @@
-// ScriptView.cs - A Custom subclass of DialogueViewBase for Starfox 64-like
-//                 linear script-based dialogue.
-// To-DO: Edit Dismiss, Run, and Interupt to work with what we want!
-//--------------------------------------------------------------
+// TO-DO: - Design dialogue to start but hide or not run the first line
+//        - Add an opening fade for each line
+//        - Add a closing fade after hold & ensure that hold timer only starts after line is presented
+//        - Fix auto-sizing of text
 
 using System;
 using System.Collections;
@@ -9,222 +9,340 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 
-using Yarn.Unity;
-
-
-public class ScriptView : DialogueViewBase
+namespace Yarn.Unity
 {
-    // The canvas group that contains the UI elements used by this Line
-    [SerializeField] internal CanvasGroup canvasGroup;
-
-    // The object that displays the text of dialogue lines.
-    [SerializeField] internal TextMeshProUGUI lineText = null;
-
-    // The amount of time that lines will take to appear.
-    [SerializeField] internal float appearanceTime = 0.5f;
-
-    // The amount of time that lines will take to disappear.
-    [SerializeField] internal float disappearanceTime = 0.5f;
-
-    // The current <see cref="LocalizedLine"/> that this line view is displaying.
-    LocalizedLine currentLine = null;
-
     /// <summary>
-    /// Controls whether the <see cref="lineText"/> object will show the
-    /// character name present in the line or not.
+    /// A Custom subclass of DialogueViewBase for Starfox 64-like
+    /// linear script-based dialogue.
     /// </summary>
-    /// <remarks>
-    /// <para style="note">This value is only used if <see
-    /// cref="characterNameText"/> is <see langword="null"/>.</para>
-    /// <para>If this value is <see langword="true"/>, any character names
-    /// present in a line will be shown in the <see cref="lineText"/>
-    /// object.</para>
-    /// <para>If this value is <see langword="false"/>, character names will
-    /// not be shown in the <see cref="lineText"/> object.</para>
-    /// </remarks>
-    [SerializeField]
-    [UnityEngine.Serialization.FormerlySerializedAs("showCharacterName")]
-    internal bool showCharacterNameInLineView = true;
-
-    // The object that displays the character names found in dialogue lines.
-    [SerializeField] internal TextMeshProUGUI characterNameText = null;
-
-    /// <summary>
-    /// A stop token that is used to interrupt the current animation.
-    /// </summary>
-    Effects.CoroutineInterruptToken currentStopToken = new Effects.CoroutineInterruptToken();
-
-    public override void DismissLine(Action onDismissalComplete)
+    public class ScriptView : DialogueViewBase
     {
-        currentLine = null;
+        // The canvas group that contains the UI elements used by this Line
+        [SerializeField] internal CanvasGroup canvasGroup;
 
-        var interactable = canvasGroup.interactable;
-        canvasGroup.interactable = false;
-        canvasGroup.alpha = 0;
-        canvasGroup.blocksRaycasts = false;
-        // turning interaction back on, if it needs it
-        canvasGroup.interactable = interactable;
-        onDismissalComplete();
-    }
+        // The object that displays the text of dialogue lines.
+        [SerializeField] internal TextMeshProUGUI lineText = null;
 
-    /// <inheritdoc/>
-    public override void InterruptLine(LocalizedLine dialogueLine, Action onInterruptLineFinished)
-    {
-        currentLine = dialogueLine;
+        /// <summary>
+        /// The amount of time to wait after any line
+        /// </summary>
+        [SerializeField]
+        [Min(0)]
+        internal float holdTime = 3f;
 
-        // Cancel all coroutines that we're currently running. This will
-        // stop the RunLineInternal coroutine, if it's running.
-        StopAllCoroutines();
+        /// <summary>
+        /// Controls whether this Line View will wait for user input before
+        /// indicating that it has finished presenting a line.
+        /// </summary>
+        /// <remarks>
+        /// <para>
+        /// If this value is true, the Line View will not report that it has
+        /// finished presenting its lines. Instead, it will wait until the <see
+        /// cref="UserRequestedViewAdvancement"/> method is called.
+        /// </para>
+        /// <para style="note"><para>The <see cref="DialogueRunner"/> will not
+        /// proceed to the next piece of content (e.g. the next line, or the
+        /// next options) until all Dialogue Views have reported that they have
+        /// finished presenting their lines. If a <see cref="LineView"/> doesn't
+        /// report that it's finished until it receives input, the <see
+        /// cref="DialogueRunner"/> will end up pausing.</para>
+        /// <para>
+        /// This is useful for games in which you want the player to be able to
+        /// read lines of dialogue at their own pace, and give them control over
+        /// when to advance to the next line.</para></para>
+        /// </remarks>
+        [SerializeField]
+        internal bool autoAdvance = false;
 
-        // for now we are going to just immediately show everything
-        // later we will make it fade in
-        lineText.gameObject.SetActive(true);
-        canvasGroup.gameObject.SetActive(true);
+        // The current <see cref="LocalizedLine"/> that this line view is displaying.
+        LocalizedLine currentLine = null;
 
-        int length;
+        [SerializeField]
+        [UnityEngine.Serialization.FormerlySerializedAs("showCharacterName")]
+        internal bool showCharacterNameInLineView = true;
 
-        if (characterNameText == null)
+        // The object that displays the character names found in dialogue lines.
+        [SerializeField] internal TextMeshProUGUI characterNameText = null;
+
+        /// <summary>
+        /// A stop token that is used to interrupt the current animation.
+        /// </summary>
+        Effects.CoroutineInterruptToken currentStopToken = new Effects.CoroutineInterruptToken();
+
+        /// <summary>
+        /// Controls whether the text of <see cref="lineText"/> should be
+        /// gradually revealed over time.
+        /// </summary>
+        /// <remarks><para>If this value is <see langword="true"/>, the <see
+        /// cref="lineText"/> object's <see
+        /// cref="TMP_Text.maxVisibleCharacters"/> property will animate from 0
+        /// to the length of the text, at a rate of <see
+        /// cref="typewriterEffectSpeed"/> letters per second when the line
+        /// appears. <see cref="onCharacterTyped"/> is called for every new
+        /// character that is revealed.</para>
+        /// <para>If this value is <see langword="false"/>, the <see
+        /// cref="lineText"/> will all be revealed at the same time.</para>
+        /// <para style="note">If <see cref="useFadeEffect"/> is <see
+        /// langword="true"/>, the typewriter effect will run after the fade-in
+        /// is complete.</para>
+        /// </remarks>
+        /// <seealso cref="lineText"/>
+        /// <seealso cref="onCharacterTyped"/>
+        /// <seealso cref="typewriterEffectSpeed"/>
+        [SerializeField] internal bool useTypewriterEffect = true;
+
+        /// <summary>
+        /// A Unity Event that is called each time a character is revealed
+        /// during a typewriter effect.
+        /// </summary>
+        /// <remarks>
+        /// This event is only invoked when <see cref="useTypewriterEffect"/> is
+        /// <see langword="true"/>.
+        /// </remarks>
+        /// <seealso cref="useTypewriterEffect"/>
+        [SerializeField]
+        internal UnityEngine.Events.UnityEvent onCharacterTyped;
+
+        /// <summary>
+        /// The number of characters per second that should appear during a
+        /// typewriter effect.
+        /// </summary>
+        /// <seealso cref="useTypewriterEffect"/>
+        [SerializeField]
+        [Min(0)]
+        internal float typewriterEffectSpeed = 0f;
+
+        private void Awake()
         {
-            if (showCharacterNameInLineView)
+            canvasGroup.alpha = 0;
+            canvasGroup.blocksRaycasts = false;
+        }
+
+        private void Reset()
+        {
+            canvasGroup = GetComponentInParent<CanvasGroup>();
+        }
+
+        public void HideLine()
+        {
+            Debug.Log("Hiding line one!");
+            currentLine = null;
+            canvasGroup.alpha = 0;
+        }
+
+        /// <inheritdoc/>
+        public override void DismissLine(Action onDismissalComplete)
+        {
+            currentLine = null;
+
+            StartCoroutine(DismissLineInternal(onDismissalComplete));
+        }
+
+        private IEnumerator DismissLineInternal(Action onDismissalComplete)
+        {
+            // disabling interaction temporarily while dismissing the line
+            // we don't want people to interrupt a dismissal
+            var interactable = canvasGroup.interactable;
+            canvasGroup.interactable = false;
+            canvasGroup.alpha = 0;
+            canvasGroup.blocksRaycasts = false;
+            // turning interaction back on, if it needs it
+            canvasGroup.interactable = interactable;
+            onDismissalComplete();
+            yield return new WaitForEndOfFrame();
+        }
+
+        public override void InterruptLine(LocalizedLine dialogueLine, Action onInterruptLineFinished)
+        {
+            currentLine = dialogueLine;
+
+            // Cancel all coroutines that we're currently running. This will
+            // stop the RunLineInternal coroutine, if it's running.
+            StopAllCoroutines();
+
+            // for now we are going to just immediately show everything
+            // later we will make it fade in
+            lineText.gameObject.SetActive(true);
+            canvasGroup.gameObject.SetActive(true);
+
+            int length;
+
+            if (characterNameText == null)
             {
-                lineText.text = dialogueLine.Text.Text;
-                length = dialogueLine.Text.Text.Length;
+                if (showCharacterNameInLineView)
+                {
+                    lineText.text = dialogueLine.Text.Text;
+                    length = dialogueLine.Text.Text.Length;
+                }
+                else
+                {
+                    lineText.text = dialogueLine.TextWithoutCharacterName.Text;
+                    length = dialogueLine.TextWithoutCharacterName.Text.Length;
+                }
             }
             else
             {
+                characterNameText.text = dialogueLine.CharacterName;
                 lineText.text = dialogueLine.TextWithoutCharacterName.Text;
                 length = dialogueLine.TextWithoutCharacterName.Text.Length;
             }
+
+            // Show the entire line's text immediately.
+            lineText.maxVisibleCharacters = length;
+
+            // Make the canvas group fully visible immediately, too.
+            canvasGroup.alpha = 1;
+
+            canvasGroup.interactable = true;
+            canvasGroup.blocksRaycasts = true;
+
+            onInterruptLineFinished();
         }
-        else
+
+        public override void RunLine(LocalizedLine dialogueLine, Action onDialogueLineFinished)
         {
-            characterNameText.text = dialogueLine.CharacterName;
-            lineText.text = dialogueLine.TextWithoutCharacterName.Text;
-            length = dialogueLine.TextWithoutCharacterName.Text.Length;
+            // Stop any coroutines currently running on this line view (for
+            // example, any other RunLine that might be running)
+            StopAllCoroutines();
+
+            // Begin running the line as a coroutine.
+            StartCoroutine(RunLineInternal(dialogueLine, onDialogueLineFinished));
         }
 
-        // Show the entire line's text immediately.
-        lineText.maxVisibleCharacters = length;
-
-        // Make the canvas group fully visible immediately, too.
-        canvasGroup.alpha = 1;
-
-        canvasGroup.interactable = true;
-        canvasGroup.blocksRaycasts = true;
-
-        onInterruptLineFinished();
-    }
-
-    ///// <inheritdoc/>
-    //public override void RunLine(LocalizedLine dialogueLine, Action onDialogueLineFinished)
-    //{
-    //    // Stop any coroutines currently running on this line view (for
-    //    // example, any other RunLine that might be running)
-    //    StopAllCoroutines();
-
-    //    // Begin running the line as a coroutine.
-    //    StartCoroutine(RunLineInternal(dialogueLine, onDialogueLineFinished));
-    //}
-
-    //private IEnumerator RunLineInternal(LocalizedLine dialogueLine, Action onDialogueLineFinished)
-    //{
-    //    IEnumerator PresentLine()
-    //    {
-    //        lineText.gameObject.SetActive(true);
-    //        canvasGroup.gameObject.SetActive(true);
-
-    //        if (characterNameText != null)
-    //        {
-    //            // If we have a character name text view, show the character
-    //            // name in it, and show the rest of the text in our main
-    //            // text view.
-    //            characterNameText.text = dialogueLine.CharacterName;
-    //            lineText.text = dialogueLine.TextWithoutCharacterName.Text;
-    //        }
-    //        else
-    //        {
-    //            // We don't have a character name text view. Should we show
-    //            // the character name in the main text view?
-    //            if (showCharacterNameInLineView)
-    //            {
-    //                // Yep! Show the entire text.
-    //                lineText.text = dialogueLine.Text.Text;
-    //            }
-    //            else
-    //            {
-    //                // Nope! Show just the text without the character name.
-    //                lineText.text = dialogueLine.TextWithoutCharacterName.Text;
-    //            }
-    //        }
-
-        
-    //        // Ensure that the max visible characters is effectively
-    //        // unlimited.
-    //        lineText.maxVisibleCharacters = int.MaxValue;
-    //    }
-    //    currentLine = dialogueLine;
-
-    //    // Run any presentations as a single coroutine. If this is stopped,
-    //    // which UserRequestedViewAdvancement can do, then we will stop all
-    //    // of the animations at once.
-    //    yield return StartCoroutine(PresentLine());
-
-    //    currentStopToken.Complete();
-
-    //    // All of our text should now be visible.
-    //    lineText.maxVisibleCharacters = int.MaxValue;
-
-    //    // Our view should at be at full opacity.
-    //    canvasGroup.alpha = 1f;
-    //    canvasGroup.blocksRaycasts = true;
-
-
-    //    // If we have a hold time, wait that amount of time, and then
-    //    // continue.
-    //    if (holdTime > 0)
-    //    {
-    //        yield return new WaitForSeconds(holdTime);
-    //    }
-
-    //    if (autoAdvance == false)
-    //    {
-    //        // The line is now fully visible, and we've been asked to not
-    //        // auto-advance to the next line. Stop here, and don't call the
-    //        // completion handler - we'll wait for a call to
-    //        // UserRequestedViewAdvancement, which will interrupt this
-    //        // coroutine.
-    //        yield break;
-    //    }
-
-    //    // Our presentation is complete; call the completion handler.
-    //    onDialogueLineFinished();
-    //}
-
-    /// <inheritdoc/>
-    public override void UserRequestedViewAdvancement()
-    {
-        // We received a request to advance the view. If we're in the middle of
-        // an animation, skip to the end of it. If we're not current in an
-        // animation, interrupt the line so we can skip to the next one.
-
-        // we have no line, so the user just mashed randomly
-        if (currentLine == null)
+        private IEnumerator RunLineInternal(LocalizedLine dialogueLine, Action onDialogueLineFinished)
         {
-            return;
+            IEnumerator PresentLine()
+            {
+                lineText.gameObject.SetActive(true);
+                canvasGroup.gameObject.SetActive(true);
+
+                if (characterNameText != null)
+                {
+                    // If we have a character name text view, show the character
+                    // name in it, and show the rest of the text in our main
+                    // text view.
+                    characterNameText.text = dialogueLine.CharacterName;
+                    lineText.text = dialogueLine.TextWithoutCharacterName.Text;
+                }
+                else
+                {
+                    // We don't have a character name text view. Should we show
+                    // the character name in the main text view?
+                    if (showCharacterNameInLineView)
+                    {
+                        // Yep! Show the entire text.
+                        lineText.text = dialogueLine.Text.Text;
+                    }
+                    else
+                    {
+                        // Nope! Show just the text without the character name.
+                        lineText.text = dialogueLine.TextWithoutCharacterName.Text;
+                    }
+                }
+
+                if (useTypewriterEffect)
+                {
+                    // If we're using the typewriter effect, hide all of the
+                    // text before we begin any possible fade (so we don't fade
+                    // in on visible text).
+                    lineText.maxVisibleCharacters = 0;
+                }
+                else
+                {
+                    // Ensure that the max visible characters is effectively
+                    // unlimited.
+                    lineText.maxVisibleCharacters = int.MaxValue;
+                }
+
+                // If we're using the typewriter effect, start it, and wait for
+                // it to finish.
+                if (useTypewriterEffect)
+                {
+                    // setting the canvas all back to its defaults because if we didn't also fade we don't have anything visible
+                    canvasGroup.alpha = 1f;
+                    canvasGroup.interactable = true;
+                    canvasGroup.blocksRaycasts = true;
+                    yield return StartCoroutine(
+                        Effects.Typewriter(
+                            lineText,
+                            typewriterEffectSpeed,
+                            () => onCharacterTyped.Invoke(),
+                            currentStopToken
+                        )
+                    );
+                    if (currentStopToken.WasInterrupted)
+                    {
+                        // The typewriter effect was interrupted. Stop this
+                        // entire coroutine.
+                        yield break;
+                    }
+                }
+
+                yield return new WaitForEndOfFrame();
+            }
+            currentLine = dialogueLine;
+
+            // Run any presentations as a single coroutine. If this is stopped,
+            // which UserRequestedViewAdvancement can do, then we will stop all
+            // of the animations at once.
+            yield return StartCoroutine(PresentLine());
+
+            currentStopToken.Complete();
+
+            // All of our text should now be visible.
+            lineText.maxVisibleCharacters = int.MaxValue;
+
+            // Our view should at be at full opacity.
+            canvasGroup.alpha = 1f;
+            canvasGroup.blocksRaycasts = true;
+
+
+            // If we have a hold time, wait that amount of time, and then
+            // continue.
+            if (holdTime > 0)
+            {
+                yield return new WaitForSeconds(holdTime);
+            }
+
+            if (autoAdvance == false)
+            {
+                // The line is now fully visible, and we've been asked to not
+                // auto-advance to the next line. Stop here, and don't call the
+                // completion handler - we'll wait for a call to
+                // UserRequestedViewAdvancement, which will interrupt this
+                // coroutine.
+                yield break;
+            }
+
+            // Our presentation is complete; call the completion handler.
+            onDialogueLineFinished();
         }
 
-        // we may want to change this later so the interrupted
-        // animation coroutine is what actually interrupts
-        // for now this is fine.
-        // Is an animation running that we can stop?
-        if (currentStopToken.CanInterrupt)
+        public override void UserRequestedViewAdvancement()
         {
-            // Stop the current animation, and skip to the end of whatever
-            // started it.
-            currentStopToken.Interrupt();
+            // We received a request to advance the view. If we're in the middle of
+            // an animation, skip to the end of it. If we're not current in an
+            // animation, interrupt the line so we can skip to the next one.
+
+            // we have no line, so the user just mashed randomly
+            if (currentLine == null)
+            {
+                return;
+            }
+
+            // we may want to change this later so the interrupted
+            // animation coroutine is what actually interrupts
+            // for now this is fine.
+            // Is an animation running that we can stop?
+            if (currentStopToken.CanInterrupt)
+            {
+                // Stop the current animation, and skip to the end of whatever
+                // started it.
+                currentStopToken.Interrupt();
+            }
+            // No animation is now running. Signal that we want to
+            // interrupt the line instead.
+            requestInterrupt?.Invoke();
         }
-        // No animation is now running. Signal that we want to
-        // interrupt the line instead.
-        requestInterrupt?.Invoke();
     }
 }
