@@ -10,13 +10,25 @@ using Yarn.Unity;
 /// </summary>
 public class DialogueAdvanceOnTrigger : MonoBehaviour
 {
-    [SerializeField] public DialogueViewBase dialogueView;
+    [SerializeField] DialogueRunner dialogueRunner;
+    [SerializeField] ScriptView scriptView;
+    [SerializeField] string sceneNode;
 
     internal void Start()
     {
-        if (dialogueView == null)
+        if (dialogueRunner == null)
         {
-            dialogueView = GetComponent<DialogueViewBase>();
+            dialogueRunner = FindObjectOfType<DialogueRunner>();
+        }
+        
+        if (scriptView == null)
+        {
+            scriptView = FindObjectOfType<ScriptView>();
+        }
+
+        if (sceneNode == "")
+        {
+            sceneNode = "StartScript";
         }
     }
 
@@ -24,9 +36,17 @@ public class DialogueAdvanceOnTrigger : MonoBehaviour
     {
         if (collision.gameObject.tag == "DialogueTrigger")
         {
-            Debug.Log("Loading next linear script line!");
-
-            dialogueView.UserRequestedViewAdvancement();
+            if(!dialogueRunner.IsDialogueRunning)
+            {
+                // start node
+                dialogueRunner.startNode = sceneNode;
+                dialogueRunner.StartDialogue(dialogueRunner.startNode);
+            }
+            else
+            {
+                Debug.Log("Loading next linear script line!");
+                scriptView.UserRequestedViewAdvancement();
+            }
         }
     }
 }

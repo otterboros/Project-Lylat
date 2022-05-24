@@ -1,8 +1,3 @@
-// TO-DO: - Design dialogue to start but hide or not run the first line
-//        - Add an opening fade for each line
-//        - Add a closing fade after hold & ensure that hold timer only starts after line is presented
-//        - Fix auto-sizing of text
-
 using System;
 using System.Collections;
 using UnityEngine;
@@ -17,11 +12,63 @@ namespace Yarn.Unity
     /// </summary>
     public class ScriptView : DialogueViewBase
     {
-        // The canvas group that contains the UI elements used by this Line
-        [SerializeField] internal CanvasGroup canvasGroup;
+        /// <summary>
+        /// The canvas group that contains the UI elements used by this Line
+        /// View.
+        /// </summary>
+        /// <remarks>
+        /// If <see cref="useFadeEffect"/> is true, then the alpha value of this
+        /// <see cref="CanvasGroup"/> will be animated during line presentation
+        /// and dismissal.
+        /// </remarks>
+        /// <seealso cref="useFadeEffect"/>
+        [SerializeField] 
+        internal CanvasGroup canvasGroup;
 
-        // The object that displays the text of dialogue lines.
-        [SerializeField] internal TextMeshProUGUI lineText = null;
+        /// <summary>
+        /// Controls whether the line view should fade in when lines appear, and
+        /// fade out when lines disappear.
+        /// </summary>
+        /// <remarks><para>If this value is <see langword="true"/>, the <see
+        /// cref="canvasGroup"/> object's alpha property will animate from 0 to
+        /// 1 over the course of <see cref="fadeInTime"/> seconds when lines
+        /// appear, and animate from 1 to zero over the course of <see
+        /// cref="fadeOutTime"/> seconds when lines disappear.</para>
+        /// <para>If this value is <see langword="false"/>, the <see
+        /// cref="canvasGroup"/> object will appear instantaneously.</para>
+        /// </remarks>
+        /// <seealso cref="canvasGroup"/>
+        /// <seealso cref="fadeInTime"/>
+        /// <seealso cref="fadeOutTime"/>
+        [SerializeField]
+        internal bool useFadeEffect = true;
+
+        /// <summary>
+        /// The time that the fade effect will take to fade lines in.
+        /// </summary>
+        /// <remarks>This value is only used when <see cref="useFadeEffect"/> is
+        /// <see langword="true"/>.</remarks>
+        /// <seealso cref="useFadeEffect"/>
+        [SerializeField]
+        [Min(0)]
+        internal float fadeInTime = 0.25f;
+
+        /// <summary>
+        /// The time that the fade effect will take to fade lines out.
+        /// </summary>
+        /// <remarks>This value is only used when <see cref="useFadeEffect"/> is
+        /// <see langword="true"/>.</remarks>
+        /// <seealso cref="useFadeEffect"/>
+        [SerializeField]
+        [Min(0)]
+        internal float fadeOutTime = 0.05f;
+
+        /// <summary>
+        /// The <see cref="TextMeshProUGUI"/> object that displays the text of
+        /// dialogue lines.
+        /// </summary>
+        [SerializeField] 
+        internal TextMeshProUGUI lineText = null;
 
         /// <summary>
         /// The amount of time to wait after any line
@@ -123,13 +170,6 @@ namespace Yarn.Unity
             canvasGroup = GetComponentInParent<CanvasGroup>();
         }
 
-        public void HideLine()
-        {
-            Debug.Log("Hiding line one!");
-            currentLine = null;
-            canvasGroup.alpha = 0;
-        }
-
         /// <inheritdoc/>
         public override void DismissLine(Action onDismissalComplete)
         {
@@ -144,6 +184,14 @@ namespace Yarn.Unity
             // we don't want people to interrupt a dismissal
             var interactable = canvasGroup.interactable;
             canvasGroup.interactable = false;
+
+            //// If we're using a fade effect, run it, and wait for it to finish.
+            //if (useFadeEffect)
+            //{
+            //    yield return StartCoroutine(Effects.FadeAlpha(canvasGroup, 1, 0, fadeOutTime, currentStopToken));
+            //    currentStopToken.Complete();
+            //}
+
             canvasGroup.alpha = 0;
             canvasGroup.blocksRaycasts = false;
             // turning interaction back on, if it needs it
@@ -254,6 +302,19 @@ namespace Yarn.Unity
                     lineText.maxVisibleCharacters = int.MaxValue;
                 }
 
+                // If we're using the fade effect, start it, and wait for it to
+                // finish.
+                if (useFadeEffect)
+                {
+                    yield return StartCoroutine(Effects.FadeAlpha(canvasGroup, 0, 1, fadeInTime, currentStopToken));
+                    if (currentStopToken.WasInterrupted)
+                    {
+                        // The fade effect was interrupted. Stop this entire
+                        // coroutine.
+                        yield break;
+                    }
+                }
+
                 // If we're using the typewriter effect, start it, and wait for
                 // it to finish.
                 if (useTypewriterEffect)
@@ -308,9 +369,19 @@ namespace Yarn.Unity
             {
                 // The line is now fully visible, and we've been asked to not
                 // auto-advance to the next line. Stop here, and don't call the
-                // completion handler - we'll wait for a call to
+                // completion handler.
+
+                // If we're using a fade effect, run it, and wait for it to finish.
+                if (useFadeEffect)
+                {
+                    yield return StartCoroutine(Effects.FadeAlpha(canvasGroup, 1, 0, fadeOutTime, currentStopToken));
+                    currentStopToken.Complete();
+                }
+
+                // We'll wait for a call to
                 // UserRequestedViewAdvancement, which will interrupt this
                 // coroutine.
+
                 yield break;
             }
 
