@@ -11,31 +11,26 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 
-public class PlayerDamage : MonoBehaviour, IDamagable
+public class PlayerDamage : BaseDamage
 {
     #region Initalization
-    private GameObject _parentGameObject;
-    private PlayerData _data;
-    private Rigidbody _rb;
-    private Scoreboard _scoreboard;
 
-    public int currentHealth { get; set; }
+    protected Coroutine iFramesOn;
+    protected bool areIFramesOn { get { return iFramesOn != null; } }
 
-    private Coroutine iFramesOn;
-    private bool areIFramesOn { get { return iFramesOn != null; } }
+    protected PlayerData _playerData;
 
-    private void Awake()
+    protected override void Awake()
     {
-        // Set current health for this game object as it's stored max health
-        _data = GetComponent<PlayerData>();
-        _parentGameObject = GameObject.FindWithTag("CreateAtRuntime");
-        _rb = GetComponent<Rigidbody>();
-        _scoreboard = FindObjectOfType<Scoreboard>();
+        base.Awake();
+
+        if (TryGetComponent<PlayerData>(out PlayerData playerData)) { _playerData = playerData; }
+        else { Debug.Log("Error! This player game object doesn't have player data!"); }
     }
 
-    private void Start()
+    protected override void Start()
     {
-        currentHealth = _data.maxHealth;
+        base.Start();
         HealthBarManager.instance.UpdateHealthBar(currentHealth, "Player");
         PlayerDataStatic.laserLevel = 0;
     }
@@ -43,7 +38,7 @@ public class PlayerDamage : MonoBehaviour, IDamagable
     #endregion
 
     #region Manage Health Changes
-    public void ChangeHealth(int value) // Change health value & play damage animation
+    public override void ChangeHealth(int value) // Change health value & play damage animation
     {
         currentHealth += value;
 
@@ -52,7 +47,7 @@ public class PlayerDamage : MonoBehaviour, IDamagable
             Instantiate(Resources.Load<GameObject>("Prefabs/FX/HitVFX"), transform.position, Quaternion.identity, _parentGameObject.transform);
     }
 
-    public void ProcessHealthState(int health)
+    public override void ProcessHealthState(int health)
     {
         //if health is equal to or above 1, play damage effect.
         if (health >= 1)
@@ -72,7 +67,7 @@ public class PlayerDamage : MonoBehaviour, IDamagable
     #endregion
 
     #region OnTriggerEnter
-    void OnTriggerEnter(Collider other)
+    protected override void OnTriggerEnter(Collider other)
     {
         // Process trigger collisions if component PickupData is found
         if(other.gameObject.TryGetComponent(out PickupData _pd))
@@ -80,12 +75,12 @@ public class PlayerDamage : MonoBehaviour, IDamagable
             switch (other.gameObject.tag)
             {
                 case "PickupHealth":
-                    if (currentHealth < _data.maxHealth)
+                    if (currentHealth < _playerData.maxHealth)
                     {
                         ChangeHealth(_pd.healthValue);
                         ProcessHealthState(currentHealth);
                     }
-                    else if (currentHealth == _data.maxHealth)
+                    else if (currentHealth == _playerData.maxHealth)
                     {
                         _scoreboard.ModifyScore(_pd.scoreValue);
                     }
@@ -172,7 +167,7 @@ public class PlayerDamage : MonoBehaviour, IDamagable
     IEnumerator InvincibilityFramesOn()
     {
         int ctr = 0;
-        while (ctr < _data.numOfIFrames)
+        while (ctr < _playerData.numOfIFrames)
         {
             ctr++;
             yield return new WaitForEndOfFrame();

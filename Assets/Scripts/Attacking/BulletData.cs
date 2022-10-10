@@ -2,12 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BulletData : MonoBehaviour
+public class BulletData : BaseData
 {
-    public int shotDamage;
-    public float shotSpeed;
-    public int distToDestroy;
-
-    public GameObject target;
-    public string firingMode;
+    // Just the base data for now!
 }

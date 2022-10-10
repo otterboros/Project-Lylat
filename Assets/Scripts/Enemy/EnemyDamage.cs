@@ -5,80 +5,77 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyDamage : MonoBehaviour, IDamagable
+public class EnemyDamage : BaseDamage
 {
-    Scoreboard scoreboard;
-    GameObject parentGameObject;
+    protected DamageAnimator _da;
+    protected EnemyData _enemyData;
 
-    private EnemyData _data;
-    public int currentHealth { get; set; }
-    private RigidBodyAddition _rb;
-    private DamageAnimator _da;
+    public GameObject currentAttacker { get; set; }
 
-    private void Awake()
+    protected override void Awake()
     {
-        scoreboard = FindObjectOfType<Scoreboard>();
-        parentGameObject = GameObject.FindWithTag("CreateAtRuntime");
+        // Replace this with just preassigned RBs.
+        var rb = GetComponent<RigidBodyAddition>();
+        rb.AddRigidBody();
 
-        // Add a rigidbody to this gameobject.
-        _rb = GetComponent<RigidBodyAddition>();
-        _rb.AddRigidBody();
+        base.Awake();
 
-        // Set current health for this game object as it's stored max health
-        _data = GetComponent<EnemyData>();
-        currentHealth = _data.maxHealth;
+        if (TryGetComponent<EnemyData>(out EnemyData enemyData)) { _enemyData = enemyData; }
+        else { Debug.Log("Error! This enemy doesn't contain enemy Data!"); }
 
         // Get Damage Animator
         _da = GetComponent<DamageAnimator>();
     }
 
-    private void OnTriggerEnter(Collider other)
+    protected override void OnTriggerEnter(Collider other)
     {
+        currentAttacker = other.gameObject;
+
         // Process enemy laser damage, with charged shot damage processed in ChargedShotExplosion.cs
-        if (other.gameObject.CompareTag("PlayerLaser") && _data.isArmored == false)
+        if (other.gameObject.CompareTag("PlayerLaser") && _enemyData.isArmored == false)
         {
             Debug.Log($"{transform.name} was hit by {other.transform.name}");
             ChangeHealth(other.GetComponent<BulletData>().shotDamage);
             _da.StartAnimatingDamage();
             ProcessHealthState(currentHealth);
         }
-        else if (other.gameObject.CompareTag("PlayerLaser") && _data.isArmored == true)
+        else if (other.gameObject.CompareTag("PlayerLaser") && _enemyData.isArmored == true)
         {
             // reflect lasers
             Debug.Log($"{transform.name} is Armored!");
         }
     }
-    public void ChangeHealth(int damage)
+    public override void ChangeHealth(int damage)
     {
         // Remove damage from health
         currentHealth += damage;
     }
 
-    public void ProcessHealthState(int health)
+    public override void ProcessHealthState(int health)
     {
         //if health is equal to or above 1, play damage effect.
         if (health >= 1)
         {
-            Instantiate(Resources.Load<GameObject>("Prefabs/FX/HitVFX"), transform.position, Quaternion.identity, parentGameObject.transform);
+            Instantiate(Resources.Load<GameObject>("Prefabs/FX/HitVFX"), transform.position, Quaternion.identity, _parentGameObject.transform);
             return;
         }
 
         // If health is below 1, process death.
         else if (health < 1)
         {
-            Instantiate(Resources.Load<GameObject>("Prefabs/FX/EnemyExplosionVFX&SFX"), transform.position, Quaternion.identity, parentGameObject.transform);
+            Instantiate(Resources.Load<GameObject>("Prefabs/FX/EnemyExplosionVFX&SFX"), transform.position, Quaternion.identity, _parentGameObject.transform);
 
             // Update player score based on score value of killed enemy
-            scoreboard.ModifyScore(_data.scoreValue);
+            _scoreboard.ModifyScore(_enemyData.scoreValue);
 
             // If the enemy should instantiate an item on death, instantiate it
-            switch(_data.spawnPickup)
+            switch(_enemyData.spawnPickup)
             {
                 case "PickupLaser":
-                    Instantiate(Resources.Load<GameObject>("Prefabs/Pickups/PickupLaser"), transform.position, new Quaternion(0, 0, 0.382f, 0.923f), parentGameObject.transform);
+                    Instantiate(Resources.Load<GameObject>("Prefabs/Pickups/PickupLaser"), transform.position, new Quaternion(0, 0, 0.382f, 0.923f), _parentGameObject.transform);
                     break;
                 case "PickupHealth":
-                    Instantiate(Resources.Load<GameObject>("Prefabs/Pickups/PickupHealth"), transform.position, new Quaternion(0, 0, 0.382f, 0.923f), parentGameObject.transform);
+                    Instantiate(Resources.Load<GameObject>("Prefabs/Pickups/PickupHealth"), transform.position, new Quaternion(0, 0, 0.382f, 0.923f), _parentGameObject.transform);
                     break;
                 default:
                     break;
@@ -91,6 +88,6 @@ public class EnemyDamage : MonoBehaviour, IDamagable
 
     public bool CheckIfArmored()
     {
-        return _data.isArmored;
+        return _enemyData.isArmored;
     }
 }

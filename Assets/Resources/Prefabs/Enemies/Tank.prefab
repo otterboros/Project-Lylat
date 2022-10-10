@@ -112,16 +112,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23ed6622513ec9e45b1712fcb69c5632, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  charName: 
   maxHealth: 3
-  scoreValue: 1
   shotsPerSecond: 0.5
   shotSpeed: 1
   shotDamage: 2
-  distToDestroy: -5
-  isShielded: 0
+  shotDistToDestroy: 0
   target: {fileID: 0}
-  firingMode: 
+  firingMode: 2
+  scoreValue: 1
   spawnPickup: 
+  shipRotationSpeed: 0
+  isShielded: 0
 --- !u!114 &-4139044376997873864
 MonoBehaviour:
   m_ObjectHideFlags: 0

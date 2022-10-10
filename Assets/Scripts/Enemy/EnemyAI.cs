@@ -1,82 +1,39 @@
-// EnemyAI.cs - Coroutine to instantiate enemy attack objects
-// TO-DO: Optimize and move RotateToFaceTarget to its own script
+// EnemyAI.cs - AI for enemies, derived from BaseAI
 //-----------------------------------------------------------
 
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyAI : MonoBehaviour
+public class EnemyAI : BaseAI
 {
-    Coroutine firing;
-    bool isFiring { get { return firing != null; } }
+    protected GameObject enemyTargetParent;
+    protected GameObject player;
 
-    private GameObject parentGameObject;
+    protected EnemyData _eData;
 
-    private GameObject _bullet;
-
-    private EnemyData _data;
-
-    private GameObject enemyTargetParent;
-    private GameObject player;
-    private Transform target;
-
-    private void Awake()
+    protected override void Awake()
     {
-        parentGameObject = GameObject.FindWithTag("CreateAtRuntime");
-
-        _data = GetComponent<EnemyData>();
+        base.Awake();
+        if (_data.TryGetComponent<EnemyData>(out EnemyData eData)) { _eData = eData; }
+        else { Debug.Log("Error! This enemy object is missing enemy data."); }
 
         enemyTargetParent = GameObject.Find("EnemyTargets");
         player = GameObject.Find("PlayerShip2");
     }
 
 #region Spawn Bullets
-    public void StartSpawningBullets()
-    {
-        // Instantiate Bullet & Assign new properties
-        StopSpawningBullets(); //If this ship is firing, stop firing.
-        firing = StartCoroutine(SpawnBullet());
-    }
-
-    public void StopSpawningBullets()
-    {
-        if (isFiring)
-        {
-            StopCoroutine(firing);
-        }
-        firing = null;
-    }
-
-    IEnumerator SpawnBullet()
+    protected override IEnumerator SpawnBullet()
     {
         while(true)
         {
-            _bullet = Instantiate(Resources.Load<GameObject>("Prefabs/Enemies/EnemyAttack/EnemyLaserBullet"), transform.position, Quaternion.identity, parentGameObject.transform);
+            Debug.Log("Spawning Bullets!");
+            _bullet = Instantiate(Resources.Load<GameObject>("Prefabs/Enemies/EnemyAttack/EnemyLaserBullet"), transform.position, Quaternion.identity, createAtRuntimeObj.transform);
             SetBulletProperties();
             yield return new WaitForSeconds(1/_data.shotsPerSecond);
         }
     }
-
-    private void SetBulletProperties()
-    {
-        BulletData _bd = _bullet.GetComponent<BulletData>();
-
-        _bd.shotDamage = _data.shotDamage;
-        _bd.shotSpeed = _data.shotSpeed;
-        _bd.distToDestroy = _data.distToDestroy;
-        _bd.target = _data.target;
-        _bd.firingMode = _data.firingMode;
-    }
     #endregion
-
-    #region
-    public void UpdateTarget(string newTarget)
-    {
-        _data.target = GameObject.Find(newTarget);
-    }
-    #endregion
-
 
     #region Rotate to Face Target
 
@@ -89,10 +46,10 @@ public class EnemyAI : MonoBehaviour
         switch (targetName)
         {
             case "player": case "Player":
-                target = player.transform;
+                currentTarget = player.gameObject;
                 break;
             case "10":
-                target = enemyTargetParent.transform.GetChild(1);
+                currentTarget = enemyTargetParent.transform.GetChild(1).gameObject;
                 break;
             default:
                 Debug.Log("Error! Target was not assigned.");
@@ -118,10 +75,10 @@ public class EnemyAI : MonoBehaviour
 
     IEnumerator RotateToTarget()
     {
-        Quaternion targetRotation = Quaternion.LookRotation(target.position - transform.position);
+        Quaternion targetRotation = Quaternion.LookRotation(currentTarget.transform.position - transform.position);
         while (transform.rotation != targetRotation)
         {
-            transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * _data.shipRotationSpeed);
+            transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * _eData.shipRotationSpeed);
             yield return new WaitForEndOfFrame();
         }
         StopRotatingToTarget();

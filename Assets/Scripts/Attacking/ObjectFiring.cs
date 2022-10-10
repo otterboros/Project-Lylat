@@ -6,21 +6,21 @@ public class ObjectFiring : MonoBehaviour
 {
     private bool _hasBegunFiring = false;
     // Change this to overload parameters!
-    public void SetFiringMode(string firingMode, GameObject target, float speed)
+    public void SetFiringMode(BaseData.FiringModes firingMode, GameObject target, float speed)
     {
         switch (firingMode)
         {
-            case ("FireObjectForward"):
+            case BaseData.FiringModes.FireObjectForward:
                 FireObjectForward(speed);
                 break;
-            case ("FireObjectAtTarget"):
+            case BaseData.FiringModes.FireObjectAtTarget:
                 FireObjectAtTarget(target.transform, speed);
                 break;
-            case ("FireHomingObjectAtTarget"):
+            case BaseData.FiringModes.FireHomingObjectAtTarget:
                 FireHomingObjectAtTarget(target.transform, speed);
                 break;
-            default:
-                Debug.Log("Error! This is not a listed firing mode.");
+            case BaseData.FiringModes.None:
+                Debug.Log("No firing mode was set!");
                 break;
         }
     }
@@ -39,17 +39,25 @@ public class ObjectFiring : MonoBehaviour
         _hasBegunFiring = true;
         transform.Translate(Vector3.forward * speed);
     }
-
+    /// <summary>
+    /// Move this object at target at speed. 
+    /// Object will continually home in on target, chasing it from behind if it overshoots.
+    /// </summary>
+    /// <param name="target"></param>
+    /// <param name="speed"></param>
     public void FireHomingObjectAtTarget(Transform target, float speed)
     {
-        // Object will continually home in on target, chasing it from behind if it overshoots
         transform.LookAt(target);
         transform.Translate(Vector3.forward * speed);
     }
-
+    /// <summary>
+    /// Move thisObject at target at speed.
+    /// </summary>
+    /// <param name="target"></param>
+    /// <param name="thisObject"></param>
+    /// <param name="speed"></param>
     public void FireHomingObjectAtTarget(Transform target, Transform thisObject, float speed)
     {
-        // Overloaded version that moves something this isn't attached to
         thisObject.transform.LookAt(target);
         thisObject.transform.Translate(Vector3.forward * speed);
     }
