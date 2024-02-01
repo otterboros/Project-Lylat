@@ -1,2 +1,2 @@
 # Project Lylat
- Rail shooter based on Starfox64.
+A Unity, C# rail shooter based on Starfox 64. 
